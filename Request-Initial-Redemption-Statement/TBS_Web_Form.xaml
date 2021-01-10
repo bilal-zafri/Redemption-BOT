@@ -1,0 +1,700 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TBS_Web_Form" this:TBS_Web_Form.FOS_Mtg_AC_No="12345678911234" this:TBS_Web_Form.FOS_First_Name_1="First Name" this:TBS_Web_Form.FOS_Last_Name_1="Last Name" this:TBS_Web_Form.FOS_Address="E12E hi there how are you doing today this is a test E12E" this:TBS_Web_Form.FOS_PCode="AB1 2AB" this:TBS_Web_Form.AVRillo_Company_Name="AV Rillo LLP" this:TBS_Web_Form.AVRillo_Pcode="CM13 3TU" this:TBS_Web_Form.AVRillo_Panel_Number="664226" this:TBS_Web_Form.Reference_Number="123456" this:TBS_Web_Form.AVRillo_Contact_Number="02083703877" this:TBS_Web_Form.AVRillo_Fax_Number="02083621705" this:TBS_Web_Form.AVRillo_Email="hk@avrillo.co.uk" this:TBS_Web_Form.AVRillo_DX_Number="155263 Enfield 11" this:TBS_Web_Form.AVRillo_Redemption_Reason="Sale" this:TBS_Web_Form.FOS_Solicitor_Name="Yo Yo" this:TBS_Web_Form.FOS_Solicitor_Address_1="E121E Hi there Solicitor how are you doing today" this:TBS_Web_Form.FOS_Solicitor_Address_2="E121 hi there Solicitor 2 how are you doing today E121E" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:this="clr-namespace:" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="FOS_Mtg_AC_No" Type="InArgument(x:String)" />
+    <x:Property Name="FOS_First_Name_1" Type="InArgument(x:String)" />
+    <x:Property Name="FOS_Last_Name_1" Type="InArgument(x:String)" />
+    <x:Property Name="FOS_First_Name_2" Type="InArgument(x:String)" />
+    <x:Property Name="FOS_Last_Name_2" Type="InArgument(x:String)" />
+    <x:Property Name="FOS_Address" Type="InArgument(x:String)" />
+    <x:Property Name="FOS_PCode" Type="InArgument(x:String)" />
+    <x:Property Name="AVRillo_Company_Name" Type="InArgument(x:String)" />
+    <x:Property Name="AVRillo_Pcode" Type="InArgument(x:String)" />
+    <x:Property Name="AVRillo_Panel_Number" Type="InArgument(x:String)" />
+    <x:Property Name="Reference_Number" Type="InArgument(x:String)" />
+    <x:Property Name="AVRillo_Contact_Number" Type="InArgument(x:String)" />
+    <x:Property Name="AVRillo_Fax_Number" Type="InArgument(x:String)" />
+    <x:Property Name="AVRillo_Email" Type="InArgument(x:String)" />
+    <x:Property Name="AVRillo_DX_Number" Type="InArgument(x:String)" />
+    <x:Property Name="AVRillo_Redemption_Reason" Type="InArgument(x:String)" />
+    <x:Property Name="FOS_Solicitor_Name" Type="InArgument(x:String)" />
+    <x:Property Name="FOS_Solicitor_Address_1" Type="InArgument(x:String)" />
+    <x:Property Name="FOS_Solicitor_Address_2" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1794,3977</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>TBS_Web_Form_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="52">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TBS_Web_Form" sap:VirtualizedContainerService.HintSize="509,3872" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="467,3780" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.tsb.co.uk/request-a-redemption-statement/">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,3679" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="Cookies_Popup" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'P'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="73d6a38f-f1f5-4a7d-b4a8-1e1609b34960" InformativeScreenshot="e880275b9d30b66a1144e122e95573c6" Selector="&lt;webctrl idx='1' tag='P' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <p:CVScope DelayBefore="{x:Null}" UseLocalServer="{x:Null}" ApiKey="0/e6JQ/U3Yc4x1ipGLo9p3/dnijIULSu0ujxXSaW+xfmxwqpn/NM1p4nC4M1KyVliCY7XIN+pgd3NvqzTRD/rQ==" ContinueOnError="True" DisplayName="CV Screen Scope 'iexplore.exe '" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CVScope_1" Server="https://cv.uipath.com/" Version="V1">
+              <p:CVScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <p:CvSelectItemWithDescriptor DeselectAfter="{x:Null}" InRegion="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (763,408,484,64)&quot; +&#xA;&quot;Anchor: Text 'am' (706,432,23,10)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Dropdown Select - InputBox" EmptyField="False" sap:VirtualizedContainerService.HintSize="400,134" sap2010:WorkflowViewState.IdRef="CvSelectItemWithDescriptor_1" InformativeScreenshot="466cd535bed4a534908bd6b58c9bd684" Text="[&quot;A solicitor&quot;]" Version="V2">
+                      <p:CvSelectItemWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor>
+                          <uc:CvDescriptor.Anchors>
+                            <x:Array Type="uc:CvElementDescriptor">
+                              <uc:CvElementDescriptor DesignTimeArea="706, 432, 23, 10" ElementType="Text" Text="am" />
+                            </x:Array>
+                          </uc:CvDescriptor.Anchors>
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor DesignTimeArea="763, 408, 484, 64" ElementType="InputBox" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvSelectItemWithDescriptor.DesignTimeDescriptor>
+                      <p:CvSelectItemWithDescriptor.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f85019ac-e439-4995-9112-e3d1ff9f8cf7">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </p:CvSelectItemWithDescriptor.Target>
+                    </p:CvSelectItemWithDescriptor>
+                  </Sequence>
+                </ActivityAction>
+              </p:CVScope.Body>
+              <p:CVScope.DesignTimeCache>
+                <uc:CVCache DisplayName="Main Screen" InformativeScreenshot="4629d18fd5c77c9ce9ed823e08614ad9" LogicalPosition="0, 71" OcrText="Personal Banking&#xA;Help and support&#xA;Current accounts Save &amp; Invest Mortgages Insurance Business Banking&#xA;Register&#xA;Loans Credit cards Log in 6&#xA;Money Confidence&#xA;Request a Redemption Statement&#xA;If you're thinking of paying off your mortgage and would like to know how much you owe, we can provide you with a redemption statement. This will also show any&#xA;Early Repayment Charge and Closing Administration Charge that may be payable.&#xA;Depending on your status, you'll need to provide slightly different information.&#xA;I am&#xA;Register for mobile&#xA;banking&#xA;We're open anytime and&#xA;anywhere. Take care of your day-&#xA;to-day banking when you need&#xA;to. Select Need to visit us?&#xA;Visit our FAQs&#xA;[f you need help with something&#xA;specific, let us know what it&#xA;relates to or search a topic.&#xA;Go help&#xA;Legal&#xA;Sitemap&#xA;Press and Media Accessibility&#xA;Contact us&#xA;Branch Locator Issues&#xA;logging in?&#xA;Follow our step-by-step tutorial&#xA;to get back online from the&#xA;safety of your home.&#xA;tutoial Cookies&#xA;privacy&#xA;Careers" Position="0, 71" ScreenshotGuid="0611ff12-aa5e-415e-abeb-07c4c1af9092" ServerVersion="1">
+                  <uc:CVCache.CvUiElements>
+                    <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
+                      <uc:CvElementInfo Category="Button" Region="1310, 743, 191, 46" />
+                      <uc:CvElementInfo Category="Button" Region="897, 742, 160, 47" />
+                      <uc:CvElementInfo Category="Button" Region="482, 743, 234, 46" />
+                      <uc:CvElementInfo Category="Icon" Region="772, 554, 85, 102" />
+                      <uc:CvElementInfo Category="Icon" Region="1511, 72, 30, 35" />
+                      <uc:CvElementInfo Category="InputBox" Region="1251, 11, 244, 38" />
+                      <uc:CvElementInfo Category="Icon" Region="1505, 11, 35, 32" />
+                      <uc:CvElementInfo Category="Icon" Region="359, 552, 78, 105" />
+                      <uc:CvElementInfo Category="Icon" Region="1469, 71, 37, 38" />
+                      <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1171, 553, 116, 106" />
+                      <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="747, 406, 494, 70" />
+                      <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1203, 425, 29, 28" />
+                      <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="18, 984, 10, 3" />
+                      <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="1896, 982, 7, 5" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="3, 149, 305, 116" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1080, 859, 823, 112" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="248, 160, 91, 99" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="329, 179, 397, 84" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="5, 55, 317, 315" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="2, 59, 330, 72" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1696, 32, 190, 25" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1379, 855, 319, 124" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1178, 790, 110, 70" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1706, 35, 86, 21" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1253, 803, 607, 53" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 208, 312, 57" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="25, 107, 323, 715" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="671, 947, 343, 31" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1330, 46, 564, 715" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 260, 314, 88" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1176, 324, 708, 23" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1674, 63, 188, 33" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1706, 44, 86, 21" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1503, 0, 396, 13" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="896, 702, 278, 32" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1645, 18, 231, 23" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 943, 325, 36" />
+                      <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1296, 269, 607, 19" />
+                      <uc:CvElementInfo Category="InputBox" Region="763, 408, 484, 64" />
+                      <uc:CvElementInfo Category="ArrowButton" Region="1201, 424, 30, 31" />
+                    </scg:List>
+                  </uc:CVCache.CvUiElements>
+                  <uc:CVCache.OcrTexts>
+                    <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="256">
+                      <uc:OcrTextInfo Region="985, 28, 48, 10" Text="Personal" />
+                      <uc:OcrTextInfo Region="1038, 28, 46, 13" Text="Banking" />
+                      <uc:OcrTextInfo Region="726, 75, 78, 35" Text="Help" />
+                      <uc:OcrTextInfo Region="818, 75, 62, 29" Text="and" />
+                      <uc:OcrTextInfo Region="894, 77, 136, 33" Text="support" />
+                      <uc:OcrTextInfo Region="465, 135, 72, 16" Text="Current" />
+                      <uc:OcrTextInfo Region="544, 136, 86, 15" Text="accounts" />
+                      <uc:OcrTextInfo Region="670, 135, 46, 16" Text="Save" />
+                      <uc:OcrTextInfo Region="723, 136, 12, 15" Text="&amp;" />
+                      <uc:OcrTextInfo Region="744, 135, 55, 16" Text="Invest" />
+                      <uc:OcrTextInfo Region="839, 135, 101, 20" Text="Mortgages" />
+                      <uc:OcrTextInfo Region="980, 135, 93, 16" Text="Insurance" />
+                      <uc:OcrTextInfo Region="1117, 28, 52, 10" Text="Business" />
+                      <uc:OcrTextInfo Region="1174, 28, 45, 13" Text="Banking" />
+                      <uc:OcrTextInfo Region="1143, 75, 144, 35" Text="Register" />
+                      <uc:OcrTextInfo Region="1113, 135, 55, 16" Text="Loans" />
+                      <uc:OcrTextInfo Region="1208, 135, 57, 16" Text="Credit" />
+                      <uc:OcrTextInfo Region="1272, 135, 52, 16" Text="cards" />
+                      <uc:OcrTextInfo Region="1400, 75, 60, 35" Text="Log" />
+                      <uc:OcrTextInfo Region="1476, 75, 26, 29" Text="in" />
+                      <uc:OcrTextInfo Region="1516, 76, 22, 28" Text="6" />
+                      <uc:OcrTextInfo Region="1364, 135, 62, 20" Text="Money" />
+                      <uc:OcrTextInfo Region="1433, 135, 109, 16" Text="Confidence" />
+                      <uc:OcrTextInfo Region="351, 195, 208, 53" Text="Request" />
+                      <uc:OcrTextInfo Region="575, 207, 28, 32" Text="a" />
+                      <uc:OcrTextInfo Region="624, 195, 305, 53" Text="Redemption" />
+                      <uc:OcrTextInfo Region="947, 194, 267, 45" Text="Statement" />
+                      <uc:OcrTextInfo Region="348, 273, 8, 13" Text="If" />
+                      <uc:OcrTextInfo Region="361, 273, 45, 17" Text="you're" />
+                      <uc:OcrTextInfo Region="411, 273, 57, 17" Text="thinking" />
+                      <uc:OcrTextInfo Region="474, 273, 14, 13" Text="of" />
+                      <uc:OcrTextInfo Region="493, 273, 47, 17" Text="paying" />
+                      <uc:OcrTextInfo Region="546, 273, 19, 13" Text="off" />
+                      <uc:OcrTextInfo Region="569, 277, 32, 13" Text="your" />
+                      <uc:OcrTextInfo Region="607, 275, 70, 15" Text="mortgage" />
+                      <uc:OcrTextInfo Region="683, 273, 26, 13" Text="and" />
+                      <uc:OcrTextInfo Region="715, 273, 44, 13" Text="would" />
+                      <uc:OcrTextInfo Region="765, 273, 23, 13" Text="like" />
+                      <uc:OcrTextInfo Region="793, 275, 14, 11" Text="to" />
+                      <uc:OcrTextInfo Region="813, 273, 39, 13" Text="know" />
+                      <uc:OcrTextInfo Region="858, 273, 31, 13" Text="how" />
+                      <uc:OcrTextInfo Region="895, 273, 39, 13" Text="much" />
+                      <uc:OcrTextInfo Region="939, 277, 26, 13" Text="you" />
+                      <uc:OcrTextInfo Region="971, 277, 35, 12" Text="owe," />
+                      <uc:OcrTextInfo Region="1012, 277, 21, 9" Text="we" />
+                      <uc:OcrTextInfo Region="1039, 277, 26, 9" Text="can" />
+                      <uc:OcrTextInfo Region="1071, 273, 54, 17" Text="provide" />
+                      <uc:OcrTextInfo Region="1130, 277, 26, 13" Text="you" />
+                      <uc:OcrTextInfo Region="1162, 273, 29, 13" Text="with" />
+                      <uc:OcrTextInfo Region="1197, 277, 8, 9" Text="a" />
+                      <uc:OcrTextInfo Region="1211, 273, 82, 17" Text="redemption" />
+                      <uc:OcrTextInfo Region="1299, 275, 76, 11" Text="statement." />
+                      <uc:OcrTextInfo Region="1381, 273, 30, 13" Text="This" />
+                      <uc:OcrTextInfo Region="1417, 273, 22, 13" Text="will" />
+                      <uc:OcrTextInfo Region="1445, 273, 29, 13" Text="also" />
+                      <uc:OcrTextInfo Region="1480, 273, 39, 13" Text="show" />
+                      <uc:OcrTextInfo Region="1525, 277, 25, 13" Text="any" />
+                      <uc:OcrTextInfo Region="348, 296, 35, 17" Text="Early" />
+                      <uc:OcrTextInfo Region="389, 296, 83, 17" Text="Repayment" />
+                      <uc:OcrTextInfo Region="478, 296, 55, 17" Text="Charge" />
+                      <uc:OcrTextInfo Region="538, 296, 27, 13" Text="and" />
+                      <uc:OcrTextInfo Region="571, 296, 56, 17" Text="Closing" />
+                      <uc:OcrTextInfo Region="633, 296, 104, 13" Text="Administration" />
+                      <uc:OcrTextInfo Region="744, 296, 55, 17" Text="Charge" />
+                      <uc:OcrTextInfo Region="804, 296, 27, 13" Text="that" />
+                      <uc:OcrTextInfo Region="837, 300, 29, 13" Text="may" />
+                      <uc:OcrTextInfo Region="872, 296, 18, 13" Text="be" />
+                      <uc:OcrTextInfo Region="896, 296, 60, 17" Text="payable." />
+                      <uc:OcrTextInfo Region="348, 337, 80, 17" Text="Depending" />
+                      <uc:OcrTextInfo Region="434, 341, 17, 9" Text="on" />
+                      <uc:OcrTextInfo Region="457, 341, 32, 13" Text="your" />
+                      <uc:OcrTextInfo Region="494, 339, 47, 14" Text="status," />
+                      <uc:OcrTextInfo Region="547, 337, 38, 17" Text="you'll" />
+                      <uc:OcrTextInfo Region="591, 337, 35, 13" Text="need" />
+                      <uc:OcrTextInfo Region="632, 339, 14, 11" Text="to" />
+                      <uc:OcrTextInfo Region="652, 337, 54, 17" Text="provide" />
+                      <uc:OcrTextInfo Region="711, 337, 50, 17" Text="slightly" />
+                      <uc:OcrTextInfo Region="766, 337, 60, 13" Text="different" />
+                      <uc:OcrTextInfo Region="832, 337, 84, 13" Text="information." />
+                      <uc:OcrTextInfo Region="697, 429, 2, 13" Text="I" />
+                      <uc:OcrTextInfo Region="706, 432, 23, 10" Text="am" />
+                      <uc:OcrTextInfo Region="487, 552, 104, 27" Text="Register" />
+                      <uc:OcrTextInfo Region="598, 552, 35, 22" Text="for" />
+                      <uc:OcrTextInfo Region="643, 552, 84, 22" Text="mobile" />
+                      <uc:OcrTextInfo Region="487, 587, 98, 27" Text="banking" />
+                      <uc:OcrTextInfo Region="485, 639, 45, 13" Text="We're" />
+                      <uc:OcrTextInfo Region="536, 643, 36, 13" Text="open" />
+                      <uc:OcrTextInfo Region="578, 639, 56, 17" Text="anytime" />
+                      <uc:OcrTextInfo Region="639, 639, 27, 13" Text="and" />
+                      <uc:OcrTextInfo Region="485, 662, 75, 17" Text="anywhere." />
+                      <uc:OcrTextInfo Region="566, 662, 34, 13" Text="Take" />
+                      <uc:OcrTextInfo Region="606, 666, 31, 9" Text="care" />
+                      <uc:OcrTextInfo Region="643, 662, 14, 13" Text="of" />
+                      <uc:OcrTextInfo Region="662, 666, 32, 13" Text="your" />
+                      <uc:OcrTextInfo Region="699, 662, 30, 17" Text="day-" />
+                      <uc:OcrTextInfo Region="485, 685, 45, 17" Text="to-day" />
+                      <uc:OcrTextInfo Region="536, 685, 57, 17" Text="banking" />
+                      <uc:OcrTextInfo Region="599, 685, 39, 13" Text="when" />
+                      <uc:OcrTextInfo Region="644, 689, 25, 13" Text="you" />
+                      <uc:OcrTextInfo Region="676, 685, 35, 13" Text="need" />
+                      <uc:OcrTextInfo Region="485, 710, 17, 11" Text="to." />
+                      <uc:OcrTextInfo Region="777, 434, 46, 13" Text="Select" />
+                      <uc:OcrTextInfo Region="1314, 552, 64, 22" Text="Need" />
+                      <uc:OcrTextInfo Region="1387, 553, 25, 21" Text="to" />
+                      <uc:OcrTextInfo Region="1420, 552, 49, 22" Text="visit" />
+                      <uc:OcrTextInfo Region="1479, 552, 44, 22" Text="us?" />
+                      <uc:OcrTextInfo Region="1311, 587, 53, 22" Text="Visit" />
+                      <uc:OcrTextInfo Region="1372, 593, 42, 16" Text="our" />
+                      <uc:OcrTextInfo Region="1423, 587, 66, 23" Text="FAQs" />
+                      <uc:OcrTextInfo Region="1313, 639, 8, 13" Text="[f" />
+                      <uc:OcrTextInfo Region="1325, 643, 26, 13" Text="you" />
+                      <uc:OcrTextInfo Region="1357, 639, 36, 13" Text="need" />
+                      <uc:OcrTextInfo Region="1399, 639, 30, 17" Text="help" />
+                      <uc:OcrTextInfo Region="1435, 639, 29, 13" Text="with" />
+                      <uc:OcrTextInfo Region="1470, 639, 76, 17" Text="something" />
+                      <uc:OcrTextInfo Region="1312, 662, 60, 17" Text="specific," />
+                      <uc:OcrTextInfo Region="1379, 662, 16, 13" Text="let" />
+                      <uc:OcrTextInfo Region="1401, 666, 16, 9" Text="us" />
+                      <uc:OcrTextInfo Region="1423, 662, 39, 13" Text="know" />
+                      <uc:OcrTextInfo Region="1467, 662, 36, 13" Text="what" />
+                      <uc:OcrTextInfo Region="1509, 662, 7, 13" Text="it" />
+                      <uc:OcrTextInfo Region="1312, 685, 48, 13" Text="relates" />
+                      <uc:OcrTextInfo Region="1365, 687, 14, 11" Text="to" />
+                      <uc:OcrTextInfo Region="1385, 689, 14, 9" Text="or" />
+                      <uc:OcrTextInfo Region="1405, 685, 49, 13" Text="search" />
+                      <uc:OcrTextInfo Region="1460, 689, 8, 9" Text="a" />
+                      <uc:OcrTextInfo Region="1473, 685, 40, 17" Text="topic." />
+                      <uc:OcrTextInfo Region="1346, 759, 24, 13" Text="Go" />
+                      <uc:OcrTextInfo Region="1394, 759, 31, 17" Text="help" />
+                      <uc:OcrTextInfo Region="348, 886, 39, 17" Text="Legal" />
+                      <uc:OcrTextInfo Region="348, 923, 60, 17" Text="Sitemap" />
+                      <uc:OcrTextInfo Region="348, 960, 41, 13" Text="Press" />
+                      <uc:OcrTextInfo Region="395, 960, 26, 13" Text="and" />
+                      <uc:OcrTextInfo Region="428, 960, 45, 13" Text="Media" />
+                      <uc:OcrTextInfo Region="692, 886, 92, 17" Text="Accessibility" />
+                      <uc:OcrTextInfo Region="693, 923, 59, 13" Text="Contact" />
+                      <uc:OcrTextInfo Region="757, 927, 16, 9" Text="us" />
+                      <uc:OcrTextInfo Region="693, 960, 52, 13" Text="Branch" />
+                      <uc:OcrTextInfo Region="752, 960, 55, 13" Text="Locator" />
+                      <uc:OcrTextInfo Region="900, 552, 80, 22" Text="Issues" />
+                      <uc:OcrTextInfo Region="900, 587, 91, 27" Text="logging" />
+                      <uc:OcrTextInfo Region="1002, 587, 36, 22" Text="in?" />
+                      <uc:OcrTextInfo Region="899, 639, 48, 13" Text="Follow" />
+                      <uc:OcrTextInfo Region="952, 643, 24, 9" Text="our" />
+                      <uc:OcrTextInfo Region="981, 639, 92, 17" Text="step-by-step" />
+                      <uc:OcrTextInfo Region="1078, 639, 49, 13" Text="tutorial" />
+                      <uc:OcrTextInfo Region="898, 664, 14, 11" Text="to" />
+                      <uc:OcrTextInfo Region="917, 664, 24, 15" Text="get" />
+                      <uc:OcrTextInfo Region="946, 662, 35, 13" Text="back" />
+                      <uc:OcrTextInfo Region="987, 662, 43, 13" Text="online" />
+                      <uc:OcrTextInfo Region="1035, 662, 33, 13" Text="from" />
+                      <uc:OcrTextInfo Region="1073, 662, 23, 13" Text="the" />
+                      <uc:OcrTextInfo Region="898, 685, 44, 17" Text="safety" />
+                      <uc:OcrTextInfo Region="947, 685, 14, 13" Text="of" />
+                      <uc:OcrTextInfo Region="965, 689, 32, 13" Text="your" />
+                      <uc:OcrTextInfo Region="1003, 685, 44, 13" Text="home." />
+                      <uc:OcrTextInfo Region="973, 759, 50, 13" Text="tutoial" />
+                      <uc:OcrTextInfo Region="1038, 886, 60, 13" Text="Cookies" />
+                      <uc:OcrTextInfo Region="1038, 923, 52, 17" Text="privacy" />
+                      <uc:OcrTextInfo Region="1038, 960, 59, 13" Text="Careers" />
+                    </scg:List>
+                  </uc:CVCache.OcrTexts>
+                </uc:CVCache>
+              </p:CVScope.DesignTimeCache>
+              <p:CVScope.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                  <ActivityFunc.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument>
+                  <ui:MicrosoftOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_1" Image="[Image]" Language="en" Profile="Screen" Scale="1" />
+                </ActivityFunc>
+              </p:CVScope.OCREngine>
+              <p:CVScope.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44350553-b589-46f8-8292-2eeca9820322" InformativeScreenshot="bf280974039646481edfc46e8c06460a" Selector="&lt;html app='chrome.exe' title='Request a redemption Statement' /&gt;&lt;webctrl tag='BODY' /&gt;" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </p:CVScope.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:CVScope>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorAccount...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[FOS_Mtg_AC_No]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fd25ea68-a8da-4e1e-b981-13fbd601358b" InformativeScreenshot="f7dd73a5e69095cdbdb5906f0260ede0" Selector="&lt;webctrl id='solicitorAccountNumber' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorName'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[FOS_First_Name_1+&quot; &quot;+FOS_Last_Name_1]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="0ea619125ec8acfa3f9eae43f56cc5a4" Selector="&lt;webctrl id='solicitorName' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorAddress1'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[FOS_Address]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="cdadbb168cae2ab10cfe3d5727b1568f" Selector="&lt;webctrl id='solicitorAddress1' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorPostcode'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[FOS_PCode]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="5bd0ef77e7e7574991b3c38271423d4e" Selector="&lt;webctrl id='solicitorPostcode' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorSubmitt...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[FOS_Solicitor_Name]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="1cf81b3b4bb59c604ee7fefc110ec748" Selector="&lt;webctrl id='solicitorSubmittersName' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorPanelNu...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" Text="[AVRillo_Panel_Number]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="d363e9f43e1ca41fc8c0328291eebfa9" Selector="&lt;webctrl id='solicitorPanelNumber' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorPanelNu...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[AVRillo_Company_Name]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="a8a8267f602b63a9516e85a066a6cae1" Selector="&lt;webctrl id='solicitorFirmName' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorFirmAdd...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" Text="[FOS_Solicitor_Address_1]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="410246ca84c498fc45bf86d021b44639" Selector="&lt;webctrl id='solicitorFirmAddress1' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorFirmAdd...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_9" Text="[FOS_Solicitor_Address_2]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="a1ea35164685c6209018d09defbacec6" Selector="&lt;webctrl id='solicitorFirmAddress2' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorFirmPos...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_10" Text="[AVRillo_Pcode]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="49737b30121ae29c3a9ec8929e0130f6" Selector="&lt;webctrl id='solicitorFirmPostcode' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorDXNumber'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_11" Text="[AVRillo_DX_Number]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="02331f5960a2b6682229de5a9158b22e" Selector="&lt;webctrl id='solicitorDXNumber' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorYourRef...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_12" Text="[Reference_Number]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="4283bccbc83ba79f3e02e27f3dceff3c" Selector="&lt;webctrl id='solicitorYourReference' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b5d2822c-fcbf-4da0-a187-05ca54906777" InformativeScreenshot="83becdfd3aa7c994ceb8b9c341a46024" Selector="&lt;webctrl aaname='*» Su Mo Tu We Th Fr Sa Today Clear' tag='TABLE' idx='2' /&gt;&lt;webctrl tag='TD' aaname='30' class='day' innertext='30' parentclass='table-condensed' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'LABEL'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bdc187bc-dac5-405b-b585-57cff1c26822" InformativeScreenshot="e982cb8d00d20e78d490863e99757ae4" Selector="&lt;webctrl aaname='Sub account' parentid='solicitorAccountType' tag='LABEL' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorTelepho...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_13" Text="[AVRillo_Contact_Number]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="c439f78d29b40e88c32c019187a0db26" Selector="&lt;webctrl id='solicitorTelephone' tag='INPUT' type='tel' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorFax'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_14" Text="[AVRillo_Fax_Number]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="8ca4a821125c50bad3376753121c5026" Selector="&lt;webctrl id='solicitorFax' tag='INPUT' type='tel' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorRedempt...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_15" Text="[AVRillo_Redemption_Reason]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="2f514cf27586296ff10b96c1b339c8e2" Selector="&lt;webctrl id='solicitorRedemptionReason' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  solicitorEmail'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_16" Text="[AVRillo_Email]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="687d6755-1bc1-4f2d-9587-c02529c7fc24" InformativeScreenshot="a16d1f7f41178afa9feda6984a64fa02" Selector="&lt;webctrl id='solicitorEmail' tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  solicitorSubmit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be12cca6-cb52-4561-b20a-c856dcfdcdd3" InformativeScreenshot="560c87cac3beca4c95c0cd17aceb99c0" Selector="&lt;webctrl id='solicitorSubmit' tag='INPUT' type='submit' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;TBS Webform fill Successfully&quot;]" />
+            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OpenBrowser>
+  </Sequence>
+</Activity>
