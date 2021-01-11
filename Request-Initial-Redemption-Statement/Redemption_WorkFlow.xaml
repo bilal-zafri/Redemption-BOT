@@ -87,6 +87,7 @@
       <Variable x:TypeArguments="x:String" Name="Lender_Name" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="Reference_Number_List" />
       <Variable x:TypeArguments="x:Int32" Name="Lender_Number" />
+      <Variable x:TypeArguments="x:String" Name="FOS_Solicitor_Full_Address" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -105,11 +106,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">500,304.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,52</av:Size>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">600,355.5 600,394.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Proclaim_Enter_Reference workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Proclaim_Enter_Reference.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Proclaim_Enter_Reference workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Proclaim_Enter_Reference.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
@@ -124,11 +125,11 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">500,394.5</av:Point>
-              <av:Size x:Key="ShapeSize">200,52</av:Size>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">600,445.5 600,484.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GoTo_Proclaim_FileOpening(S) workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="GoTo_Proclaim_FileOpening(S).xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GoTo_Proclaim_FileOpening(S) workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="GoTo_Proclaim_FileOpening(S).xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
@@ -143,11 +144,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">500,484.5</av:Point>
-                  <av:Size x:Key="ShapeSize">200,52</av:Size>
+                  <av:Size x:Key="ShapeSize">200,51</av:Size>
                   <av:PointCollection x:Key="ConnectorLocation">700,510 730,510 730,116.5 910,116.5 910,146.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Extracted_Data_Proclaim_FileOpening(S) workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Extracted_Data_Proclaim_FileOpening(S).xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Extracted_Data_Proclaim_FileOpening(S) workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Extracted_Data_Proclaim_FileOpening(S).xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="x:String" x:Key="FOS_DOB_1">[FOS_DOB_1]</OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="FOS_DOB_2">[FOS_DOB_2]</OutArgument>
@@ -176,10 +177,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID17" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
-                  <FlowDecision.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Lender_Name.ToUpper.Contains(&quot;TSB&quot;)" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID17" Condition="[Lender_Name.ToUpper.Contains(&quot;TSB&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -194,45 +192,23 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">810,304.5</av:Point>
-                          <av:Size x:Key="ShapeSize">200,52</av:Size>
+                          <av:Size x:Key="ShapeSize">200,51</av:Size>
                           <av:PointCollection x:Key="ConnectorLocation">910,355.5 910,454.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TBS_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="TBS_Web_Form.xaml">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TBS_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="TBS_Web_Form.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Solicitor_Name" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference_Number" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Address_1">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Solicitor_Address_1" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Address_2">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Solicitor_Address_2" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">[FOS_Solicitor_Name]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Address_1">[FOS_Solicitor_Address_1]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Address_2">[FOS_Solicitor_Address_2]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -245,11 +221,11 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">810,454.5</av:Point>
-                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                              <av:Size x:Key="ShapeSize">200,51</av:Size>
                               <av:PointCollection x:Key="ConnectorLocation">910,505.5 910,790 561,790</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[FOS_Name_Title_1+&quot;//&quot;+FOS_DOB_1+&quot;//&quot;+FOS_First_Name_1+&quot;//&quot;+FOS_Last_Name_1+&quot;//&quot;+FOS_Full_Name_1+Environment.NewLine+&#xD;&#xA;FOS_Name_Title_2+&quot;//&quot;+FOS_DOB_2+&quot;//&quot;+FOS_First_Name_2+&quot;//&quot;+FOS_Last_Name_2+&quot;//&quot;+FOS_Full_Name_2+Environment.NewLine+&#xD;&#xA;FOS_Address+&quot;//&quot;+FOS_City+&quot;//&quot;+FOS_PCode+&quot;//&quot;+FOS_Bank+&quot;//&quot;+FOS_Mtg_AC_No+Environment.NewLine+&#xD;&#xA;FOS_Solicitor_Name+&quot;//&quot;+FOS_Solicitor_Address_1+&quot;//&quot;+FOS_Solicitor_Address_2+&quot;//&quot;+FOS_Solicitor_Pcode]">
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[FOS_Name_Title_1+&quot;//&quot;+FOS_DOB_1+&quot;//&quot;+FOS_First_Name_1+&quot;//&quot;+FOS_Last_Name_1+&quot;//&quot;+FOS_Full_Name_1+Environment.NewLine+&#xA;FOS_Name_Title_2+&quot;//&quot;+FOS_DOB_2+&quot;//&quot;+FOS_First_Name_2+&quot;//&quot;+FOS_Last_Name_2+&quot;//&quot;+FOS_Full_Name_2+Environment.NewLine+&#xA;FOS_Address+&quot;//&quot;+FOS_City+&quot;//&quot;+FOS_PCode+&quot;//&quot;+FOS_Bank+&quot;//&quot;+FOS_Mtg_AC_No+Environment.NewLine+&#xA;FOS_Solicitor_Name+&quot;//&quot;+FOS_Solicitor_Address_1+&quot;//&quot;+FOS_Solicitor_Address_2+&quot;//&quot;+FOS_Solicitor_Pcode]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -279,10 +255,7 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </Assign>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID11" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-                                  <FlowDecision.Condition>
-                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Redemption_Data_Counter =0" />
-                                  </FlowDecision.Condition>
+                                <FlowDecision x:Name="__ReferenceID11" Condition="[Redemption_Data_Counter =0]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -337,10 +310,7 @@
                                             </sap:WorkflowViewStateService.ViewState>
                                           </Assign>
                                           <FlowStep.Next>
-                                            <FlowDecision x:Name="__ReferenceID14" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                                              <FlowDecision.Condition>
-                                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Reference_Number=&quot;&quot; or Reference_Number= &quot; &quot; or Reference_Number = &quot;  &quot;" />
-                                              </FlowDecision.Condition>
+                                            <FlowDecision x:Name="__ReferenceID14" Condition="[Reference_Number=&quot;&quot; or Reference_Number= &quot; &quot; or Reference_Number = &quot;  &quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID0}" False="{x:Reference __ReferenceID1}">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -350,12 +320,6 @@
                                                   <av:PointCollection x:Key="TrueConnector">560.5,190 430,190 430,760</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <FlowDecision.True>
-                                                <x:Reference>__ReferenceID0</x:Reference>
-                                              </FlowDecision.True>
-                                              <FlowDecision.False>
-                                                <x:Reference>__ReferenceID1</x:Reference>
-                                              </FlowDecision.False>
                                             </FlowDecision>
                                           </FlowStep.Next>
                                         </FlowStep>
@@ -371,10 +335,7 @@
                     </FlowStep>
                   </FlowDecision.True>
                   <FlowDecision.False>
-                    <FlowDecision x:Name="__ReferenceID19" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
-                      <FlowDecision.Condition>
-                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Lender_Name.ToUpper.Contains(&quot;SCOTTISH&quot;)" />
-                      </FlowDecision.Condition>
+                    <FlowDecision x:Name="__ReferenceID19" Condition="[Lender_Name.ToUpper.Contains(&quot;SCOTTISH&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -389,45 +350,23 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">1030,304.5</av:Point>
-                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                              <av:Size x:Key="ShapeSize">200,51</av:Size>
                               <av:PointCollection x:Key="ConnectorLocation">1130,355.5 1130,385.5 910,385.5 910,454.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Scottish_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Scottish_Web_Form.xaml">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Scottish_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Scottish_Web_Form.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Address_1">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Solicitor_Address_1" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Address_2">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Solicitor_Address_2" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Pcode">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Solicitor_Pcode" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference_Number" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="FOS_City">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_City" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Address_1">[FOS_Solicitor_Address_1]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Address_2">[FOS_Solicitor_Address_2]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Pcode">[FOS_Solicitor_Pcode]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="FOS_City">[FOS_City]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -441,10 +380,7 @@
                         </FlowStep>
                       </FlowDecision.True>
                       <FlowDecision.False>
-                        <FlowDecision x:Name="__ReferenceID18" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
-                          <FlowDecision.Condition>
-                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Lender_Name.ToUpper.Contains(&quot;NATIONWIDE&quot;)" />
-                          </FlowDecision.Condition>
+                        <FlowDecision x:Name="__ReferenceID18" Condition="[Lender_Name.ToUpper.Contains(&quot;NATIONWIDE&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -459,11 +395,11 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">1250,304.5</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
                                   <av:PointCollection x:Key="ConnectorLocation">1350,355.5 1350,385.5 910,385.5 910,454.5</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Nationet_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Nationet_Web_Form.xaml">
+                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Nationet_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Nationet_Web_Form.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                 </ui:InvokeWorkflowFile.Arguments>
@@ -479,10 +415,7 @@
                             </FlowStep>
                           </FlowDecision.True>
                           <FlowDecision.False>
-                            <FlowDecision x:Name="__ReferenceID20" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                              <FlowDecision.Condition>
-                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Lender_Name.ToUpper.Contains(&quot;SANTANDER&quot;)" />
-                              </FlowDecision.Condition>
+                            <FlowDecision x:Name="__ReferenceID20" Condition="[Lender_Name.ToUpper.Contains(&quot;SANTANDER&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -497,11 +430,11 @@
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">1470,304.5</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
                                       <av:PointCollection x:Key="ConnectorLocation">1570,355.5 1570,385.5 910,385.5 910,454.5</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke LenderExchange_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="LenderExchange_Web_Form.xaml">
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke LenderExchange_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="LenderExchange_Web_Form.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
                                       <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
@@ -524,10 +457,7 @@
                                 </FlowStep>
                               </FlowDecision.True>
                               <FlowDecision.False>
-                                <FlowDecision x:Name="__ReferenceID21" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
-                                  <FlowDecision.Condition>
-                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Lender_Name.ToUpper.Contains(&quot;HALIFAX&quot;) or Lender_Name.ToUpper.Contains(&quot;SCOTLAND&quot;) or Lender_Name.ToUpper.Contains(&quot;LLYOD&quot;)" />
-                                  </FlowDecision.Condition>
+                                <FlowDecision x:Name="__ReferenceID21" Condition="[Lender_Name.ToUpper.Contains(&quot;HALIFAX&quot;) or Lender_Name.ToUpper.Contains(&quot;SCOTLAND&quot;) or Lender_Name.ToUpper.Contains(&quot;LLYOD&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -548,48 +478,20 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Lloydsbank_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Lloydsbank_Web_Form.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_1">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Name_Title_1" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_2">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Name_Title_2" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_1">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_DOB_1" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_2">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_DOB_2" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Bank">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Bank" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference_Number" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_City">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_City" />
-                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_1">[FOS_Name_Title_1]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_2">[FOS_Name_Title_2]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_1">[FOS_DOB_1]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_2">[FOS_DOB_2]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_Bank">[FOS_Bank]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="FOS_City">[FOS_City]</InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -603,10 +505,7 @@
                                     </FlowStep>
                                   </FlowDecision.True>
                                   <FlowDecision.False>
-                                    <FlowDecision x:Name="__ReferenceID22" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-                                      <FlowDecision.Condition>
-                                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Lender_Name.ToUpper.Contains(&quot;VIRGIN&quot;)" />
-                                      </FlowDecision.Condition>
+                                    <FlowDecision x:Name="__ReferenceID22" Condition="[Lender_Name.ToUpper.Contains(&quot;VIRGIN&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -680,11 +579,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">90,314</av:Point>
-          <av:Size x:Key="ShapeSize">200,52</av:Size>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">190,365 190,426.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Redemption_Data]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Redemption_Data]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
@@ -721,11 +620,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">90,154</av:Point>
-          <av:Size x:Key="ShapeSize">200,52</av:Size>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">190,205 190,230 191,230</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadRange AddHeaders="True" DataTable="[Redemption_Data]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A1" SheetName="Sheet1" WorkbookPath="S:\Offshore\RPA-Team-BOTS\Request-Initial-Redemption\Sales_Temp.xlsx">
+      <ui:ReadRange AddHeaders="True" DataTable="[Redemption_Data]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A1" SheetName="Sheet1" WorkbookPath="S:\Offshore\RPA-Team-BOTS\Request-Initial-Redemption\Sales_Temp.xlsx">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
