@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2120,1686</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2120,1581</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GoTo_Proclaim_FileOpening_P__1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -76,7 +76,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GoTo_Proclaim_FileOpening_P_" sap:VirtualizedContainerService.HintSize="2130,1461" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GoTo_Proclaim_FileOpening_P_" sap:VirtualizedContainerService.HintSize="2130,1476" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="Screen_Status" />
       <Variable x:TypeArguments="x:String" Name="Screen_Title" />
@@ -94,16 +94,16 @@
         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleWhile Condition="[Screen_Status=False]" DisplayName="While" sap:VirtualizedContainerService.HintSize="2088,1269" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:InterruptibleWhile Condition="[Screen_Status=False]" DisplayName="While" sap:VirtualizedContainerService.HintSize="2088,1284" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="2052,1104" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="2052,1117" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2010,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2010,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -181,7 +181,7 @@
               </Catch>
             </TryCatch.Catches>
           </TryCatch>
-          <If Condition="[Screen_Title.Contains(&quot;Screen Split Sale - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="2010,921" sap2010:WorkflowViewState.IdRef="If_4">
+          <If Condition="[Screen_Title.Contains(&quot;Screen Split Sale - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="2010,933" sap2010:WorkflowViewState.IdRef="If_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -189,13 +189,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="480,707" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence sap:VirtualizedContainerService.HintSize="480,712" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,52" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1069,7 +1069,7 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,337" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1183,7 +1183,7 @@
                                     </ActivityAction>
                                   </p:CVScope.Body>
                                   <p:CVScope.DesignTimeCache>
-                                    <uc:CVCache DisplayName="Main Screen" InformativeScreenshot="421bacf87e735d056691fd769c1346e4" LogicalPosition="0, 0" OcrText="Selections&#xD;&#xA;Favourites&#xD;&#xA;155283 Mrs S Chen Sale and&#xD;&#xA;157880 Mr P D S„affield&#xD;&#xA;General&#xD;&#xA;Calendar&#xD;&#xA;Task Ljgt&#xD;&#xA;Draft *nails n,&#xD;&#xA;a Name Search&#xD;&#xA;R. Queries&#xD;&#xA;Cases / Ljbraries&#xD;&#xA;Cpen Cases&#xD;&#xA;1:01&#xD;&#xA;Quick Actions&#xD;&#xA;CD Bill Number&#xD;&#xA;Today's Cases (1}&#xD;&#xA;172152 Miss L N N&#xD;&#xA;Historical Case Ljgt&#xD;&#xA;sat 07/11/2020&#xD;&#xA;Fri 08/11/2020&#xD;&#xA;wed 04/11/2020&#xD;&#xA;Mon 02/11/2020&#xD;&#xA;30/10/2020 (15}&#xD;&#xA;Thu 29/10/2020&#xD;&#xA;wed 28/10/2020&#xD;&#xA;Tue 27/10/2020 (11}&#xD;&#xA;Mon 28/10/2020 (2}&#xD;&#xA;sat 24/10/2020&#xD;&#xA;History&#xD;&#xA;Enquiry&#xD;&#xA;Tasks&#xD;&#xA;—Z Accounts Screen Split Sale - 172152 (Miss L N N Sikabe) Conveyancing&#xD;&#xA;p RIP: Yes S/O: 21 orchar Test-Fee Eamer Test Estate Morgan BSL: Test Solictor EASbs LEAS Wk : _ 30/10/2020&#xD;&#xA;Bamster Advice&#xD;&#xA;Case ksistant&#xD;&#xA;AML Press f pass&#xD;&#xA;01/11/201!&#xD;&#xA;Lender: 1st Red in&#xD;&#xA;One off-Memos&#xD;&#xA;Orange -1M 4 148 No Covid Clause&#xD;&#xA;Chase ID I&#xD;&#xA;Gase ID 2&#xD;&#xA;Gase CL forms&#xD;&#xA;Chase BSL-'.Vk2&#xD;&#xA;Replies to Addtüona] Sim Exchanae / Comoletion&#xD;&#xA;Cll-pass ID 01/11/201! Call Credt Results sc&#xD;&#xA;Dorn chase ID file OPEN/ updE&#xD;&#xA;Back sc&#xD;&#xA;C12- pass ID&#xD;&#xA;PIF / FIF / SLIFA Log in 153&#xD;&#xA;122&#xD;&#xA;147 Gase M&#xD;&#xA;CL-SURVEY in&#xD;&#xA;Gase final Red&#xD;&#xA;Chase BSL-'.Vk3&#xD;&#xA;On Hold Case Detail:&#xD;&#xA;123&#xD;&#xA;Blank Letters final Red in&#xD;&#xA;History entries&#xD;&#xA;Corference - 5&#xD;&#xA;Additional E_nqu rie*&#xD;&#xA;1st AEfrom BSL&#xD;&#xA;hd.&amp;d.4h AE4rom BSL&#xD;&#xA;ISIS-one off kk Isis Quote CL-RepIiest0 AE&#xD;&#xA;CL: Accept Q 11/11/201!&#xD;&#xA;Order Block ail) ot AE&#xD;&#xA;End of AE&#xD;&#xA;aken&#xD;&#xA;Request L/L Pack Cost&#xD;&#xA;Request MC Pack Cost&#xD;&#xA;172&#xD;&#xA;VL- Pack In 72&#xD;&#xA;In 22&#xD;&#xA;kk Comp Date&#xD;&#xA;CL al_nhorise a&#xD;&#xA;Prep &amp;&#xD;&#xA;BSL- Cont &amp; Dep In&#xD;&#xA;Comp Checklist - sc&#xD;&#xA;Accounts L/L gives price&#xD;&#xA;MACO gives price&#xD;&#xA;Chase L/L pack 59&#xD;&#xA;!Chase MACO pacle 58 Paid paid AMR to order 50&#xD;&#xA;o _ 00 a-paid paid AVR to 51&#xD;&#xA;159&#xD;&#xA;Chase CL 2 pay L/L&#xD;&#xA;Chase CL 2 pay M/Co: IEO&#xD;&#xA;81&#xD;&#xA;Ek 24/04/2020 Lease - Information sc&#xD;&#xA;BSL ask service charges&#xD;&#xA;Lease EWsc&#xD;&#xA;06/11/201! Email BSC to EX„th CL CD COMP Ætatement&#xD;&#xA;Invoice&#xD;&#xA;Sale E: 300,000.00&#xD;&#xA;•E, soo_oo Exchanged - NOTIFY all&#xD;&#xA;EAS - In Held to our order&#xD;&#xA;NSP to CL: 29&#xD;&#xA;Post Comp Back screen: Misc/ Abortive/ Complaints/ NPS/ Referrals. other&#xD;&#xA;189&#xD;&#xA;Caæ - 171 24/7 128&#xD;&#xA;Pa—word 2: 174&#xD;&#xA;file: Corilid" Position="0, 0" ScreenshotGuid="43ad50ac-121f-4a89-91b2-538acb7cd7b7" ServerVersion="1">
+                                    <uc:CVCache DisplayName="Main Screen" InformativeScreenshot="421bacf87e735d056691fd769c1346e4" LogicalPosition="0, 0" OcrText="Selections&#xA;Favourites&#xA;155283 Mrs S Chen Sale and&#xA;157880 Mr P D S„affield&#xA;General&#xA;Calendar&#xA;Task Ljgt&#xA;Draft *nails n,&#xA;a Name Search&#xA;R. Queries&#xA;Cases / Ljbraries&#xA;Cpen Cases&#xA;1:01&#xA;Quick Actions&#xA;CD Bill Number&#xA;Today's Cases (1}&#xA;172152 Miss L N N&#xA;Historical Case Ljgt&#xA;sat 07/11/2020&#xA;Fri 08/11/2020&#xA;wed 04/11/2020&#xA;Mon 02/11/2020&#xA;30/10/2020 (15}&#xA;Thu 29/10/2020&#xA;wed 28/10/2020&#xA;Tue 27/10/2020 (11}&#xA;Mon 28/10/2020 (2}&#xA;sat 24/10/2020&#xA;History&#xA;Enquiry&#xA;Tasks&#xA;—Z Accounts Screen Split Sale - 172152 (Miss L N N Sikabe) Conveyancing&#xA;p RIP: Yes S/O: 21 orchar Test-Fee Eamer Test Estate Morgan BSL: Test Solictor EASbs LEAS Wk : _ 30/10/2020&#xA;Bamster Advice&#xA;Case ksistant&#xA;AML Press f pass&#xA;01/11/201!&#xA;Lender: 1st Red in&#xA;One off-Memos&#xA;Orange -1M 4 148 No Covid Clause&#xA;Chase ID I&#xA;Gase ID 2&#xA;Gase CL forms&#xA;Chase BSL-'.Vk2&#xA;Replies to Addtüona] Sim Exchanae / Comoletion&#xA;Cll-pass ID 01/11/201! Call Credt Results sc&#xA;Dorn chase ID file OPEN/ updE&#xA;Back sc&#xA;C12- pass ID&#xA;PIF / FIF / SLIFA Log in 153&#xA;122&#xA;147 Gase M&#xA;CL-SURVEY in&#xA;Gase final Red&#xA;Chase BSL-'.Vk3&#xA;On Hold Case Detail:&#xA;123&#xA;Blank Letters final Red in&#xA;History entries&#xA;Corference - 5&#xA;Additional E_nqu rie*&#xA;1st AEfrom BSL&#xA;hd.&amp;d.4h AE4rom BSL&#xA;ISIS-one off kk Isis Quote CL-RepIiest0 AE&#xA;CL: Accept Q 11/11/201!&#xA;Order Block ail) ot AE&#xA;End of AE&#xA;aken&#xA;Request L/L Pack Cost&#xA;Request MC Pack Cost&#xA;172&#xA;VL- Pack In 72&#xA;In 22&#xA;kk Comp Date&#xA;CL al_nhorise a&#xA;Prep &amp;&#xA;BSL- Cont &amp; Dep In&#xA;Comp Checklist - sc&#xA;Accounts L/L gives price&#xA;MACO gives price&#xA;Chase L/L pack 59&#xA;!Chase MACO pacle 58 Paid paid AMR to order 50&#xA;o _ 00 a-paid paid AVR to 51&#xA;159&#xA;Chase CL 2 pay L/L&#xA;Chase CL 2 pay M/Co: IEO&#xA;81&#xA;Ek 24/04/2020 Lease - Information sc&#xA;BSL ask service charges&#xA;Lease EWsc&#xA;06/11/201! Email BSC to EX„th CL CD COMP Ætatement&#xA;Invoice&#xA;Sale E: 300,000.00&#xA;•E, soo_oo Exchanged - NOTIFY all&#xA;EAS - In Held to our order&#xA;NSP to CL: 29&#xA;Post Comp Back screen: Misc/ Abortive/ Complaints/ NPS/ Referrals. other&#xA;189&#xA;Caæ - 171 24/7 128&#xA;Pa—word 2: 174&#xA;file: Corilid" Position="0, 0" ScreenshotGuid="43ad50ac-121f-4a89-91b2-538acb7cd7b7" ServerVersion="1">
                                       <uc:CVCache.CvUiElements>
                                         <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="512">
                                           <uc:CvElementInfo Category="Icon" Region="631, 27, 33, 33" />
@@ -2366,7 +2366,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <If Condition="[Screen_Title.Contains(&quot;Screen Split Purchase - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="1485,774" sap2010:WorkflowViewState.IdRef="If_3">
+              <If Condition="[Screen_Title.Contains(&quot;Screen Split Purchase - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="1485,784" sap2010:WorkflowViewState.IdRef="If_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2374,14 +2374,14 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="304,425" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence sap:VirtualizedContainerService.HintSize="304,427" sap2010:WorkflowViewState.IdRef="Sequence_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -3468,7 +3468,7 @@
                         </Catch>
                       </TryCatch.Catches>
                     </TryCatch>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_11">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -3582,7 +3582,7 @@
                                         </ActivityAction>
                                       </p:CVScope.Body>
                                       <p:CVScope.DesignTimeCache>
-                                        <uc:CVCache DisplayName="Main Screen" InformativeScreenshot="761919e2bd6353d8e2d58eaaa14820f6" LogicalPosition="169, 90" OcrText="Log SDLT/Couid Clause&#xD;&#xA;OR: DiSiS-8P:!- Q 4 Besooke 11&#xD;&#xA;- - tiénor/Gtft LEASEHOLC 24/7 Test Rat 12Test RoadTest Ct&#xD;&#xA;CL: Sikabe&#xD;&#xA;AEI &amp; Prettm Rep&#xD;&#xA;: fru&#xD;&#xA;1}: AEI out/ PrelimFpt 154&#xD;&#xA;Tile Checker&#xD;&#xA;Case ksistant&#xD;&#xA;AE2to AE Final stage&#xD;&#xA;2) Cont In- AE&#xD;&#xA;3) AE Maint (Log Replies/ Gase AE&#xD;&#xA;4)Go see Last AE&amp;aser&#xD;&#xA;Log Searches&#xD;&#xA;In: 198&#xD;&#xA;AE. AE2. PIF. Aherations etc&#xD;&#xA;Add bespoke to Mem/ Rpt/ Lend:&#xD;&#xA;final AE In 40.000 In: 24&#xD;&#xA;Caæ - 172105&#xD;&#xA;Chase Memo&#xD;&#xA;21/09/2020 Test-Fee&#xD;&#xA;EA.: Non Refemng Agent&#xD;&#xA;d: Mortgage Otter&#xD;&#xA;Mort offer-Log&#xD;&#xA;Log 19&#xD;&#xA;HTæMort: Lend scre I ii7 N: Gary Coleman&#xD;&#xA;E: Pre Exchange&#xD;&#xA;Log CL Survey&#xD;&#xA;Or ask CL-CD&#xD;&#xA;F: Log Depost 83 3 _ 2S- • 31/10/201!&#xD;&#xA;chase AM L-pass-CI_!&#xD;&#xA;chase AML-pass-CI_2&#xD;&#xA;CL AML Passed&#xD;&#xA;AML:&#xD;&#xA;aception&#xD;&#xA;EStat Dec-I Summary&#xD;&#xA;01/11/201!&#xD;&#xA;01/11/201!&#xD;&#xA;129&#xD;&#xA;estat Dec-2&#xD;&#xA;Priv*e&#xD;&#xA;C: Report issues to Lender&#xD;&#xA;IEB&#xD;&#xA;L Ques 1&#xD;&#xA;Lender Pooroves Issues 171&#xD;&#xA;Giff to Laid 170&#xD;&#xA;I EO&#xD;&#xA;D: REPORT on Titte to cttent&#xD;&#xA;API Chk Pint REPORT&#xD;&#xA;Log in Report 24/07/2020&#xD;&#xA;4 Day Notice 131&#xD;&#xA;R NOT 127 Chase Dep&#xD;&#xA;CHASE Exchange&#xD;&#xA;! kk SSLt0&#xD;&#xA;Chase EX&#xD;&#xA;ÉAsk CL Ex&#xD;&#xA;E O/shore-PreD Ex 81&#xD;&#xA;87&#xD;&#xA;R In but NOT ach&#xD;&#xA;OneOff•s Screen&#xD;&#xA;Back Screen File Note&#xD;&#xA;Blank Letters - NOTIFY all&#xD;&#xA;E: 11/00 -12020 c:&#xD;&#xA;Exchange Screen&#xD;&#xA;Cgmgsetemerg&#xD;&#xA;Misc: Abort/ Complaint/ Other&#xD;&#xA;Accounts&#xD;&#xA;Abort/ComoIaint etc&#xD;&#xA;Purch Price:&#xD;&#xA;Deo to o&#xD;&#xA;Bal to 23&#xD;&#xA;Mort Oif:&#xD;&#xA;EAP Lead 140 300,000.00&#xD;&#xA;Mort _E 99&#xD;&#xA;100 Balance from Sale:&#xD;&#xA;Mort E due should show nil :&#xD;&#xA;E Balance Oue from CL to Comp&#xD;&#xA;Purchase Misc Fees 22 424,094.14&#xD;&#xA;0.00&#xD;&#xA;Inw Contr Partrm o/ride : Cl_2- Fail&#xD;&#xA;Leor-S u&#xD;&#xA;Portal: 124&#xD;&#xA;acid 147 NPS: 121&#xD;&#xA;NPS E Out 122&#xD;&#xA;Message Log Ref Omitted ESTAS&#xD;&#xA;CL: Log Message&#xD;&#xA;M/Pack In&#xD;&#xA;Chase Pack 93&#xD;&#xA;Apport-Sc Info sc :&#xD;&#xA;Lease&#xD;&#xA;icoT sent 162&#xD;&#xA;184&#xD;&#xA;Exp: 163&#xD;&#xA;Prep for Comp &amp; Corm Screen&#xD;&#xA;Post-Comp screen&#xD;&#xA;Post-CompOneOffs&#xD;&#xA;Search Money&#xD;&#xA;Searches/ One off S&#xD;&#xA;CData Search Portal&#xD;&#xA;Back Screen&#xD;&#xA;1 Case Details:&#xD;&#xA;File opening (P)/ Data&#xD;&#xA;Proceeds of Crime Act 2002&#xD;&#xA;AVR Swtch - Admin Only" Position="169, 90" ScreenshotGuid="a515cd23-0f37-4e6f-ad03-375136c3a091" ServerVersion="1">
+                                        <uc:CVCache DisplayName="Main Screen" InformativeScreenshot="761919e2bd6353d8e2d58eaaa14820f6" LogicalPosition="169, 90" OcrText="Log SDLT/Couid Clause&#xA;OR: DiSiS-8P:!- Q 4 Besooke 11&#xA;- - tiénor/Gtft LEASEHOLC 24/7 Test Rat 12Test RoadTest Ct&#xA;CL: Sikabe&#xA;AEI &amp; Prettm Rep&#xA;: fru&#xA;1}: AEI out/ PrelimFpt 154&#xA;Tile Checker&#xA;Case ksistant&#xA;AE2to AE Final stage&#xA;2) Cont In- AE&#xA;3) AE Maint (Log Replies/ Gase AE&#xA;4)Go see Last AE&amp;aser&#xA;Log Searches&#xA;In: 198&#xA;AE. AE2. PIF. Aherations etc&#xA;Add bespoke to Mem/ Rpt/ Lend:&#xA;final AE In 40.000 In: 24&#xA;Caæ - 172105&#xA;Chase Memo&#xA;21/09/2020 Test-Fee&#xA;EA.: Non Refemng Agent&#xA;d: Mortgage Otter&#xA;Mort offer-Log&#xA;Log 19&#xA;HTæMort: Lend scre I ii7 N: Gary Coleman&#xA;E: Pre Exchange&#xA;Log CL Survey&#xA;Or ask CL-CD&#xA;F: Log Depost 83 3 _ 2S- • 31/10/201!&#xA;chase AM L-pass-CI_!&#xA;chase AML-pass-CI_2&#xA;CL AML Passed&#xA;AML:&#xA;aception&#xA;EStat Dec-I Summary&#xA;01/11/201!&#xA;01/11/201!&#xA;129&#xA;estat Dec-2&#xA;Priv*e&#xA;C: Report issues to Lender&#xA;IEB&#xA;L Ques 1&#xA;Lender Pooroves Issues 171&#xA;Giff to Laid 170&#xA;I EO&#xA;D: REPORT on Titte to cttent&#xA;API Chk Pint REPORT&#xA;Log in Report 24/07/2020&#xA;4 Day Notice 131&#xA;R NOT 127 Chase Dep&#xA;CHASE Exchange&#xA;! kk SSLt0&#xA;Chase EX&#xA;ÉAsk CL Ex&#xA;E O/shore-PreD Ex 81&#xA;87&#xA;R In but NOT ach&#xA;OneOff•s Screen&#xA;Back Screen File Note&#xA;Blank Letters - NOTIFY all&#xA;E: 11/00 -12020 c:&#xA;Exchange Screen&#xA;Cgmgsetemerg&#xA;Misc: Abort/ Complaint/ Other&#xA;Accounts&#xA;Abort/ComoIaint etc&#xA;Purch Price:&#xA;Deo to o&#xA;Bal to 23&#xA;Mort Oif:&#xA;EAP Lead 140 300,000.00&#xA;Mort _E 99&#xA;100 Balance from Sale:&#xA;Mort E due should show nil :&#xA;E Balance Oue from CL to Comp&#xA;Purchase Misc Fees 22 424,094.14&#xA;0.00&#xA;Inw Contr Partrm o/ride : Cl_2- Fail&#xA;Leor-S u&#xA;Portal: 124&#xA;acid 147 NPS: 121&#xA;NPS E Out 122&#xA;Message Log Ref Omitted ESTAS&#xA;CL: Log Message&#xA;M/Pack In&#xA;Chase Pack 93&#xA;Apport-Sc Info sc :&#xA;Lease&#xA;icoT sent 162&#xA;184&#xA;Exp: 163&#xA;Prep for Comp &amp; Corm Screen&#xA;Post-Comp screen&#xA;Post-CompOneOffs&#xA;Search Money&#xA;Searches/ One off S&#xA;CData Search Portal&#xA;Back Screen&#xA;1 Case Details:&#xA;File opening (P)/ Data&#xA;Proceeds of Crime Act 2002&#xA;AVR Swtch - Admin Only" Position="169, 90" ScreenshotGuid="a515cd23-0f37-4e6f-ad03-375136c3a091" ServerVersion="1">
                                           <uc:CVCache.CvTables>
                                             <x:Array Type="uc:CvTableInfo">
                                               <uc:CvTableInfo>
@@ -4513,7 +4513,7 @@
                                         </ActivityAction>
                                       </p:CVScope.Body>
                                       <p:CVScope.DesignTimeCache>
-                                        <uc:CVCache DisplayName="Main Screen" InformativeScreenshot="627c78a219d92d2a2c60a2d847c60e0a" LogicalPosition="169, 90" OcrText="Screen Splt Purchase General&#xD;&#xA;NPS: EAP Lead&#xD;&#xA;Inw Contr NPS Corrur•-ds&#xD;&#xA;Partrm o/ride&#xD;&#xA;Portal : Bids 1M&#xD;&#xA;Switd•: Ole N&#xD;&#xA;AVR S'.vtch - Admin Only&#xD;&#xA;Ref Omitted NPS E out&#xD;&#xA;Message Log&#xD;&#xA;Caæ - Case Details&#xD;&#xA;File opening (P}/ Data&#xD;&#xA;Proceeds of Crime Act 2002&#xD;&#xA;Ljnk S" Position="169, 90" ScreenshotGuid="aede50cc-a04e-4773-8aad-0c707f124c58" ServerVersion="1">
+                                        <uc:CVCache DisplayName="Main Screen" InformativeScreenshot="627c78a219d92d2a2c60a2d847c60e0a" LogicalPosition="169, 90" OcrText="Screen Splt Purchase General&#xA;NPS: EAP Lead&#xA;Inw Contr NPS Corrur•-ds&#xA;Partrm o/ride&#xA;Portal : Bids 1M&#xA;Switd•: Ole N&#xA;AVR S'.vtch - Admin Only&#xA;Ref Omitted NPS E out&#xA;Message Log&#xA;Caæ - Case Details&#xA;File opening (P}/ Data&#xA;Proceeds of Crime Act 2002&#xA;Ljnk S" Position="169, 90" ScreenshotGuid="aede50cc-a04e-4773-8aad-0c707f124c58" ServerVersion="1">
                                           <uc:CVCache.CvUiElements>
                                             <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="128">
                                               <uc:CvElementInfo Category="InputBox" Region="526, 191, 78, 23" />
@@ -4691,7 +4691,7 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <If Condition="[Screen_Title.Contains(&quot;Screen Split Sale - Log Initial Forms - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="1136,627" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[Screen_Title.Contains(&quot;Screen Split Sale - Log Initial Forms - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="1136,635" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -4699,13 +4699,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="304,334" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence sap:VirtualizedContainerService.HintSize="304,335" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_15">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -6014,7 +6014,7 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <If Condition="[Screen_Title.Contains(&quot;File Opening(P) - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="787,480" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If Condition="[Screen_Title.Contains(&quot;File Opening(P) - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="787,486" sap2010:WorkflowViewState.IdRef="If_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -6913,7 +6913,7 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_21">
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,337" sap2010:WorkflowViewState.IdRef="TryCatch_21">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
