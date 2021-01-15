@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1579,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1273,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Testing_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="40">
@@ -93,7 +93,7 @@
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Testing" sap:VirtualizedContainerService.HintSize="376,297" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Testing" sap:VirtualizedContainerService.HintSize="401,518" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="HAha" />
     </Sequence.Variables>
@@ -102,9 +102,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'table'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="885138d5-9966-4a0d-b497-9f7ed7f116e2" InformativeScreenshot="b78a0bef16ff11d5ab85e50bdecb98fd" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='11427030  -  Compatibility Mode - Word' /&gt;&lt;uia role='table' /&gt;">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ComboBox'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ee1f9da-0163-4cb9-ab25-fcb50393a38a" InformativeScreenshot="84e589efcb550d4fa2eaee5e51289b0b" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='22' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -112,11 +122,69 @@
             <InArgument x:TypeArguments="ui:WaitForReady" />
           </ui:Target.WaitForReady>
         </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[HAha]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[HAha]" />
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'list item'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ee1f9da-0163-4cb9-ab25-fcb50393a38a" InformativeScreenshot="82a9c382a47efc52737ff38a444463b2" Selector="&lt;wnd app='prowin32.exe' cls='ComboLBox' idx='*' /&gt;&#xD;&#xA;&lt;ctrl name='MS1R - The Co-Operative Bank PLC' role='list item' /&gt;&#xD;&#xA;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="MS1R-003 - Request redemption figure for completion">
+      <ui:SelectItem.Items>
+        <scg:List x:TypeArguments="x:String" Capacity="32">
+          <x:String>MS1R-001 - Letter to Redemptions (1st Mortgagee Sale)</x:String>
+          <x:String>MS1R-001 - Letter to Redemptions (1st Mortgagee Sale)</x:String>
+          <x:String>MS1R-001aa - Redemption statement clarify for errors</x:String>
+          <x:String>MS1R-002 - Requesting initial redemption figure</x:String>
+          <x:String>MS1R-002(a) - Requesting initial redemption figure (second time)</x:String>
+          <x:String>MS1R-002-copy - Requesting initial redemption figure-copy</x:String>
+          <x:String>MS1R-002cd - Request redemption figure when asking client to choose a comp date</x:String>
+          <x:String>MS1R-002f - Chasing initial redemption figure</x:String>
+          <x:String>MS1R-003 - Request redemption figure for completion</x:String>
+          <x:String>MS1R-003-CSF - Request redemption figure for completion</x:String>
+          <x:String>MS1R-003-SED - Request exchange date for completion</x:String>
+          <x:String>MS1R-003f - Chasing final redemption figure</x:String>
+          <x:String>MS1R-004 - Redemption Letter</x:String>
+          <x:String>MS1R-004f - Chase lender for acknowledgement of redemption</x:String>
+          <x:String>MS1R-DS1-1st - Cancellation of entries relating to registered charge - 1st lender</x:String>
+          <x:String>MS1R-DS1-2nd - Cancellation of entries relating to registered charge - 1st lender</x:String>
+          <x:String>MS1R-END3 - END1 (Adobe) Electronic Notification of Discharge 1st Account</x:String>
+          <x:String>MS1R-END4 - END1 (Adobe) Electronic Notification of Discharge 2nd Account</x:String>
+        </scg:List>
+      </ui:SelectItem.Items>
+      <ui:SelectItem.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b8a4b56-4ad0-4ab8-b6f4-5b5a8a4a0ff3" InformativeScreenshot="18b2a327c2bfc1a789b0ab80c50fe2e6" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='21' /&gt;&lt;ctrl role='combo box' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:SelectItem.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:SelectItem>
   </Sequence>
 </Activity>
