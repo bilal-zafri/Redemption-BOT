@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Halifax_Web_Form" this:Halifax_Web_Form.FOS_Address="E12E hi how are you doing today i am doing fine what about you E12E" this:Halifax_Web_Form.FOS_PCode="AB1 2AB" this:Halifax_Web_Form.FOS_Bank="Halifax" this:Halifax_Web_Form.FOS_Mtg_AC_No="12345678911234" this:Halifax_Web_Form.FOS_DOB_1="Dr" this:Halifax_Web_Form.FOS_First_Name_1="First Name" this:Halifax_Web_Form.FOS_Last_Name_1="Last Name" this:Halifax_Web_Form.AVRillo_Panel_Number="657837" this:Halifax_Web_Form.AVRillo_Company_Name="Avrillo LLP" this:Halifax_Web_Form.AVRillo_Pcode="EN13GN" this:Halifax_Web_Form.AVRillo_Fax_Number="02083621705" this:Halifax_Web_Form.AVRillo_Contact_Number="02083703877" this:Halifax_Web_Form.Reference_Number="123456" this:Halifax_Web_Form.FOS_City="City Name" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Halifax_Web_Form" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="FOS_Address" Type="InArgument(x:String)" />
     <x:Property Name="FOS_PCode" Type="InArgument(x:String)" />
@@ -23,7 +23,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2270,9910</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2270,9788</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Halifax_Web_Form_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -57,7 +57,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -85,9 +85,10 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Halifax_Web_Form" sap:VirtualizedContainerService.HintSize="2280,9805" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Halifax_Web_Form" sap:VirtualizedContainerService.HintSize="2280,9683" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="Address_E1" />
       <Variable x:TypeArguments="x:Boolean" Name="Website_Check" />
@@ -98,13 +99,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="2238,9713" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://apply.lloydsbank.co.uk/personal/a/gforms?formId=F013&amp;prodType=MM">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="2238,9591" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://apply.lloydsbank.co.uk/personal/a/gforms?formId=F013&amp;prodType=MM">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2204,9611" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2204,9489" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -112,7 +113,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="2162,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="2162,365" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile Condition="[Website_Check=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="2162,365" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_21">
                   <sap:WorkflowViewStateService.ViewState>
@@ -134,9 +135,6 @@
                   </ui:UiElementExists>
                 </Sequence>
               </ui:InterruptibleDoWhile.Body>
-              <ui:InterruptibleDoWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Website_Check=False" />
-              </ui:InterruptibleDoWhile.Condition>
             </ui:InterruptibleDoWhile>
             <Sequence sap:VirtualizedContainerService.HintSize="2162,2519" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
@@ -286,7 +284,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:TypeInto>
-              <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="562,660" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+              <ui:InterruptibleDoWhile Condition="[Website_Check_3=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="562,660" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
                 <ui:InterruptibleDoWhile.Body>
                   <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,493" sap2010:WorkflowViewState.IdRef="Sequence_22">
                     <sap:WorkflowViewStateService.ViewState>
@@ -337,20 +335,16 @@
                     </If>
                   </Sequence>
                 </ui:InterruptibleDoWhile.Body>
-                <ui:InterruptibleDoWhile.Condition>
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Website_Check_3=False" />
-                </ui:InterruptibleDoWhile.Condition>
               </ui:InterruptibleDoWhile>
             </Sequence>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="2162,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Hello&quot;]" />
-            <Sequence sap:VirtualizedContainerService.HintSize="2162,6394" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence sap:VirtualizedContainerService.HintSize="2162,6371" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="2120,365" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
+              <ui:InterruptibleDoWhile Condition="[Website_Check_2=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="2120,365" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
                 <ui:InterruptibleDoWhile.Body>
                   <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_23">
                     <sap:WorkflowViewStateService.ViewState>
@@ -372,11 +366,8 @@
                     </ui:UiElementExists>
                   </Sequence>
                 </ui:InterruptibleDoWhile.Body>
-                <ui:InterruptibleDoWhile.Condition>
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Website_Check_2=False" />
-                </ui:InterruptibleDoWhile.Condition>
               </ui:InterruptibleDoWhile>
-              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[FOS_Name_Title_1]" sap:VirtualizedContainerService.HintSize="2120,52" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[FOS_Name_Title_1]" sap:VirtualizedContainerService.HintSize="2120,209" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                 <Switch.Default>
                   <Sequence sap:VirtualizedContainerService.HintSize="401,400" sap2010:WorkflowViewState.IdRef="Sequence_24">
                     <sap:WorkflowViewStateService.ViewState>
@@ -428,7 +419,7 @@
                 </Switch.Default>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -731,7 +722,7 @@
                   </ui:Target>
                 </ui:TypeInto.Target>
               </ui:TypeInto>
-              <If Condition="[String.IsNullOrWhiteSpace(FOS_First_Name_2)]" sap:VirtualizedContainerService.HintSize="2120,1124" sap2010:WorkflowViewState.IdRef="If_10">
+              <If Condition="[String.IsNullOrWhiteSpace(FOS_First_Name_2)]" sap:VirtualizedContainerService.HintSize="2120,944" sap2010:WorkflowViewState.IdRef="If_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -763,7 +754,7 @@
                   </ui:Click>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="539,975" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <Sequence sap:VirtualizedContainerService.HintSize="539,795" sap2010:WorkflowViewState.IdRef="Sequence_13">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -792,7 +783,7 @@
                         </ui:Target>
                       </ui:Click.Target>
                     </ui:Click>
-                    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[FOS_Name_Title_2]" sap:VirtualizedContainerService.HintSize="497,389" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[FOS_Name_Title_2]" sap:VirtualizedContainerService.HintSize="497,209" sap2010:WorkflowViewState.IdRef="Switch`1_2">
                       <Switch.Default>
                         <Sequence sap:VirtualizedContainerService.HintSize="401,400" sap2010:WorkflowViewState.IdRef="Sequence_25">
                           <sap:WorkflowViewStateService.ViewState>
@@ -1043,7 +1034,7 @@
                         <InArgument x:TypeArguments="x:Int32">0</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="340,419" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_4">
+                    <ui:InterruptibleDoWhile Condition="[FOS_Address.Length&lt;20]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="340,419" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_4">
                       <ui:InterruptibleDoWhile.Body>
                         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_26">
                           <sap:WorkflowViewStateService.ViewState>
@@ -1069,9 +1060,6 @@
                           </Assign>
                         </Sequence>
                       </ui:InterruptibleDoWhile.Body>
-                      <ui:InterruptibleDoWhile.Condition>
-                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="FOS_Address.Length&lt;20" />
-                      </ui:InterruptibleDoWhile.Condition>
                     </ui:InterruptibleDoWhile>
                     <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  txtBusinessAddre...'" sap:VirtualizedContainerService.HintSize="340,134" sap2010:WorkflowViewState.IdRef="TypeInto_24" Text="[FOS_Address]">
                       <ui:TypeInto.Target>
@@ -1173,7 +1161,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:TypeInto>
-              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  appointmentDate...'" sap:VirtualizedContainerService.HintSize="2120,134" sap2010:WorkflowViewState.IdRef="SelectItem_15" Item="[Now.AddDays(30).ToString(&quot;dd&quot;)]">
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  appointmentDate...'" sap:VirtualizedContainerService.HintSize="2120,134" sap2010:WorkflowViewState.IdRef="SelectItem_15" Item="[Now.AddMonths(1).ToString(&quot;dd&quot;)]">
                 <ui:SelectItem.Items>
                   <scg:List x:TypeArguments="x:String" Capacity="32">
                     <x:String>Day</x:String>
@@ -1227,7 +1215,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:SelectItem>
-              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  appointmentDate...'" sap:VirtualizedContainerService.HintSize="2120,134" sap2010:WorkflowViewState.IdRef="SelectItem_16" Item="[Now.AddDays(30).ToString(&quot;MMMM&quot;)]">
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  appointmentDate...'" sap:VirtualizedContainerService.HintSize="2120,134" sap2010:WorkflowViewState.IdRef="SelectItem_16" Item="[Now.AddMonths(1).ToString(&quot;MMMM&quot;)]">
                 <ui:SelectItem.Items>
                   <scg:List x:TypeArguments="x:String" Capacity="16">
                     <x:String>Month</x:String>
@@ -1256,7 +1244,7 @@
                   </ui:Target>
                 </ui:SelectItem.Target>
               </ui:SelectItem>
-              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  appointmentDate...'" sap:VirtualizedContainerService.HintSize="2120,134" sap2010:WorkflowViewState.IdRef="SelectItem_17" Item="[Now.AddDays(30).ToString(&quot;yyyy&quot;)]">
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  appointmentDate...'" sap:VirtualizedContainerService.HintSize="2120,134" sap2010:WorkflowViewState.IdRef="SelectItem_17" Item="[Now.AddMonths(1).ToString(&quot;yyyy&quot;)]">
                 <ui:SelectItem.Items>
                   <scg:List x:TypeArguments="x:String" Capacity="4">
                     <x:String>Year</x:String>
