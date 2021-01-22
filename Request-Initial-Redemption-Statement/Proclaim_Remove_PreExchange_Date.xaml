@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Proclaim_Remove_PreExchange_Date" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1442,1386" sap2010:WorkflowViewState.IdRef="Proclaim_Remove_PreExchange_Date_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Proclaim_Remove_PreExchange_Date" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1794,1529" sap2010:WorkflowViewState.IdRef="Proclaim_Remove_PreExchange_Date_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -52,98 +52,23 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Proclaim_Remove_PreExchange_Date" sap:VirtualizedContainerService.HintSize="522,1281" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Proclaim_Remove_PreExchange_Date" sap:VirtualizedContainerService.HintSize="522,1424" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="480,1189" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="480,1332" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,381" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <TryCatch.Try>
-          <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'prowin32.exe AVR'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_3" KeyModifiers="None" MouseButton="BTN_LEFT">
-            <ui:ClickImage.CursorPosition>
-              <ui:CursorPosition Position="Center">
-                <ui:CursorPosition.OffsetX>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:CursorPosition.OffsetX>
-                <ui:CursorPosition.OffsetY>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:CursorPosition.OffsetY>
-              </ui:CursorPosition>
-            </ui:ClickImage.CursorPosition>
-            <ui:ClickImage.Image>
-              <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQ8AAAAhCAYAAADH/i7MAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQeSURBVHhe7drPUxtlAMZxrvZQPXj1wj/hCR3HizNaLzqCo6OOM2IPnR68WJlONWNGxyoB29RAbGmFQBoqbW0rKoPFBIpRiflBSyMpCUFoEgiE/+Bxf2RDNmxY9k3oGHgOn6Gz7/vu9vJ+ebvbps3NTRARWcV4EJEQJR7uYI6IyBLGg4iEMB5EJITxICIhjAcRCWE8iEgI40FEQkzjEY1G0d7eXrNAIIBCoWD4DCJqPKbx8Hq9hjGwyuVyIZvNGj6DiBrPI4tHT08P40G0j5jGY2hoqLT5S3p70fXVabjd7h2d7XbgnPOsst7pdDIeRPuIaTwGBgaUzW80ppleyMM5vYLT/mV4Qhlk8vp3G/J6h8NhHo+xCJo/GEWTzgRaxwzm1sNIUHlGy4jBGBHtyDQeHo+najyWVgt45/I9vHQ+jPd8d3Hs+zm84YnheVcIrjvp0jx5fVdX167j0dy3tZaI/p9qikfrd1G8NTiL6cRWFJZy67hwJ4Wnz/yFSzMZ5Vpd4qGNdQfRYlNPJC1l8+x9weKpRbouzSmdKIqnC+2ex7vlOUEcl9fpTh5xtMjrbROl+yg/bRHYlWeo4wwbkUo4Hhd/X8QL7jDuLa1tG5M5bi/glctJrK7l6xoPdTOn0aoEpBgBbaw7Ls1NFwMhGA9tTGLvm6gyl4iE4/HqpSi+HH+w7bomll7F61eSCM/NW46HvElLtN/8FWEpj4C6ycs2dvlGtxoPJUDF+xSfKY/rQkJE4vF4zhXCeemfJ5XXNensOt6+msJUKFbXk0f1eJS9WK1XPLQTjnRNWacbIzrYhOPx5uAsbD/Po1Bl/cxCDq3DKcwlksp6K19brMZDjcBexGMrTM1SRAz/XkQHlHA8roX/xbPfhHQvS8t98tM82nwJ5c/y+s7Ozr2LR3FM3fja+5BiFHTrKt5r7CIe2hxdnIhIPB6yY1fv48ULf+O6FJLESh4rqxsIJXP4bCyBxzoCOHHjPpbXCrj16yT6vu1FJvPQ8D4lWgQqbI9ARTwkdmmTq2srvrYoc9V3Ik22oDRWtm438dCul766EJGspnjIPr69giODD/DutRSO/rCItuEkXpO0j8zj/eFZtHnj+OKKH5FIGOsbG4b3qDtdFGpVLSpEB5tpPPr7+3eMh2w5k8V4MIKbgT/xR2xrk73sTeHQid/w1JkEvr4+qVuzp+oUD+0rjnxi0U44RKQyjYfP51PiYdWtH0fRMRTA4/YQDnX48eTnEXz6S/VPu0TUWEzjkU6n4ff7LZmamsLdWBSLyw9xcnxJikdAeQfyxKlJnBr9x/A5RNRYTONRq2y+gI9uxnH45KQSkGfOzRjOI6LGsufxkK2tF/DhjbjyaVf+/x9Gc4iosTySeBDR/sN4EJEQxoOIhDAeRCSE8SAiATn8B0m86PZ4+imiAAAAAElFTkSuQmCC" />
-            </ui:ClickImage.Image>
-            <ui:ClickImage.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4de69ebe-db57-4063-97aa-9d4b07583085" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;">
-                <ui:Target.TimeoutMS>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:Target.TimeoutMS>
-                <ui:Target.WaitForReady>
-                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                </ui:Target.WaitForReady>
-              </ui:Target>
-            </ui:ClickImage.Target>
-          </ui:ClickImage>
-        </TryCatch.Try>
-        <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ActivityAction x:TypeArguments="s:Exception">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-              </ActivityAction.Argument>
-              <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'prowin32.exe AVR'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-                <ui:ClickImage.CursorPosition>
-                  <ui:CursorPosition Position="Center">
-                    <ui:CursorPosition.OffsetX>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:CursorPosition.OffsetX>
-                    <ui:CursorPosition.OffsetY>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:CursorPosition.OffsetY>
-                  </ui:CursorPosition>
-                </ui:ClickImage.CursorPosition>
-                <ui:ClickImage.Image>
-                  <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQ4AAAAhCAYAAAAoPEXyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQWSURBVHhe7drNcxNlAMfxXOWgHrzyb6w3HYeLM75cdKSODuwwY/HAXewwqKNDRqCpQCBt5c02bUijgIAoTGFMWupbs2lSKKWhSVNbkrZp0//g5+4mu2TTDdsnSRnT/A6fKbPP8+xyeb592MW1vr4OIiIRDAcRCWM4iEgYw0FEwhgOIhLGcBCRMIaDiIQxHEQkzDEc8Xgc7e3tdYtEIigUCrbPIKLm4hiOQCBgGwJRPp8PuVzO9hlE1FyeWzi6u7sZDqJtwjEcg4OD5sY39fSg6/hR9Pb2PtOp7zw47T2lr/d6vQwH0TbhGI7+/n5949uNGcZm8/COLeJoeAH+aBbZvPVdhrbe4/E4h0NxQ3K54LKQ4FZs5jZCSNafIYdsxoioKsdw+P3+quGYXy5AvvQAb5+N4ZPgfRz4cQof+RPY5YvCdy9jztPWd3V1bTockluxHyei/4W6wrH7hzj2DExiLPk0CPNLqzh3L41XT/6Di+NZ/VpDwmGMyTJkqXgSkcvmKW65dFpRr6tzzJNE6VRh3DMka3NkhLR1lhNHCLK2XpLM++g/JTcU/RnFcUaNqI5wXPhjDm/2xvBgfmXDmMZzdxbvXUpheSXf0HAUN7ICtx6PUgCMMTmkzlVKcagxHMaYSnFLVeYStbaaw/H+xTiODT/ecN2QyCzjw1AKsakZ4XBoG9Rk/MaviEp5AIobvGxTl29y0XDo8Sndp/RMbdwSEaIWV3M43vBFcVb9J0nldUMmt4q9l9MYjSYaeuKoHo6yl6iNCodxslGv6essY0Stq+ZwfDwwia9+m0Gh4rphfHYJu4fSmEqm9PUiX1VEw1EMwFaE42mUJDUgtn8vohZUcziuxP7F62eilhej5b78dQZtwaT+Z219Z2fn1oWjNFbc9Mb7j1IQLOsq3mNsIhzGHEuYiFpczeHQHLj8EG+dU3BVjUhyMY/F5TVEU0s4cjuJFzoiOHjtIRZWCrhxZwTnv+9BNvvE9j4mIwAVNgagIhwqRd3gxbUVX1X0ucV3IC5JVsfK1m0mHMZ18+sKEdUVDs0XdxfxzsBj7LuSxqc/z6FtKIUPVO0/zWD/0CTaAtP4NhTGxEQMq2trtvdoOEsQ6lUtKEStyzEcfX19zwyHZiGbw/CfE7ge+Rt/JabN6+8G0thx8HfsPJnEiasjljVbqkHhML7WaCcV42RDRJsIRzAY1MMh6sYvN9ExGMFL30SxoyOMV9wT+PpW9c+3RNQ8HMORyWQQDoeFjI6O4n4ijrmFJzg0PK+GI6K/83j58AgO33xk+xwiah6O4ahXLl/A59en8eKhET0er50et51HRM1jy8OhWVkt4LNr0/rnW+3/d9jNIaLm8VzCQUTbC8NBRMIYDiISxnAQkTCGg4iEMRxEJGgd/wG8BOu0SfRrlwAAAABJRU5ErkJggg==" />
-                </ui:ClickImage.Image>
-                <ui:ClickImage.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4de69ebe-db57-4063-97aa-9d4b07583085" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;">
-                    <ui:Target.TimeoutMS>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:Target.TimeoutMS>
-                    <ui:Target.WaitForReady>
-                      <InArgument x:TypeArguments="ui:WaitForReady" />
-                    </ui:Target.WaitForReady>
-                  </ui:Target>
-                </ui:ClickImage.Target>
-              </ui:ClickImage>
-            </ActivityAction>
-          </Catch>
-        </TryCatch.Catches>
-      </TryCatch>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -160,7 +85,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6717990b-81a5-41cb-8fdd-bc21e56776a8" InformativeScreenshot="c6ec0ae9d73b6abab585f3218aaad022" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='ProButton' idx='3' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6717990b-81a5-41cb-8fdd-bc21e56776a8" InformativeScreenshot="c6ec0ae9d73b6abab585f3218aaad022" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='ProButton' idx='3' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -172,10 +97,10 @@
           </ui:Click>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,223" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -224,7 +149,7 @@
           </ui:CursorPosition>
         </ui:Click.CursorPosition>
         <ui:Click.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8c3b3a8-86d0-43c0-8832-171ffd2472c8" InformativeScreenshot="b5d454f895246fc9fb1302f96aab89c7" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;&#xA;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&#xA;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&#xA;&lt;wnd aaname='Horizontal' cls='ProFrame' /&gt;&#xA;&lt;wnd cls='Edit' idx='5' /&gt;&#xA;&lt;nav up='1' /&gt;&#xA;&lt;wnd cls='Edit' idx='4' /&gt;&#xA;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8c3b3a8-86d0-43c0-8832-171ffd2472c8" InformativeScreenshot="b5d454f895246fc9fb1302f96aab89c7" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='4' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -236,7 +161,7 @@
       </ui:Click>
       <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'Edit'" sap:VirtualizedContainerService.HintSize="438,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="a" KeyModifiers="Ctrl">
         <ui:SendHotkey.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="98f72290-c2db-41a3-9de1-af924d6bb509" InformativeScreenshot="b5d454f895246fc9fb1302f96aab89c7" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;&#xA;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&#xA;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&#xA;&lt;wnd aaname='Horizontal' cls='ProFrame' /&gt;&#xA;&lt;wnd cls='Edit' idx='5' /&gt;&#xA;&lt;nav up='1' /&gt;&#xA;&lt;wnd cls='Edit' idx='4' /&gt;&#xA;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="98f72290-c2db-41a3-9de1-af924d6bb509" InformativeScreenshot="b5d454f895246fc9fb1302f96aab89c7" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='4' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -248,7 +173,7 @@
       </ui:SendHotkey>
       <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'Edit'" sap:VirtualizedContainerService.HintSize="438,154" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="del" KeyModifiers="None" SpecialKey="True">
         <ui:SendHotkey.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="98f72290-c2db-41a3-9de1-af924d6bb509" InformativeScreenshot="b5d454f895246fc9fb1302f96aab89c7" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;&#xA;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&#xA;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&#xA;&lt;wnd aaname='Horizontal' cls='ProFrame' /&gt;&#xA;&lt;wnd cls='Edit' idx='5' /&gt;&#xA;&lt;nav up='1' /&gt;&#xA;&lt;wnd cls='Edit' idx='4' /&gt;&#xA;">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="98f72290-c2db-41a3-9de1-af924d6bb509" InformativeScreenshot="b5d454f895246fc9fb1302f96aab89c7" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='4' /&gt;">
             <ui:Target.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:Target.TimeoutMS>
@@ -258,10 +183,10 @@
           </ui:Target>
         </ui:SendHotkey.Target>
       </ui:SendHotkey>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -278,7 +203,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a869919b-3034-46fa-8680-92f714b4f194" InformativeScreenshot="71ef14ed18cb2e20255e19a9e73a30ea" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='ProButton' idx='3' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a869919b-3034-46fa-8680-92f714b4f194" InformativeScreenshot="71ef14ed18cb2e20255e19a9e73a30ea" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='ProButton' idx='3' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -290,10 +215,10 @@
           </ui:Click>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,223" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>

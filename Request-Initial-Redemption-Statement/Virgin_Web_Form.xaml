@@ -1,10 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Virgin_Web_Form" this:Virgin_Web_Form.FOS_Solicitor_Name="Solicitor Name" this:Virgin_Web_Form.AVRillo_Contact_Number="02083703877" this:Virgin_Web_Form.AVRillo_Email="hk@avrillo.co.uk" this:Virgin_Web_Form.AVRillo_Company_Name="AV Rillo" this:Virgin_Web_Form.FOS_Solicitor_Address_2="E121E hi there solicitor address how ar eyou doing today" this:Virgin_Web_Form.AVRillo_Fax_Number="02083621705" this:Virgin_Web_Form.AVRillo_Panel_Number="664226" this:Virgin_Web_Form.AVRillo_ID="651077" this:Virgin_Web_Form.Reference_Number="123456" this:Virgin_Web_Form.FOS_Mtg_AC_No="12345678911234" this:Virgin_Web_Form.FOS_First_Name_1="First Name" this:Virgin_Web_Form.FOS_Last_Name_1="Last Name" this:Virgin_Web_Form.FOS_Address="E121E hi how are you today hope you are doing well let test it E121E" this:Virgin_Web_Form.FOS_Name_Title_1="Null" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Virgin_Web_Form" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="FOS_Solicitor_Name" Type="InArgument(x:String)" />
     <x:Property Name="AVRillo_Contact_Number" Type="InArgument(x:String)" />
     <x:Property Name="AVRillo_Email" Type="InArgument(x:String)" />
     <x:Property Name="AVRillo_Company_Name" Type="InArgument(x:String)" />
-    <x:Property Name="FOS_Solicitor_Address_2" Type="InArgument(x:String)" />
     <x:Property Name="AVRillo_Fax_Number" Type="InArgument(x:String)" />
     <x:Property Name="AVRillo_Panel_Number" Type="InArgument(x:String)" />
     <x:Property Name="AVRillo_ID" Type="InArgument(x:String)" />
@@ -14,11 +13,14 @@
     <x:Property Name="FOS_Last_Name_1" Type="InArgument(x:String)" />
     <x:Property Name="FOS_Address" Type="InArgument(x:String)" />
     <x:Property Name="FOS_Name_Title_1" Type="InArgument(x:String)" />
+    <x:Property Name="AVRillo_Address_1" Type="InArgument(x:String)" />
+    <x:Property Name="AVRillo_Address_2" Type="InArgument(x:String)" />
+    <x:Property Name="AVRillo_City" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1478,5791</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1532,5778</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Virgin_Web_Form_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -51,7 +53,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -79,21 +81,22 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Virgin_Web_Form" sap:VirtualizedContainerService.HintSize="915,5686" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Virgin_Web_Form" sap:VirtualizedContainerService.HintSize="915,5673" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="873,5594" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://uk.virginmoney.com/mortgages/forms/redemption/">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="873,5581" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://uk.virginmoney.com/mortgages/forms/redemption/">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,5492" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,5480" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="Solicitor_Name_1" />
               <Variable x:TypeArguments="s:String[]" Name="Solicitor_Name_List" />
@@ -106,7 +109,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <ui:InterruptibleDoWhile Condition="[Website_Check=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="797,365" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile Condition="[Website_Check=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="797,363" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
@@ -185,14 +188,25 @@
                 <InArgument x:TypeArguments="x:String">[Solicitor_Name_List(0)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[Solicitor_Name_2]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[Solicitor_Name_List(1)]</InArgument>
-              </Assign.Value>
-            </Assign>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="797,230" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Solicitor_Name_2]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[Solicitor_Name_List(1)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  RedemptionReques...'" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[Solicitor_Name_1]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="27f3457f-4c92-4d69-8a5f-c651d44ec944" InformativeScreenshot="2e93ee58d89853a3cf200db2fdd9c50f" Selector="&lt;webctrl id='RedemptionRequest_SolicitorFirstName' tag='INPUT' /&gt;">
@@ -253,7 +267,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  RedemptionReques...'" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" Text="[FOS_Solicitor_Address_2]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  RedemptionReques...'" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" Text="[AVRillo_Address_1+AVRillo_Address_2+AVRillo_City]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e8ddb4e2-0c1c-44cd-83aa-142cb20be56d" InformativeScreenshot="d4692e391ec33f94ff708bef3bd725b6" Selector="&lt;webctrl id='RedemptionRequest_SolicitorFirmAddress' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -423,7 +437,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[FOS_Name_Title_1]" sap:VirtualizedContainerService.HintSize="797,493" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[FOS_Name_Title_1]" sap:VirtualizedContainerService.HintSize="797,313" sap2010:WorkflowViewState.IdRef="Switch`1_1">
               <Switch.Default>
                 <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  RedemptionReque...'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="Mr">
                   <ui:SelectItem.Items>

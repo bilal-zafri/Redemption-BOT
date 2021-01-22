@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2545,2690</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2469,3076</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GoTo_Proclaim_FileOpening_S__1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -81,7 +81,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GoTo_Proclaim_FileOpening_S_" sap:VirtualizedContainerService.HintSize="2555,2585" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GoTo_Proclaim_FileOpening_S_" sap:VirtualizedContainerService.HintSize="2479,3011" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Screen_Title" />
       <Variable x:TypeArguments="x:Boolean" Name="Screen_Status" />
@@ -91,7 +91,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="2513,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="2437,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[Screen_Status]</OutArgument>
       </Assign.To>
@@ -99,19 +99,19 @@
         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="2513,2393" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="2437,2819" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="2477,2226" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="2401,2654" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2435,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2359,425" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -156,10 +156,10 @@
               </ui:AnchorBase>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,175" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="730,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -186,7 +186,7 @@
               </Catch>
             </TryCatch.Catches>
           </TryCatch>
-          <If Condition="[Screen_Title.Contains(&quot;Screen Split Sale - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="2435,2042" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[Screen_Title.Contains(&quot;Screen Split Sale - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="2359,2097" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -194,13 +194,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="304,428" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence sap:VirtualizedContainerService.HintSize="304,425" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1074,7 +1074,7 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1948,7 +1948,7 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_23">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_23">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2383,15 +2383,15 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <If Condition="[Screen_Title.Contains(&quot;Screen Split Purchase - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="2086,1893" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[Screen_Title.Contains(&quot;Screen Split Purchase - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="2010,1950" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="304,520" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence sap:VirtualizedContainerService.HintSize="304,516" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -3478,7 +3478,7 @@
                         </Catch>
                       </TryCatch.Catches>
                     </TryCatch>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -4561,7 +4561,7 @@
                         </Catch>
                       </TryCatch.Catches>
                     </TryCatch>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_11">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -5429,7 +5429,7 @@
                         </Catch>
                       </TryCatch.Catches>
                     </TryCatch>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_25">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_25">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -5864,15 +5864,15 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <If Condition="[Screen_Title.Contains(&quot;Screen Split Sale - Log Initial Forms - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="1737,1744" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[Screen_Title.Contains(&quot;Screen Split Sale - Log Initial Forms - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="1661,1803" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="304,336" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <Sequence sap:VirtualizedContainerService.HintSize="304,334" sap2010:WorkflowViewState.IdRef="Sequence_15">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_19">
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_19">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -6746,7 +6746,7 @@
                             </Catch>
                           </TryCatch.Catches>
                         </TryCatch>
-                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_21">
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_21">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -7181,15 +7181,15 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <If Condition="[Screen_Title.Contains(&quot;File Opening(S) - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="1388,1595" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If Condition="[Screen_Title.Contains(&quot;File Opening(S) - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="1312,1656" sap2010:WorkflowViewState.IdRef="If_4">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="304,244" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <Sequence sap:VirtualizedContainerService.HintSize="304,243" sap2010:WorkflowViewState.IdRef="Sequence_19">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_27">
+                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="TryCatch_27">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -8074,18 +8074,18 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <If Condition="[Screen_Title.Contains(&quot;Screen Split Sale - Pre-exchange / Exchange / Invoices - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="1039,1446" sap2010:WorkflowViewState.IdRef="If_5">
+                          <If Condition="[Screen_Title.Contains(&quot;Screen Split Sale - Pre-exchange / Exchange / Invoices - &quot;+Reference_Number)]" sap:VirtualizedContainerService.HintSize="963,1509" sap2010:WorkflowViewState.IdRef="If_5">
                             <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="556,1297" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                              <Sequence sap:VirtualizedContainerService.HintSize="480,1362" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="514,52" sap2010:WorkflowViewState.IdRef="TryCatch_29">
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_29">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -8122,7 +8122,7 @@
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                         </ActivityAction.Argument>
-                                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,282" sap2010:WorkflowViewState.IdRef="TryCatch_28">
+                                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="474,333" sap2010:WorkflowViewState.IdRef="TryCatch_28">
                                           <TryCatch.Try>
                                             <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ProButton'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_30" KeyModifiers="None" MouseButton="BTN_LEFT">
                                               <ui:Click.CursorPosition>
@@ -8145,7 +8145,7 @@
                                             </ui:Click>
                                           </TryCatch.Try>
                                           <TryCatch.Catches>
-                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_28">
+                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,21" sap2010:WorkflowViewState.IdRef="Catch`1_28">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -8956,7 +8956,7 @@
                                     </Catch>
                                   </TryCatch.Catches>
                                 </TryCatch>
-                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="514,829" sap2010:WorkflowViewState.IdRef="TryCatch_31">
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_31">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -8976,7 +8976,7 @@
                                         </ui:CursorPosition>
                                       </ui:Click.CursorPosition>
                                       <ui:Click.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="68d4c4ae-b800-4f7f-a8e9-07f9148b9cdf" InformativeScreenshot="0dc406b12276f17eb7de5c6459d6e5f4" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Horizontal' cls='ProFrame' /&gt;&lt;wnd cls='ProButton' idx='1' title='Screen Split Sale' /&gt;" TimeoutMS="3000">
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="68d4c4ae-b800-4f7f-a8e9-07f9148b9cdf" InformativeScreenshot="0dc406b12276f17eb7de5c6459d6e5f4" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='ProButton' idx='1' title='Screen Split Sale' /&gt;" TimeoutMS="3000">
                                           <ui:Target.WaitForReady>
                                             <InArgument x:TypeArguments="ui:WaitForReady" />
                                           </ui:Target.WaitForReady>
@@ -8985,10 +8985,10 @@
                                     </ui:Click>
                                   </TryCatch.Try>
                                   <TryCatch.Catches>
-                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="480,663" sap2010:WorkflowViewState.IdRef="Catch`1_31">
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_31">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
@@ -8996,7 +8996,7 @@
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                         </ActivityAction.Argument>
-                                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="474,593" sap2010:WorkflowViewState.IdRef="TryCatch_30">
+                                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_30">
                                           <TryCatch.Try>
                                             <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ProButton'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT">
                                               <ui:Click.CursorPosition>
@@ -9010,7 +9010,7 @@
                                                 </ui:CursorPosition>
                                               </ui:Click.CursorPosition>
                                               <ui:Click.Target>
-                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="715e9378-b36f-43b3-87a0-7046dddc0dc9" InformativeScreenshot="2c586225ec151efb2a378a59c4b88bea" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Horizontal' cls='ProFrame' /&gt;&lt;wnd cls='ProButton' idx='1' title='Screen Split Sale' /&gt;" TimeoutMS="3000">
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="715e9378-b36f-43b3-87a0-7046dddc0dc9" InformativeScreenshot="b2c5db963e6c37682e3165bcc0002ed4" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='ProButton' idx='1' title='Screen Split Sale' /&gt;" TimeoutMS="3000">
                                                   <ui:Target.WaitForReady>
                                                     <InArgument x:TypeArguments="ui:WaitForReady" />
                                                   </ui:Target.WaitForReady>
@@ -9019,10 +9019,10 @@
                                             </ui:Click>
                                           </TryCatch.Try>
                                           <TryCatch.Catches>
-                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,427" sap2010:WorkflowViewState.IdRef="Catch`1_30">
+                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,21" sap2010:WorkflowViewState.IdRef="Catch`1_30">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -9070,7 +9070,7 @@
                                                     </ActivityAction>
                                                   </p:CVScope.Body>
                                                   <p:CVScope.DesignTimeCache>
-                                                    <uc:CVCache DisplayName="Main Screen" InformativeScreenshot="f9067e1de26aeba24cf14e26c5d7708f" LogicalPosition="277, 90" OcrText="Screen Splt Sale Pre-exchange I Exchange&#xD;&#xA;Email BSC to EX„th CL CD&#xD;&#xA;kk Comp Date&#xD;&#xA;CL al_nhorise a Ek 16/12/2020&#xD;&#xA;Exchanged - NOTIFY all&#xD;&#xA;Prep &amp; EXscreen CD: 16/12/2020&#xD;&#xA;BSL- Cont &amp; Dep In EAS - In Er7ä0_oo&#xD;&#xA;Ref Omitted" Position="277, 90" ScreenshotGuid="a4f9956e-d99b-44b6-8407-660932bd36bb" ServerVersion="1">
+                                                    <uc:CVCache DisplayName="Main Screen" InformativeScreenshot="f9067e1de26aeba24cf14e26c5d7708f" LogicalPosition="277, 90" OcrText="Screen Splt Sale Pre-exchange I Exchange&#xA;Email BSC to EX„th CL CD&#xA;kk Comp Date&#xA;CL al_nhorise a Ek 16/12/2020&#xA;Exchanged - NOTIFY all&#xA;Prep &amp; EXscreen CD: 16/12/2020&#xA;BSL- Cont &amp; Dep In EAS - In Er7ä0_oo&#xA;Ref Omitted" Position="277, 90" ScreenshotGuid="a4f9956e-d99b-44b6-8407-660932bd36bb" ServerVersion="1">
                                                       <uc:CVCache.CvUiElements>
                                                         <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
                                                           <uc:CvElementInfo Category="Button" Region="7, 123, 104, 20" />
@@ -9202,10 +9202,10 @@
                                     </Catch>
                                   </TryCatch.Catches>
                                 </TryCatch>
-                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="514,52" sap2010:WorkflowViewState.IdRef="TryCatch_33">
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_33">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -9231,10 +9231,10 @@
                                     </ui:Click>
                                   </TryCatch.Try>
                                   <TryCatch.Catches>
-                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="444,402" sap2010:WorkflowViewState.IdRef="Catch`1_33">
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_33">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
@@ -9242,7 +9242,7 @@
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                         </ActivityAction.Argument>
-                                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_32">
+                                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="474,652" sap2010:WorkflowViewState.IdRef="TryCatch_32">
                                           <TryCatch.Try>
                                             <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ProButton'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_34" KeyModifiers="None" MouseButton="BTN_LEFT">
                                               <ui:Click.CursorPosition>
@@ -9265,7 +9265,7 @@
                                             </ui:Click>
                                           </TryCatch.Try>
                                           <TryCatch.Catches>
-                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_32">
+                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,21" sap2010:WorkflowViewState.IdRef="Catch`1_32">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -10070,7 +10070,7 @@
                                     </Catch>
                                   </TryCatch.Catches>
                                 </TryCatch>
-                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="514,52" sap2010:WorkflowViewState.IdRef="TryCatch_35">
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="TryCatch_35">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -10494,7 +10494,7 @@
                                     </Catch>
                                   </TryCatch.Catches>
                                 </TryCatch>
-                                <Assign sap:VirtualizedContainerService.HintSize="514,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                <Assign sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Boolean">[Screen_Status]</OutArgument>
                                   </Assign.To>
@@ -10505,7 +10505,7 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,338" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_13">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -10534,7 +10534,7 @@
                                   </ui:Click>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
-                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_13">
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_13">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -10545,7 +10545,7 @@
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                       </ActivityAction.Argument>
-                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,337" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="474,333" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                                         <TryCatch.Try>
                                           <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ProButton'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
                                             <ui:Click.CursorPosition>
@@ -10568,7 +10568,7 @@
                                           </ui:Click>
                                         </TryCatch.Try>
                                         <TryCatch.Catches>
-                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>

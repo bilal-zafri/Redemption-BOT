@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1442,1071</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>3671,2575</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Redemption_Lender_Selection_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -67,18 +67,28 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Redemption_Lender_Selection" sap:VirtualizedContainerService.HintSize="538,1006" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Redemption_Lender_Selection" sap:VirtualizedContainerService.HintSize="3681,2470" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[String.IsNullOrWhiteSpace(Lender_Name)]" sap:VirtualizedContainerService.HintSize="496,208" sap2010:WorkflowViewState.IdRef="If_10">
+    <If Condition="[String.IsNullOrWhiteSpace(Lender_Name)]" sap:VirtualizedContainerService.HintSize="3639,1688" sap2010:WorkflowViewState.IdRef="If_10">
+      <If.Then>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[Lender_ID]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">null</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Then>
       <If.Else>
-        <If Condition="[Lender_Name.ToUpper.Contains(&quot;TSB&quot;)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_9">
+        <If Condition="[Lender_Name.ToUpper.Contains(&quot;TSB&quot;)]" sap:VirtualizedContainerService.HintSize="3332,1540" sap2010:WorkflowViewState.IdRef="If_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -93,7 +103,7 @@
             </Assign>
           </If.Then>
           <If.Else>
-            <If Condition="[Lender_Name.ToUpper.Contains(&quot;SCOTTISH&quot;)]" sap:VirtualizedContainerService.HintSize="2718,1244" sap2010:WorkflowViewState.IdRef="If_8">
+            <If Condition="[Lender_Name.ToUpper.Contains(&quot;SCOTTISH&quot;)]" sap:VirtualizedContainerService.HintSize="3025,1392" sap2010:WorkflowViewState.IdRef="If_8">
               <If.Then>
                 <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                   <Assign.To>
@@ -105,7 +115,7 @@
                 </Assign>
               </If.Then>
               <If.Else>
-                <If Condition="[Lender_Name.ToUpper.Contains(&quot;NATIONWIDE&quot;)]" sap:VirtualizedContainerService.HintSize="2411,1096" sap2010:WorkflowViewState.IdRef="If_7">
+                <If Condition="[Lender_Name.ToUpper.Contains(&quot;NATIONWIDE&quot;)]" sap:VirtualizedContainerService.HintSize="2718,1244" sap2010:WorkflowViewState.IdRef="If_7">
                   <If.Then>
                     <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                       <Assign.To>
@@ -117,7 +127,7 @@
                     </Assign>
                   </If.Then>
                   <If.Else>
-                    <If Condition="[Lender_Name.ToUpper.Contains(&quot;SANTANDER&quot;)]" sap:VirtualizedContainerService.HintSize="2104,948" sap2010:WorkflowViewState.IdRef="If_6">
+                    <If Condition="[Lender_Name.ToUpper.Contains(&quot;SANTANDER&quot;)]" sap:VirtualizedContainerService.HintSize="2411,1096" sap2010:WorkflowViewState.IdRef="If_6">
                       <If.Then>
                         <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                           <Assign.To>
@@ -129,7 +139,7 @@
                         </Assign>
                       </If.Then>
                       <If.Else>
-                        <If Condition="[Lender_Name.ToUpper.Contains(&quot;HALIFAX&quot;) or Lender_Name.ToUpper.Contains(&quot;SCOTLAND&quot;) or Lender_Name.ToUpper.Contains(&quot;LLYOD&quot;) or Lender_Name.ToUpper.Contains(&quot;BIRMING&quot;)]" sap:VirtualizedContainerService.HintSize="1797,800" sap2010:WorkflowViewState.IdRef="If_5">
+                        <If Condition="[Lender_Name.ToUpper.Contains(&quot;HALIFAX&quot;) or Lender_Name.ToUpper.Contains(&quot;SCOTLAND&quot;) or Lender_Name.ToUpper.Contains(&quot;LLYO&quot;) or Lender_Name.ToUpper.Contains(&quot;BIRMING&quot;)]" sap:VirtualizedContainerService.HintSize="2104,948" sap2010:WorkflowViewState.IdRef="If_5">
                           <If.Then>
                             <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                               <Assign.To>
@@ -141,7 +151,7 @@
                             </Assign>
                           </If.Then>
                           <If.Else>
-                            <If Condition="[Lender_Name.ToUpper.Contains(&quot;VIRGIN&quot;)]" sap:VirtualizedContainerService.HintSize="1490,652" sap2010:WorkflowViewState.IdRef="If_4">
+                            <If Condition="[Lender_Name.ToUpper.Contains(&quot;VIRGIN&quot;)]" sap:VirtualizedContainerService.HintSize="1797,800" sap2010:WorkflowViewState.IdRef="If_4">
                               <If.Then>
                                 <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                                   <Assign.To>
@@ -153,7 +163,7 @@
                                 </Assign>
                               </If.Then>
                               <If.Else>
-                                <If Condition="[Lender_Name.ToUpper.Contains(&quot;IRELAND&quot;)]" sap:VirtualizedContainerService.HintSize="1183,504" sap2010:WorkflowViewState.IdRef="If_3">
+                                <If Condition="[Lender_Name.ToUpper.Contains(&quot;IRELAND&quot;)]" sap:VirtualizedContainerService.HintSize="1490,652" sap2010:WorkflowViewState.IdRef="If_3">
                                   <If.Then>
                                     <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                                       <Assign.To>
@@ -165,7 +175,7 @@
                                     </Assign>
                                   </If.Then>
                                   <If.Else>
-                                    <If Condition="[Lender_Name.ToUpper.Contains(&quot;YORKSHIRE&quot;)]" sap:VirtualizedContainerService.HintSize="876,356" sap2010:WorkflowViewState.IdRef="If_2">
+                                    <If Condition="[Lender_Name.ToUpper.Contains(&quot;YORKSHIRE&quot;)]" sap:VirtualizedContainerService.HintSize="1183,504" sap2010:WorkflowViewState.IdRef="If_2">
                                       <If.Then>
                                         <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                                           <Assign.To>
@@ -177,26 +187,40 @@
                                         </Assign>
                                       </If.Then>
                                       <If.Else>
-                                        <If Condition="[Lender_Name.ToUpper.Contains(&quot;NATWEST&quot;)]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_1">
+                                        <If Condition="[Lender_Name.ToUpper.Contains(&quot;ACCORD&quot;)]" sap:VirtualizedContainerService.HintSize="876,356" sap2010:WorkflowViewState.IdRef="If_11">
                                           <If.Then>
-                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_38">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[Lender_ID]</OutArgument>
                                               </Assign.To>
                                               <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">natwest</InArgument>
+                                                <InArgument x:TypeArguments="x:String">accord</InArgument>
                                               </Assign.Value>
                                             </Assign>
                                           </If.Then>
                                           <If.Else>
-                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="x:String">[Lender_ID]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">fax</InArgument>
-                                              </Assign.Value>
-                                            </Assign>
+                                            <If Condition="[Lender_Name.ToUpper.Contains(&quot;UNKNOW&quot;) or Lender_Name.ToUpper.Contains(&quot;N/A&quot;) or Lender_Name.ToUpper.Contains(&quot;NO MORT&quot;) or Lender_Name.ToUpper.Contains(&quot;ROYAL&quot;)]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_1">
+                                              <If.Then>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[Lender_ID]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">null</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[Lender_ID]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">fax</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Else>
+                                            </If>
                                           </If.Else>
                                         </If>
                                       </If.Else>
@@ -217,7 +241,7 @@
         </If>
       </If.Else>
     </If>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Lender_Name.ToLower]" sap:VirtualizedContainerService.HintSize="496,666" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Lender_Name.ToLower]" sap:VirtualizedContainerService.HintSize="3639,650" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Switch.Default>
         <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_36">
           <Assign.To>
