@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Nationet_Web_Form" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Nationet_Web_Form" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="AVRillo_Panel_Number" Type="InArgument(x:String)" />
     <x:Property Name="AVRillo_Company_Name" Type="InArgument(x:String)" />
@@ -12,10 +12,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1442,4178</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1507,4283</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Nationet_Web_Form_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="26">
+    <scg:List x:TypeArguments="x:String" Capacity="27">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -42,6 +42,7 @@
       <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -75,7 +76,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Nationet_Web_Form" sap:VirtualizedContainerService.HintSize="965,4073" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Nationet_Web_Form" sap:VirtualizedContainerService.HintSize="965,4178" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="Website_Check" />
       <Variable x:TypeArguments="x:Boolean" Name="No_Paper_Popup" />
@@ -85,13 +86,16 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="923,3981" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://portal.nationet.com/nationwide/LawyersRedStat/start.aspx">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="923,4086" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://portal.nationet.com/nationwide/LawyersRedStat/start.aspx">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="889,3880" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="889,3984" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="FOS_Address_Result" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -99,7 +103,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="847,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <ui:InterruptibleDoWhile Condition="[Website_Check=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="847,363" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="847,365" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
@@ -121,8 +125,11 @@
                   </ui:UiElementExists>
                 </Sequence>
               </ui:InterruptibleDoWhile.Body>
+              <ui:InterruptibleDoWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Website_Check=False" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+              </ui:InterruptibleDoWhile.Condition>
             </ui:InterruptibleDoWhile>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[AVRillo_Company_Name]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[AVRillo_Company_Name]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="74a2aaa9-f4f1-457a-8e70-93d0e9f8618c" InformativeScreenshot="dec236ba9c60be58cd9f96c4bab27ead" Selector="&lt;webctrl id='SolicitorName' tag='INPUT' type='text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -134,7 +141,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  SolicitorPanelNo'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[AVRillo_Panel_Number]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'INPUT  SolicitorPanelNo'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[AVRillo_Panel_Number]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b8b424a-c9c3-4205-8775-0007286f8305" InformativeScreenshot="40cb6df8861cd89133d279b1585b3085" Selector="&lt;webctrl id='SolicitorPanelNo' tag='INPUT' type='text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -146,7 +153,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  SolicitorReferen...'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[Reference_Number]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'INPUT  SolicitorReferen...'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[Reference_Number]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b8b424a-c9c3-4205-8775-0007286f8305" InformativeScreenshot="e04733f37bb0ed861f35ca635cbc9c7d" Selector="&lt;webctrl id='SolicitorReference' tag='INPUT' type='text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -158,7 +165,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  MemberName'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[FOS_First_Name_1+&quot; &quot;+FOS_Last_Name_1]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'INPUT  MemberName'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[FOS_First_Name_1+&quot; &quot;+FOS_Last_Name_1]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b8b424a-c9c3-4205-8775-0007286f8305" InformativeScreenshot="2d9ed319fb41f96023ab863863008753" Selector="&lt;webctrl id='MemberName' tag='INPUT' type='text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -170,7 +177,15 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  MemberHouseName'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[FOS_Address]">
+            <Assign sap:VirtualizedContainerService.HintSize="847,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[FOS_Address_Result]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[Split(FOS_Address, " ")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'INPUT  MemberHouseName'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[FOS_Address_Result(0)]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b8b424a-c9c3-4205-8775-0007286f8305" InformativeScreenshot="54c9971940c44068bd9b31b2163bfdc4" Selector="&lt;webctrl id='MemberHouseName' tag='INPUT' type='text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -182,7 +197,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  Postcode'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" Text="[FOS_PCode]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'INPUT  Postcode'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" Text="[FOS_PCode]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b8b424a-c9c3-4205-8775-0007286f8305" InformativeScreenshot="136a7f2a70a58a5c14a702368b9427d0" Selector="&lt;webctrl id='Postcode' tag='INPUT' type='text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -194,7 +209,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  MortgageAccountNo'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[FOS_Mtg_AC_No]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'INPUT  MortgageAccountNo'" sap:VirtualizedContainerService.HintSize="847,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[FOS_Mtg_AC_No]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b8b424a-c9c3-4205-8775-0007286f8305" InformativeScreenshot="1d0c4976b53923c6feb8eca20134476d" Selector="&lt;webctrl id='MortgageAccountNo' tag='INPUT' type='text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -477,7 +492,7 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[No_Paper_Popup=True]" sap:VirtualizedContainerService.HintSize="847,253" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[No_Paper_Popup=True]" sap:VirtualizedContainerService.HintSize="847,255" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
