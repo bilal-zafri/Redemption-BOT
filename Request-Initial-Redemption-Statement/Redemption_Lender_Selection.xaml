@@ -139,7 +139,7 @@
                         </Assign>
                       </If.Then>
                       <If.Else>
-                        <If Condition="[Lender_Name.ToUpper.Contains(&quot;HALIFAX&quot;) or Lender_Name.ToUpper.Contains(&quot;SCOTLAND&quot;) or Lender_Name.ToUpper.Contains(&quot;LLYO&quot;) or Lender_Name.ToUpper.Contains(&quot;BIRMING&quot;)]" sap:VirtualizedContainerService.HintSize="2104,948" sap2010:WorkflowViewState.IdRef="If_5">
+                        <If Condition="[Lender_Name.ToUpper.Contains(&quot;HALIFAX&quot;) or Lender_Name.ToUpper.Contains(&quot;SCOTLAND&quot;) or Lender_Name.ToUpper.Contains(&quot;LLOYD&quot;) or Lender_Name.ToUpper.Contains(&quot;BIRMING&quot;)]" sap:VirtualizedContainerService.HintSize="2104,948" sap2010:WorkflowViewState.IdRef="If_5">
                           <If.Then>
                             <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                               <Assign.To>
@@ -194,7 +194,7 @@
                                                 <OutArgument x:TypeArguments="x:String">[Lender_ID]</OutArgument>
                                               </Assign.To>
                                               <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">accord</InArgument>
+                                                <InArgument x:TypeArguments="x:String">null</InArgument>
                                               </Assign.Value>
                                             </Assign>
                                           </If.Then>
