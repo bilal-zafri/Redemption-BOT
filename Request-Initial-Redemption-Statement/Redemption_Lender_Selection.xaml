@@ -215,12 +215,12 @@
                                                   <OutArgument x:TypeArguments="x:String">[Lender_ID]</OutArgument>
                                                 </Assign.To>
                                                 <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">null</InArgument>
+                                                  <InArgument x:TypeArguments="x:String">accord</InArgument>
                                                 </Assign.Value>
                                               </Assign>
                                             </If.Then>
                                             <If.Else>
-                                              <If Condition="[Lender_Name.ToUpper.Contains(&quot;UNKNOW&quot;) or Lender_Name.ToUpper.Contains(&quot;N/A&quot;) or Lender_Name.ToUpper.Contains(&quot;MORTGAGE&quot;) or Lender_Name.ToUpper.Contains(&quot;ROYAL&quot;) or Lender_Name.ToUpper.Contains(&quot;NATWEST&quot;)]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_1">
+                                              <If Condition="[Lender_Name.ToUpper.Contains(&quot;UNKNOW&quot;) or Lender_Name.ToUpper.Contains(&quot;N/A&quot;) or Lender_Name.ToUpper.Contains(&quot;NO MORT&quot;) or Lender_Name.ToUpper.Contains(&quot;ROYAL&quot;) or Lender_Name.ToUpper.Contains(&quot;NATWEST&quot;)]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_1">
                                                 <If.Then>
                                                   <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                                                     <Assign.To>

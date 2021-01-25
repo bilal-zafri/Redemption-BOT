@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,2946</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1507,2832</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Proclaim_Dowload_Drafting_WordFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -85,7 +85,7 @@
       <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Proclaim_Dowload_Drafting_WordFile" sap:VirtualizedContainerService.HintSize="632,2841" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Proclaim_Dowload_Drafting_WordFile" sap:VirtualizedContainerService.HintSize="632,2727" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="Letter_Popup" />
       <Variable x:TypeArguments="x:Boolean" Name="Letter_Popup_2" />
@@ -136,23 +136,23 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ClickImage>
-    <ui:InterruptibleDoWhile Condition="[Word_Check=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="590,1663" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
+    <ui:InterruptibleDoWhile Condition="[Word_Check=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="590,1549" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="554,1498" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="554,1384" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="512,554" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+          <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="512,440" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
             <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,389" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,275" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,297" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,183" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -189,10 +189,10 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,135" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -200,7 +200,7 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                         </ActivityAction.Argument>
-                        <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                        <Sequence sap:VirtualizedContainerService.HintSize="641,66" sap2010:WorkflowViewState.IdRef="Sequence_23">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -460,7 +460,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[&quot;Completion has now been set for &quot;+Output_Day+&quot; &quot;+Now.ToString(&quot;MMMM&quot;)+&quot; &quot;+Now.ToString(&quot;yyyy&quot;)+&quot;.&quot;+Environment.NewLine()+&#xA;&quot;Kindly, send the redemption statement by fax or email to:-&quot;+Environment.NewLine()+&#xA;Environment.NewLine()+&#xA;&quot;Fax:02083621705&quot;+Environment.NewLine()+&#xA;&quot;Email: mohammed.sadiq@avrillo.co.uk ( CC To ia@avrillo.co.uk )&quot;]" ReplaceAll="True" Search="[&quot;Completion has now been set for &quot;+Output_Day+&quot; &quot;+Now.ToString(&quot;MMMM&quot;)+&quot; &quot;+Now.ToString(&quot;yyyy&quot;)+&quot;.&quot;]" />
+            <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[&quot;Completion has now been set for &quot;+Output_Day+&quot; &quot;+Now.ToString(&quot;MMMM&quot;)+&quot; &quot;+Now.ToString(&quot;yyyy&quot;)+&quot;.&quot;+Environment.NewLine()+&#xD;&#xA;&quot;Kindly, send the redemption statement by fax or email to:-&quot;+Environment.NewLine()+&#xD;&#xA;Environment.NewLine()+&#xD;&#xA;&quot;Fax:02083621705&quot;+Environment.NewLine()+&#xD;&#xA;&quot;Email: ms@avrillo.co.uk ( CC To na@avrillo.co.uk )&quot;]" ReplaceAll="True" Search="[&quot;Completion has now been set for &quot;+Output_Day+&quot; &quot;+Now.ToString(&quot;MMMM&quot;)+&quot; &quot;+Now.ToString(&quot;yyyy&quot;)+&quot;.&quot;]" />
           </Sequence>
         </ActivityAction>
       </p:WordApplicationScope.Body>

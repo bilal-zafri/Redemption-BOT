@@ -329,7 +329,7 @@
         <OutArgument x:TypeArguments="x:String">[FOS_Address]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">[Ad.Replace(vblf, " ").Replace("  "," ")]</InArgument>
+        <InArgument x:TypeArguments="x:String">[Ad.Replace(vbCrLf," ")]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_3">
