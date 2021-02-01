@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Redemption_WorkFlow" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="3534,1517" sap2010:WorkflowViewState.IdRef="Redemption_WorkFlow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Redemption_WorkFlow" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="3534,1557" sap2010:WorkflowViewState.IdRef="Redemption_WorkFlow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
       <x:String>System.Activities</x:String>
@@ -166,7 +166,10 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
           <FlowStep.Next>
-            <FlowDecision x:Name="__ReferenceID40" Condition="[FOS_Mtg_AC_No.Length&gt;5]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+            <FlowDecision x:Name="__ReferenceID40" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+              <FlowDecision.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="FOS_Mtg_AC_No.Length&gt;5 and FOS_Address &lt;&gt; &quot;&quot; and FOS_First_Name_1 &lt;&gt; &quot;&quot;" />
+              </FlowDecision.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -203,60 +206,24 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Scottish_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Scottish_Web_Form.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Company_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">
-                          <Literal x:TypeArguments="x:String">657837</Literal>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Fax_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Email">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Email" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Contact_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_City" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Pcode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_City" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">[AVRillo_Company_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">657837</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">[AVRillo_Fax_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Email">[AVRillo_Email]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">[AVRillo_Contact_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">[FOS_City]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">[AVRillo_Address_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">[AVRillo_Address_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">[AVRillo_Pcode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">[AVRillo_City]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -504,15 +471,9 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Redemption_Lender_Selection workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Redemption_Lender_Selection.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                    <OutArgument x:TypeArguments="x:String" x:Key="Lender_ID">
-                                                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Lender_ID" />
-                                                    </OutArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="Lender_Name">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Lender_Name" />
-                                                    </InArgument>
-                                                    <OutArgument x:TypeArguments="x:String" x:Key="Lender_Fax_Number">
-                                                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Lender_Fax_Number" />
-                                                    </OutArgument>
+                                                    <OutArgument x:TypeArguments="x:String" x:Key="Lender_ID">[Lender_ID]</OutArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="Lender_Name">[Lender_Name]</InArgument>
+                                                    <OutArgument x:TypeArguments="x:String" x:Key="Lender_Fax_Number">[Lender_Fax_Number]</OutArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -752,7 +713,7 @@
                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                     </ui:InvokeWorkflowFile>
                                                                                     <FlowStep.Next>
-                                                                                      <FlowDecision x:Name="__ReferenceID39" Condition="[FOS_Mtg_AC_No.Length&lt;5]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+                                                                                      <FlowDecision x:Name="__ReferenceID39" Condition="[FOS_Mtg_AC_No.Length&lt;5 or String.IsNullOrWhiteSpace(FOS_Address) or String.IsNullOrWhiteSpace(FOS_First_Name_1)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -815,27 +776,13 @@
                                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Proclaim_Dowload_Drafting_WordFile workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Proclaim_Dowload_Drafting_WordFile.xaml">
                                                                                               <ui:InvokeWorkflowFile.Arguments>
-                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                                                                                                </InArgument>
-                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                                                                                                </InArgument>
-                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                                                                                                </InArgument>
-                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                                                                                                </InArgument>
-                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                                                                                                </InArgument>
-                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                                                                                                </InArgument>
-                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                                                                                                </InArgument>
+                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                                                                                                <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
                                                                                               </ui:InvokeWorkflowFile.Arguments>
                                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -854,30 +801,14 @@
                                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Proclaim_Internal_Redemption_Fax_Mail workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Proclaim_Internal_Redemption_Fax_Mail.xaml">
                                                                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                                                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                                                                                                    </InArgument>
-                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                                                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                                                                                                    </InArgument>
-                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                                                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                                                                                                    </InArgument>
-                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                                                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                                                                                                    </InArgument>
-                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                                                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                                                                                                    </InArgument>
-                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                                                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                                                                                                    </InArgument>
-                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                                                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                                                                                                    </InArgument>
-                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="Lender_Fax_Number">
-                                                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Lender_Fax_Number" />
-                                                                                                    </InArgument>
+                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
+                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="Lender_Fax_Number">[Lender_Fax_Number]</InArgument>
                                                                                                   </ui:InvokeWorkflowFile.Arguments>
                                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -955,60 +886,24 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TBS_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="TBS_Web_Form.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Company_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Pcode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">
-                          <Literal x:TypeArguments="x:String">664226</Literal>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Contact_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Fax_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Email">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Email" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_DX_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_DX_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Solicitor_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_2" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">[AVRillo_Company_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">[AVRillo_Pcode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">664226</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">[AVRillo_Contact_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">[AVRillo_Fax_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Email">[AVRillo_Email]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_DX_Number">[AVRillo_DX_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">[FOS_Solicitor_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">[AVRillo_Address_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">[AVRillo_Address_2]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1030,30 +925,14 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Nationet_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Nationet_Web_Form.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">
-                          <Literal x:TypeArguments="x:String">34779</Literal>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Company_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">34779</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">[AVRillo_Company_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1075,51 +954,21 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke LenderExchange_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="LenderExchange_Web_Form.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_City" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_DOB_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_DOB_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Solicitor_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_City" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">[FOS_City]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_1">[FOS_DOB_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_2">[FOS_DOB_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">[FOS_Solicitor_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">[AVRillo_Address_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">[AVRillo_Address_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">[AVRillo_City]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1139,65 +988,27 @@
                         <av:PointCollection x:Key="ConnectorLocation">2130,1226 2130,1256 1890,1256 1890,1354</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Lloydsbank_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Lloydsbank_Web_Form.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Lloydsbank_Web_Form workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Lloydsbank_Web_Form.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Lender_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Lender_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_DOB_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Name_Title_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_DOB_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Name_Title_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Panel_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Company_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Pcode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Fax_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Contact_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_City" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Lender_Name">[Lender_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_1">[FOS_DOB_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_1">[FOS_Name_Title_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_2">[FOS_DOB_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_2">[FOS_Name_Title_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">[AVRillo_Panel_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">[AVRillo_Company_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">[AVRillo_Pcode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">[AVRillo_Fax_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">[AVRillo_Contact_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">[FOS_City]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1219,54 +1030,22 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Virgin_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Virgin_Web_Form.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Solicitor_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Contact_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Email">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Email" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Company_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Fax_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Panel_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_ID">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_ID" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Name_Title_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_City" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">[FOS_Solicitor_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">[AVRillo_Contact_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Email">[AVRillo_Email]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">[AVRillo_Company_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">[AVRillo_Fax_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">[AVRillo_Panel_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_ID">[AVRillo_ID]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_1">[FOS_Name_Title_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">[AVRillo_Address_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">[AVRillo_Address_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">[AVRillo_City]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1288,69 +1067,27 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Ireland_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Ireland_Web_Form.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_DOB_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Name_Title_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Name_Title_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Company_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_City" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Contact_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Fax_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_DOB_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Panel_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Email">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Email" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Pcode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_City" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_1">[FOS_DOB_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_1">[FOS_Name_Title_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Name_Title_2">[FOS_Name_Title_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">[AVRillo_Company_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">[AVRillo_Address_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">[AVRillo_Address_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">[AVRillo_City]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">[AVRillo_Contact_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">[AVRillo_Fax_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_DOB_2">[FOS_DOB_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">[AVRillo_Panel_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Email">[AVRillo_Email]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">[AVRillo_Pcode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">[FOS_City]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1372,60 +1109,24 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Yorkshire_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Yorkshire_Web_Form.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_City" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_City" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Company_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Pcode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Panel_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Fax_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Contact_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Solicitor_Name" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">[FOS_City]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">[AVRillo_Address_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">[AVRillo_Address_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">[AVRillo_City]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">[AVRillo_Company_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">[AVRillo_Pcode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">[AVRillo_Panel_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">[AVRillo_Fax_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">[AVRillo_Contact_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">[FOS_Solicitor_Name]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1447,63 +1148,25 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Accord_Web_Form workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="Accord_Web_Form.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_First_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Last_Name_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Address" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_City" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_PCode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Mtg_AC_No" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FOS_Solicitor_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Address_2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_City" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Company_Name" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Pcode" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Fax_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Contact_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Panel_Number" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Email">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AVRillo_Email" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference_Number" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_1">[FOS_First_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_First_Name_2">[FOS_First_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_1">[FOS_Last_Name_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Last_Name_2">[FOS_Last_Name_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Address">[FOS_Address]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_City">[FOS_City]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_PCode">[FOS_PCode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Mtg_AC_No">[FOS_Mtg_AC_No]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="FOS_Solicitor_Name">[FOS_Solicitor_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_1">[AVRillo_Address_1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Address_2">[AVRillo_Address_2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_City">[AVRillo_City]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Company_Name">[AVRillo_Company_Name]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Pcode">[AVRillo_Pcode]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Fax_Number">[AVRillo_Fax_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Contact_Number">[AVRillo_Contact_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Panel_Number">[AVRillo_Panel_Number]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="AVRillo_Email">[AVRillo_Email]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Reference_Number">[Reference_Number]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
