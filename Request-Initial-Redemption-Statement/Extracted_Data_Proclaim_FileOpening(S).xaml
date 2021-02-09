@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Extracted_Data_Proclaim_FileOpening_S_" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Extracted_Data_Proclaim_FileOpening_S_" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="FOS_Address" Type="OutArgument(x:String)" />
     <x:Property Name="FOS_PCode" Type="OutArgument(x:String)" />
@@ -18,7 +18,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1507,3862</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1497,3517</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Extracted_Data_Proclaim_FileOpening_S__1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
@@ -106,7 +106,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Extracted_Data_Proclaim_FileOpening_S_" sap:VirtualizedContainerService.HintSize="552,3757" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extracted_Data_Proclaim_FileOpening_S_" sap:VirtualizedContainerService.HintSize="552,3412" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="S_N" />
       <Variable x:TypeArguments="x:String" Name="R" />
@@ -436,22 +436,5 @@
         <InArgument x:TypeArguments="x:String">[S_N]</InArgument>
       </Assign.Value>
     </Assign>
-    <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="\\dc-01\RedirectedFolders\alk\Desktop\new.docx" sap:VirtualizedContainerService.HintSize="510,305" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
-      <p:WordApplicationScope.Body>
-        <ActivityAction x:TypeArguments="ui:WordDocument">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,196" sap2010:WorkflowViewState.IdRef="Sequence_17">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="434,104" sap2010:WorkflowViewState.IdRef="WordAppendText_1" NewLine="False" Text="[&quot;DOB 1&quot;+DB1+Environment.NewLine()+&#xA;&quot;DOB 2&quot;+DB2+Environment.NewLine()+&#xA;&quot;First 1&quot;+F1+Environment.NewLine()+&#xA;&quot;First 2&quot;+F2+Environment.NewLine()+&#xA;&quot;Last 1&quot;+L1+Environment.NewLine()+&#xA;&quot;Last 2&quot;+L2+Environment.NewLine()+&#xA;&quot;Add &quot;+Ad+Environment.NewLine()+&#xA;&quot;City &quot;+C+Environment.NewLine()+&#xA;&quot;Pin &quot;+Pc+Environment.NewLine()+&#xA;&quot;Account &quot;+Ma]" />
-          </Sequence>
-        </ActivityAction>
-      </p:WordApplicationScope.Body>
-    </p:WordApplicationScope>
   </Sequence>
 </Activity>

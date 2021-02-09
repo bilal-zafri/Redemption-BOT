@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Proclaim_Internal_Missing_Data_Mail" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1794,2086" sap2010:WorkflowViewState.IdRef="Proclaim_Internal_Missing_Data_Mail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Proclaim_Internal_Missing_Data_Mail" this:Proclaim_Internal_Missing_Data_Mail.Internal_Message_ID="account" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Internal_Message_ID" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1794,2090</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Proclaim_Internal_Missing_Data_Mail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
       <x:String>System.Activities</x:String>
@@ -51,7 +59,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Proclaim_Internal_Missing_Data_Mail" sap:VirtualizedContainerService.HintSize="454,1981" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Proclaim_Internal_Missing_Data_Mail" sap:VirtualizedContainerService.HintSize="538,1985" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="Main_Check" />
     </Sequence.Variables>
@@ -60,7 +68,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InterruptibleDoWhile Condition="[Main_Check=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412,619" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile Condition="[Main_Check=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="496,619" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,454" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
@@ -109,7 +117,7 @@
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
     </ui:InterruptibleDoWhile>
-    <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="412,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="INTCON - Internal Contact / Documentation">
+    <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="496,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="INTCON - Internal Contact / Documentation">
       <ui:SelectItem.Items>
         <scg:List x:TypeArguments="x:String" Capacity="64">
           <x:String>ACC - Avrillo</x:String>
@@ -170,7 +178,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:SelectItem>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Edit'" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Edit'" sap:VirtualizedContainerService.HintSize="496,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -198,7 +206,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:Click>
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,380" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(0,80)]">
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="496,380" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(0,80)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -232,7 +240,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,51" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Enumerable.Range(0,40)]">
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="496,51" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Enumerable.Range(0,40)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -266,7 +274,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Edit'" sap:VirtualizedContainerService.HintSize="412,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="hk@avrillo.co.uk">
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Edit'" sap:VirtualizedContainerService.HintSize="496,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="hk@avrillo.co.uk">
       <ui:TypeInto.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7407a4a2-9ef1-4a41-a783-7e4ea054a01b" InformativeScreenshot="ede5cb7e09b0bcaef18bc075291a12f7" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='Edit' idx='49' /&gt;">
           <ui:Target.TimeoutMS>
@@ -278,39 +286,11 @@
         </ui:Target>
       </ui:TypeInto.Target>
     </ui:TypeInto>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'BODY'" sap:VirtualizedContainerService.HintSize="412,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="Attention - BOT could not request the initial redemption statement as the mortgage account number is missing/not updated on Proclaim.">
-      <ui:TypeInto.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5ceca5fb-6705-47cf-93ba-389d6a9f1bbb" InformativeScreenshot="e75dfa3aabf6fabe87a4fed91115345d" Selector="&lt;html app='prowin32.exe' url='file://C:\Program Files (*)\Eclipse Legal Systems\HTMLEditor\editor\pinEdit.html?lng=EN&amp;amp;style=5&amp;amp;af=1&amp;amp;hm=2&amp;amp;me=0&amp;amp;hb=0&amp;amp;aa=0&amp;amp;dv=0&amp;amp;ru=0&amp;amp;sib=0&amp;amp;stb=0&amp;amp;um=0&amp;amp;trh=0&amp;amp;dv=0&amp;amp;rm=wp&amp;amp;dow=794&amp;amp;tbx=1&amp;amp;tbc=f8f9fa' /&gt;&lt;webctrl idx='3' tag='BODY' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:TypeInto.Target>
-    </ui:TypeInto>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="412,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <TryCatch.Try>
-        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ProButton'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
-          <ui:Click.CursorPosition>
-            <ui:CursorPosition Position="Center">
-              <ui:CursorPosition.OffsetX>
-                <InArgument x:TypeArguments="x:Int32" />
-              </ui:CursorPosition.OffsetX>
-              <ui:CursorPosition.OffsetY>
-                <InArgument x:TypeArguments="x:Int32" />
-              </ui:CursorPosition.OffsetY>
-            </ui:CursorPosition>
-          </ui:Click.CursorPosition>
-          <ui:Click.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c50303ae-1981-48cf-b5a1-7d3907871033" InformativeScreenshot="9f25568c7b058fb4bb2be6dd37819e59" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ProButton' title='btnaccept' /&gt;">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Internal_Message_ID.ToLower]" sap:VirtualizedContainerService.HintSize="496,138" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Switch.Default>
+        <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'BODY'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="Attention - BOT could not request the initial redemption statement as the mortgage account number is missing/not updated on Proclaim.">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5ceca5fb-6705-47cf-93ba-389d6a9f1bbb" InformativeScreenshot="e75dfa3aabf6fabe87a4fed91115345d" Selector="&lt;html app='prowin32.exe' url='file://C:\Program Files (*)\Eclipse Legal Systems\HTMLEditor\editor\pinEdit.html?lng=EN&amp;amp;style=5&amp;amp;af=1&amp;amp;hm=2&amp;amp;me=0&amp;amp;hb=0&amp;amp;aa=0&amp;amp;dv=0&amp;amp;ru=0&amp;amp;sib=0&amp;amp;stb=0&amp;amp;um=0&amp;amp;trh=0&amp;amp;dv=0&amp;amp;rm=wp&amp;amp;dow=794&amp;amp;tbx=1&amp;amp;tbc=f8f9fa' /&gt;&lt;webctrl idx='3' tag='BODY' /&gt;">
               <ui:Target.TimeoutMS>
                 <InArgument x:TypeArguments="x:Int32" />
               </ui:Target.TimeoutMS>
@@ -318,49 +298,110 @@
                 <InArgument x:TypeArguments="ui:WaitForReady" />
               </ui:Target.WaitForReady>
             </ui:Target>
-          </ui:Click.Target>
-        </ui:Click>
-      </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,223" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+      </Switch.Default>
+      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" x:Key="ms1r" Activate="True" DisplayName="Type Into 'BODY'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="Attention - BOT could not request the initial redemption statement as the lender details is missing/not updated on Proclaim.">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5ceca5fb-6705-47cf-93ba-389d6a9f1bbb" InformativeScreenshot="e75dfa3aabf6fabe87a4fed91115345d" Selector="&lt;html app='prowin32.exe' url='file://C:\Program Files (*)\Eclipse Legal Systems\HTMLEditor\editor\pinEdit.html?lng=EN&amp;amp;style=5&amp;amp;af=1&amp;amp;hm=2&amp;amp;me=0&amp;amp;hb=0&amp;amp;aa=0&amp;amp;dv=0&amp;amp;ru=0&amp;amp;sib=0&amp;amp;stb=0&amp;amp;um=0&amp;amp;trh=0&amp;amp;dv=0&amp;amp;rm=wp&amp;amp;dow=794&amp;amp;tbx=1&amp;amp;tbc=f8f9fa' /&gt;&lt;webctrl idx='3' tag='BODY' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+    </Switch>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="496,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ActivityAction x:TypeArguments="s:Exception">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-            </ActivityAction.Argument>
-            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'prowin32.exe  Proclaim'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:ClickImage.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:ClickImage.CursorPosition>
-              <ui:ClickImage.Image>
-                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEkAAAAdCAYAAADmbEE9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPGSURBVGhD7ZhLSJRRFMftQUUU1KKkFhUFFgVtKqqFBLVpUYsgohYRUbugRVYkgVYWlWEPUyKR7ElWUAsrHR/5ajQ136il5SPN92Py7Tjj6f6v37Xr53VmNIecaQ78ne+751y/e35zH2c+L69T78mj8WUymcjpkOafM9DqKym06nKy0j/d5XRIm28ZKaumg9p6zBT+sVoZM93lVEjHXxRRVVsPWYeG6FFOHa0M8sykEXkHJlJoejU1dPYT7E1xIy2/kKSMdQVNOaQNwWn0NPcn9Q1aOaCk8lZady1VGesqmlJIvncz6V1pM4czxJZYNtuLtt7OUMa6kqYM0o7wT2SsaueAYKWNXbTrXpYy1tU0JZC2h2ZQbq1Jw0NU/6uPDj8rUMa6ov4a0hZ2xBfXd2p4iHrNFgqK/0ZzzsQp411RSkhzz8bRDL/RbSqtZRvy1+ZuDc+wvSpooDWscFTFCxVWtXHJbTuDU3mbsO8NnbxN+OPy6jQPUVNHL52IyuHtkYnlWusfgx8+fMrW3TdIB8MyxrQLE8/SawykeQzQgcf55BuWSQv940cFCwHgiksf+MklW2VrD227Y3ujRuIYrBiwaMfAZXCAIu5xLUMLiSnh/X0CEjgk+EU/WTJMCLHyM2z1lTUG0qEn+WTqNfPT6eTrElrgbxg1q3C9jNU8Udm1GpphM1ustP9h3kjceHpprOIDkwcIWEhajgMAAVEPFJJnkqOQ8GxjWePI/aQhRefX0wBLGDbAap37mT84FOFffD6B7TkVZLEO8RhhISmVtDQgcSROJSQuEhYzCm2YGfrlJ4Q4mMoHIVG9icT1ywr3MuxJQ8IP0bKmLu3fEi8KkytaeQ0E/74HudTVP6h5h62mvZc23ki3u48Bht4wUNVMgvDNy2Bln+hnK1H9TNJr0pCg3RE51NI9oKVBfNag7sHPC/moh2FZHnle6NBphn0FoMQ9rpEIrvEpzyZcCx8SkfckJAfD/T+DNPt0LF00VLAZY+GDkY0xGWVvWYW9xM4ygzBYsbxEm5gl8CFhgBCmP92wlwiTkxfA9AafUyFB3oFJFFPSpD1SbR1sg9900+hQueDKGhcSpC8UZcOMCowrV/ZzN9mEBB2LLqJG7ZWHMLwfyqxup0XspFP1cTfZhYTiEsd7v/bqA4b3RHsix1/r7ia7kKD119PI8KWFA0INFcFqJ1Wcu8ohSNDeyM982RWyPcrnqmu/RJuoHIaEsuAoq4dQbav87iyHIUEz/WJpFoOl8rmzJgTpf5UHkgPikPDHI9vyQLIrE/0GAA6dDu1dbJgAAAAASUVORK5CYII=" />
-              </ui:ClickImage.Image>
-              <ui:ClickImage.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="763a6dd0-64b4-41d8-bac2-755765918929" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:ClickImage.Target>
-            </ui:ClickImage>
-          </ActivityAction>
-        </Catch>
-      </TryCatch.Catches>
-    </TryCatch>
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch.Try>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ProButton'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c50303ae-1981-48cf-b5a1-7d3907871033" InformativeScreenshot="9f25568c7b058fb4bb2be6dd37819e59" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ProButton' title='btnaccept' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'prowin32.exe  Proclaim'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:ClickImage.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:ClickImage.CursorPosition>
+                    <ui:ClickImage.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEkAAAAdCAYAAADmbEE9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPGSURBVGhD7ZhLSJRRFMftQUUU1KKkFhUFFgVtKqqFBLVpUYsgohYRUbugRVYkgVYWlWEPUyKR7ElWUAsrHR/5ajQ136il5SPN92Py7Tjj6f6v37Xr53VmNIecaQ78ne+751y/e35zH2c+L69T78mj8WUymcjpkOafM9DqKym06nKy0j/d5XRIm28ZKaumg9p6zBT+sVoZM93lVEjHXxRRVVsPWYeG6FFOHa0M8sykEXkHJlJoejU1dPYT7E1xIy2/kKSMdQVNOaQNwWn0NPcn9Q1aOaCk8lZady1VGesqmlJIvncz6V1pM4czxJZYNtuLtt7OUMa6kqYM0o7wT2SsaueAYKWNXbTrXpYy1tU0JZC2h2ZQbq1Jw0NU/6uPDj8rUMa6ov4a0hZ2xBfXd2p4iHrNFgqK/0ZzzsQp411RSkhzz8bRDL/RbSqtZRvy1+ZuDc+wvSpooDWscFTFCxVWtXHJbTuDU3mbsO8NnbxN+OPy6jQPUVNHL52IyuHtkYnlWusfgx8+fMrW3TdIB8MyxrQLE8/SawykeQzQgcf55BuWSQv940cFCwHgiksf+MklW2VrD227Y3ujRuIYrBiwaMfAZXCAIu5xLUMLiSnh/X0CEjgk+EU/WTJMCLHyM2z1lTUG0qEn+WTqNfPT6eTrElrgbxg1q3C9jNU8Udm1GpphM1ustP9h3kjceHpprOIDkwcIWEhajgMAAVEPFJJnkqOQ8GxjWePI/aQhRefX0wBLGDbAap37mT84FOFffD6B7TkVZLEO8RhhISmVtDQgcSROJSQuEhYzCm2YGfrlJ4Q4mMoHIVG9icT1ywr3MuxJQ8IP0bKmLu3fEi8KkytaeQ0E/74HudTVP6h5h62mvZc23ki3u48Bht4wUNVMgvDNy2Bln+hnK1H9TNJr0pCg3RE51NI9oKVBfNag7sHPC/moh2FZHnle6NBphn0FoMQ9rpEIrvEpzyZcCx8SkfckJAfD/T+DNPt0LF00VLAZY+GDkY0xGWVvWYW9xM4ygzBYsbxEm5gl8CFhgBCmP92wlwiTkxfA9AafUyFB3oFJFFPSpD1SbR1sg9900+hQueDKGhcSpC8UZcOMCowrV/ZzN9mEBB2LLqJG7ZWHMLwfyqxup0XspFP1cTfZhYTiEsd7v/bqA4b3RHsix1/r7ia7kKD119PI8KWFA0INFcFqJ1Wcu8ohSNDeyM982RWyPcrnqmu/RJuoHIaEsuAoq4dQbav87iyHIUEz/WJpFoOl8rmzJgTpf5UHkgPikPDHI9vyQLIrE/0GAA6dDu1dbJgAAAAASUVORK5CYII=" />
+                    </ui:ClickImage.Image>
+                    <ui:ClickImage.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="763a6dd0-64b4-41d8-bac2-755765918929" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:ClickImage.Target>
+                  </ui:ClickImage>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
   </Sequence>
 </Activity>

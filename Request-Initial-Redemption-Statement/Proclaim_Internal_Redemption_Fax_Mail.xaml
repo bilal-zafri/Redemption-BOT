@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,3801</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1497,4032</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Proclaim_Internal_Redemption_Fax_Mail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -78,7 +78,7 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Proclaim_Internal_Redemption_Fax_Mail" sap:VirtualizedContainerService.HintSize="953,3696" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Proclaim_Internal_Redemption_Fax_Mail" sap:VirtualizedContainerService.HintSize="953,3927" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="Define_Variable" />
       <Variable x:TypeArguments="x:Boolean" Name="Menu_Check_2" />
@@ -243,55 +243,123 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InterruptibleDoWhile>
-    <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="911,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="INTCON - Internal Contact / Documentation">
-      <ui:SelectItem.Items>
-        <scg:List x:TypeArguments="x:String" Capacity="64">
-          <x:String>ACC - Avrillo</x:String>
-          <x:String>BSL - Soma Solicitors Ltd</x:String>
-          <x:String>BUY1 - Poopalasundaram, Subathra</x:String>
-          <x:String>BUY2 - Poopalasundaram, Sobana</x:String>
-          <x:String>CL - Lawson, Alistair Robert</x:String>
-          <x:String>CL2 - Lawson, Vanessa Christina</x:String>
-          <x:String>CSA - Conveyancing Data Services</x:String>
-          <x:String>EAR - The Personal Agent</x:String>
-          <x:String>EAS - The Personal Agent</x:String>
-          <x:String>ENV - Conveyancing Data Services Ltd</x:String>
-          <x:String>ESA - Conveyancing Data Services</x:String>
-          <x:String>FLOOD - Conveyancing Data Services Ltd</x:String>
-          <x:String>IND-P - Isis Team</x:String>
-          <x:String>IND-S - Isis</x:String>
-          <x:String>INTCON - Internal Contact / Documentation</x:String>
-          <x:String>IR - Inland Revenue Stamp Taxes</x:String>
-          <x:String>LRP - HM Land Registry</x:String>
-          <x:String>LRS - HM Land Registry</x:String>
-          <x:String>LSP - Conveyancing Data Services Ltd</x:String>
-          <x:String>MP1H - N/A cash purchase from sale of 131 Seaforth Gardens</x:String>
-          <x:String>MS1D - The Co-Operative Bank PLC</x:String>
-          <x:String>MS1H - The Co-Operative Bank PLC</x:String>
-          <x:String>MS1R - The Co-Operative Bank PLC</x:String>
-          <x:String>NEG-P - ( no name )</x:String>
-          <x:String>NEG-S - Mahoney, Catherine</x:String>
-          <x:String>OFF - Offshore Team</x:String>
-          <x:String>PAGENT - Davis, Paul</x:String>
-          <x:String>PRP - ( no name )</x:String>
-          <x:String>PRS - ( no name )</x:String>
-          <x:String>PSP - Conveyancing Data Services Ltd</x:String>
-          <x:String>SEL1 - Linden Homes South East</x:String>
-          <x:String>SSL - Shoosmiths Llp</x:String>
-          <x:String>WAT - Conveyancing Data Services Ltd</x:String>
-        </scg:List>
-      </ui:SelectItem.Items>
-      <ui:SelectItem.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="456952e2-014d-465d-84c0-dc08d45b7802" InformativeScreenshot="cddf7a1942dcd005493748fe5ad3103a" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='24' /&gt;&lt;ctrl role='combo box' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:SelectItem.Target>
-    </ui:SelectItem>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="911,365" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <TryCatch.Try>
+        <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="INTCON - Internal Contact / Documentation">
+          <ui:SelectItem.Items>
+            <scg:List x:TypeArguments="x:String" Capacity="64">
+              <x:String>ACC - Avrillo</x:String>
+              <x:String>BSL - Soma Solicitors Ltd</x:String>
+              <x:String>BUY1 - Poopalasundaram, Subathra</x:String>
+              <x:String>BUY2 - Poopalasundaram, Sobana</x:String>
+              <x:String>CL - Lawson, Alistair Robert</x:String>
+              <x:String>CL2 - Lawson, Vanessa Christina</x:String>
+              <x:String>CSA - Conveyancing Data Services</x:String>
+              <x:String>EAR - The Personal Agent</x:String>
+              <x:String>EAS - The Personal Agent</x:String>
+              <x:String>ENV - Conveyancing Data Services Ltd</x:String>
+              <x:String>ESA - Conveyancing Data Services</x:String>
+              <x:String>FLOOD - Conveyancing Data Services Ltd</x:String>
+              <x:String>IND-P - Isis Team</x:String>
+              <x:String>IND-S - Isis</x:String>
+              <x:String>INTCON - Internal Contact / Documentation</x:String>
+              <x:String>IR - Inland Revenue Stamp Taxes</x:String>
+              <x:String>LRP - HM Land Registry</x:String>
+              <x:String>LRS - HM Land Registry</x:String>
+              <x:String>LSP - Conveyancing Data Services Ltd</x:String>
+              <x:String>MP1H - N/A cash purchase from sale of 131 Seaforth Gardens</x:String>
+              <x:String>MS1D - The Co-Operative Bank PLC</x:String>
+              <x:String>MS1H - The Co-Operative Bank PLC</x:String>
+              <x:String>MS1R - The Co-Operative Bank PLC</x:String>
+              <x:String>NEG-P - ( no name )</x:String>
+              <x:String>NEG-S - Mahoney, Catherine</x:String>
+              <x:String>OFF - Offshore Team</x:String>
+              <x:String>PAGENT - Davis, Paul</x:String>
+              <x:String>PRP - ( no name )</x:String>
+              <x:String>PRS - ( no name )</x:String>
+              <x:String>PSP - Conveyancing Data Services Ltd</x:String>
+              <x:String>SEL1 - Linden Homes South East</x:String>
+              <x:String>SSL - Shoosmiths Llp</x:String>
+              <x:String>WAT - Conveyancing Data Services Ltd</x:String>
+            </scg:List>
+          </ui:SelectItem.Items>
+          <ui:SelectItem.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="456952e2-014d-465d-84c0-dc08d45b7802" InformativeScreenshot="cddf7a1942dcd005493748fe5ad3103a" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='24' /&gt;&lt;ctrl role='combo box' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:SelectItem.Target>
+        </ui:SelectItem>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,203" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="INTCON - Internal Contact / Documentation">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="64">
+                  <x:String>ACC - Avrillo</x:String>
+                  <x:String>BSL - Soma Solicitors Ltd</x:String>
+                  <x:String>BUY1 - Poopalasundaram, Subathra</x:String>
+                  <x:String>BUY2 - Poopalasundaram, Sobana</x:String>
+                  <x:String>CL - Lawson, Alistair Robert</x:String>
+                  <x:String>CL2 - Lawson, Vanessa Christina</x:String>
+                  <x:String>CSA - Conveyancing Data Services</x:String>
+                  <x:String>EAR - The Personal Agent</x:String>
+                  <x:String>EAS - The Personal Agent</x:String>
+                  <x:String>ENV - Conveyancing Data Services Ltd</x:String>
+                  <x:String>ESA - Conveyancing Data Services</x:String>
+                  <x:String>FLOOD - Conveyancing Data Services Ltd</x:String>
+                  <x:String>IND-P - Isis Team</x:String>
+                  <x:String>IND-S - Isis</x:String>
+                  <x:String>INTCON - Internal Contact / Documentation</x:String>
+                  <x:String>IR - Inland Revenue Stamp Taxes</x:String>
+                  <x:String>LRP - HM Land Registry</x:String>
+                  <x:String>LRS - HM Land Registry</x:String>
+                  <x:String>LSP - Conveyancing Data Services Ltd</x:String>
+                  <x:String>MP1H - N/A cash purchase from sale of 131 Seaforth Gardens</x:String>
+                  <x:String>MS1D - The Co-Operative Bank PLC</x:String>
+                  <x:String>MS1H - The Co-Operative Bank PLC</x:String>
+                  <x:String>MS1R - The Co-Operative Bank PLC</x:String>
+                  <x:String>NEG-P - ( no name )</x:String>
+                  <x:String>NEG-S - Mahoney, Catherine</x:String>
+                  <x:String>OFF - Offshore Team</x:String>
+                  <x:String>PAGENT - Davis, Paul</x:String>
+                  <x:String>PRP - ( no name )</x:String>
+                  <x:String>PRS - ( no name )</x:String>
+                  <x:String>PSP - Conveyancing Data Services Ltd</x:String>
+                  <x:String>SEL1 - Linden Homes South East</x:String>
+                  <x:String>SSL - Shoosmiths Llp</x:String>
+                  <x:String>WAT - Conveyancing Data Services Ltd</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="456952e2-014d-465d-84c0-dc08d45b7802" InformativeScreenshot="cddf7a1942dcd005493748fe5ad3103a" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='24' /&gt;&lt;ctrl role='combo box' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
     <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Edit'" sap:VirtualizedContainerService.HintSize="911,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">

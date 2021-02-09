@@ -148,7 +148,7 @@
                               <OutArgument x:TypeArguments="x:String">[Lender_ID]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">lender</InArgument>
+                              <InArgument x:TypeArguments="x:String">null</InArgument>
                             </Assign.Value>
                           </Assign>
                         </If.Then>
