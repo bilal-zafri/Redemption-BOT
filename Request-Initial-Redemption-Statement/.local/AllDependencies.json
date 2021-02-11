@@ -3711,17 +3711,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "UiPath.Mail.Activities 1.9.3 depends on Newtonsoft.Json (>= 11.0.1) but Newtonsoft.Json 11.0.1 was not found. An approximate best match of Newtonsoft.Json 11.0.2 was resolved.",
-      "libraryId": "Newtonsoft.Json",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.6.1"
-      ]
-    }
-  ]
+  }
 }
