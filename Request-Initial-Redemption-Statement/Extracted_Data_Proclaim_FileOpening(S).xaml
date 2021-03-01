@@ -18,7 +18,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1497,3517</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1490,3517</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Extracted_Data_Proclaim_FileOpening_S__1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
@@ -131,7 +131,7 @@
     <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_21">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b0556f0d40adf654696d32ad7e99f42c" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='139' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b0556f0d40adf654696d32ad7e99f42c" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='142' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -146,7 +146,7 @@
     </ui:GetValue>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_22">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="f9e3edc948952f01e4cd3c9c63248dc1" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='102' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="f9e3edc948952f01e4cd3c9c63248dc1" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='105' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -161,7 +161,7 @@
     </ui:GetValue>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_23">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="5ce176181aa4ade8267c7a1b1f774bb7" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='120' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="5ce176181aa4ade8267c7a1b1f774bb7" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='123' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -176,7 +176,7 @@
     </ui:GetValue>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_24">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="bad53c090d698c41ccfcc34e5f5d4a29" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='118' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="bad53c090d698c41ccfcc34e5f5d4a29" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='121' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -191,7 +191,7 @@
     </ui:GetValue>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_25">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b459c0ec4bf5081c5c36764bd071462a" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='116' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b459c0ec4bf5081c5c36764bd071462a" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='119' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -206,7 +206,7 @@
     </ui:GetValue>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_26">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="036967a23b15f6aafb18b1f955b4ef18" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='89' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="036967a23b15f6aafb18b1f955b4ef18" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='92' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -221,7 +221,7 @@
     </ui:GetValue>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_27">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="f44f58ef911a40bf80693624099acdf1" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='100' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="f44f58ef911a40bf80693624099acdf1" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='103' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -236,7 +236,7 @@
     </ui:GetValue>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_28">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="6754da2f993c99e11e04b64fcf2c1cf5" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='98' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="6754da2f993c99e11e04b64fcf2c1cf5" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='101' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -251,7 +251,7 @@
     </ui:GetValue>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_29">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="0e0344ff3d2573bcd3486f91758e0e76" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='96' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="0e0344ff3d2573bcd3486f91758e0e76" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='99' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -266,7 +266,7 @@
     </ui:GetValue>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text 32'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_30">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="8f0f9955723c2f4f1b4f1e09a2fe4efa" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='87' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="8f0f9955723c2f4f1b4f1e09a2fe4efa" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='4' /&gt;&lt;ctrl name='*' role='text' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -296,7 +296,7 @@
     </ui:GetValue>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_32">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b4b89e2a88396a578c5895795a58f88d" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='85' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b4b89e2a88396a578c5895795a58f88d" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='88' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -311,7 +311,7 @@
     </ui:GetValue>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_33">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="c5aed594660ee787a9838749beb16e96" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='77' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="c5aed594660ee787a9838749beb16e96" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='80' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
