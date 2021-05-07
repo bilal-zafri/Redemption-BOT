@@ -1,7 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Redemption_Final_Report" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Working_Folder" Type="InArgument(x:String)" />
-    <x:Property Name="Screenshot_Counter" Type="InArgument(x:Int32)" />
     <x:Property Name="Lender_Coloum" Type="InArgument(x:Int32)" />
     <x:Property Name="Redemption_Data_Counter" Type="InArgument(x:Int32)" />
     <x:Property Name="Lender_Fax_Number" Type="InArgument(x:String)" />
@@ -10,11 +9,12 @@
     <x:Property Name="Reference_Number" Type="InArgument(x:String)" />
     <x:Property Name="Lender_Name" Type="InArgument(x:String)" />
     <x:Property Name="Client_Name" Type="InArgument(x:String)" />
+    <x:Property Name="Counter" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1490,2189</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,2003</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Redemption_Final_Report_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -81,7 +81,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Redemption_Final_Report" sap:VirtualizedContainerService.HintSize="538,2004" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Redemption_Final_Report" sap:VirtualizedContainerService.HintSize="538,1898" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Request_Type" />
       <Variable x:TypeArguments="x:String" Name="Website_or_FAX" />
@@ -181,7 +181,7 @@
                 <OutArgument x:TypeArguments="x:String">[Comment]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">Query Sent to HK : Lender FAX Number Missing</InArgument>
+                <InArgument x:TypeArguments="x:String">Fax number missing to send the request</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
@@ -203,7 +203,7 @@
                 <OutArgument x:TypeArguments="x:String">[Comment]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">Query Sent to HK : Mortgage Account Number Missing</InArgument>
+                <InArgument x:TypeArguments="x:String">Mortgage Account Number Missing</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
@@ -225,7 +225,7 @@
                 <OutArgument x:TypeArguments="x:String">[Comment]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">Query Sent to HK : Lender Details Missing</InArgument>
+                <InArgument x:TypeArguments="x:String">Lender Details Missing</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
@@ -276,7 +276,7 @@
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
     </Switch>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Lender_ID]" sap:VirtualizedContainerService.HintSize="496,442" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Lender_ID]" sap:VirtualizedContainerService.HintSize="496,336" sap2010:WorkflowViewState.IdRef="Switch`1_2">
       <Switch.Default>
         <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
           <Assign.To>
@@ -386,12 +386,12 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelWriteCell Cell="[&quot;A&quot;+Screenshot_Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Sheet1" Text="[Reference_Number]" />
-            <ui:ExcelWriteCell Cell="[&quot;B&quot;+Screenshot_Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Sheet1" Text="[Lender_Name]" />
-            <ui:ExcelWriteCell Cell="[&quot;C&quot;+Screenshot_Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Sheet1" Text="[Client_Name]" />
-            <ui:ExcelWriteCell Cell="[&quot;D&quot;+Screenshot_Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Sheet1" Text="[Request_Type]" />
-            <ui:ExcelWriteCell Cell="[&quot;E&quot;+Screenshot_Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Sheet1" Text="[Website_or_FAX]" />
-            <ui:ExcelWriteCell Cell="[&quot;F&quot;+Screenshot_Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Sheet1" Text="[Comment]" />
+            <ui:ExcelWriteCell Cell="[&quot;A&quot;+Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Sheet1" Text="[Reference_Number]" />
+            <ui:ExcelWriteCell Cell="[&quot;B&quot;+Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Sheet1" Text="[Lender_Name]" />
+            <ui:ExcelWriteCell Cell="[&quot;C&quot;+Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Sheet1" Text="[Client_Name]" />
+            <ui:ExcelWriteCell Cell="[&quot;D&quot;+Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Sheet1" Text="[Request_Type]" />
+            <ui:ExcelWriteCell Cell="[&quot;E&quot;+Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Sheet1" Text="[Website_or_FAX]" />
+            <ui:ExcelWriteCell Cell="[&quot;F&quot;+Counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Sheet1" Text="[Comment]" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>

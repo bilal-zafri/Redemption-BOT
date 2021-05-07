@@ -17,12 +17,12 @@
     <x:Property Name="AVRillo_Address_2" Type="InArgument(x:String)" />
     <x:Property Name="AVRillo_City" Type="InArgument(x:String)" />
     <x:Property Name="Working_Folder" Type="InArgument(x:String)" />
-    <x:Property Name="Screenshot_Counter" Type="InArgument(x:Int32)" />
+    <x:Property Name="Lender_Coloum" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1226,5600</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,5215</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Virgin_Web_Form_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -93,7 +93,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Virgin_Web_Form" sap:VirtualizedContainerService.HintSize="993,5495" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Virgin_Web_Form" sap:VirtualizedContainerService.HintSize="993,5070" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Image" Name="Screenshot" />
       <Variable x:TypeArguments="x:Boolean" Name="Retry_Loop" />
@@ -108,21 +108,21 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InterruptibleDoWhile Condition="[Retry_Loop=True]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="951,5403" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+    <ui:InterruptibleDoWhile Condition="[Retry_Loop=True]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="951,4978" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="915,5238" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="915,4813" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="873,5146" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://uk.virginmoney.com/mortgages/forms/redemption/">
+          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="873,4721" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://uk.virginmoney.com/mortgages/forms/redemption/">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,5045" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,4620" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -392,7 +392,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  RedemptionReques...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_15" Text="[DateTime.DaysInMonth(Now.Year,now.Month).ToString]">
                           <ui:TypeInto.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e81e51d1-4c30-4cf2-9d65-42b060a4471d" InformativeScreenshot="bf7f3afcb591a2eb521760b1eb23ded5" Selector="&lt;html app='chrome.exe' title='Solicitor Mortgage Redemption Statement Request | Mortgages | Virgin Money UK' /&gt;&lt;webctrl id='RedemptionRequest_RedemptionDate_Day' tag='INPUT' type='number' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e81e51d1-4c30-4cf2-9d65-42b060a4471d" InformativeScreenshot="bf7f3afcb591a2eb521760b1eb23ded5" Selector="&lt;webctrl id='RedemptionRequest_RedemptionDate' tag='INPUT' type='number' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -404,7 +404,7 @@
                         </ui:TypeInto>
                         <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  RedemptionReques...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_16" Text="[Now.ToString(&quot;MM&quot;)]">
                           <ui:TypeInto.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="951d821f-afff-47b9-ab16-0ec90e4f1228" InformativeScreenshot="eec8e17098b9cc628e2cf9a4fa77eebf" Selector="&lt;html app='chrome.exe' title='Solicitor Mortgage Redemption Statement Request | Mortgages | Virgin Money UK' /&gt;&lt;webctrl id='RedemptionRequest_RedemptionDate_Month' tag='INPUT' type='number' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="951d821f-afff-47b9-ab16-0ec90e4f1228" InformativeScreenshot="67862ae28e2daa0a8abc80e7be7892f0" Selector="&lt;webctrl id='RedemptionRequest_RedemptionDate_Month' tag='INPUT' type='number' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -416,7 +416,7 @@
                         </ui:TypeInto>
                         <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  RedemptionReques...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_17" Text="[Now.ToString(&quot;yyyy&quot;)]">
                           <ui:TypeInto.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9586b6a4-399d-4bc4-b6d9-a226da4fe1ba" InformativeScreenshot="380a326978d5ccdb05c787ab18039f9e" Selector="&lt;html app='chrome.exe' title='Solicitor Mortgage Redemption Statement Request | Mortgages | Virgin Money UK' /&gt;&lt;webctrl id='RedemptionRequest_RedemptionDate_Year' tag='INPUT' type='number' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9586b6a4-399d-4bc4-b6d9-a226da4fe1ba" InformativeScreenshot="53c4f6a773974dd43419209ef214c2ee" Selector="&lt;webctrl id='RedemptionRequest_RedemptionDate_Year' tag='INPUT' type='number' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -437,7 +437,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  RedemptionReques...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_18" Text="[DateTime.DaysInMonth(Now.AddMonths(1).Year,now.AddMonths(1).Month).ToString]">
                           <ui:TypeInto.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c44f0e71-c9b1-464d-84ad-ec09557ed07b" InformativeScreenshot="81b65f5a20e42637ef3d7d63f90761e7" Selector="&lt;html app='chrome.exe' title='Solicitor Mortgage Redemption Statement Request | Mortgages | Virgin Money UK' /&gt;&lt;webctrl id='RedemptionRequest_RedemptionDate_Day' tag='INPUT' type='number' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c44f0e71-c9b1-464d-84ad-ec09557ed07b" InformativeScreenshot="5c4530f74a470b1ab285b6fb34c5101a" Selector="&lt;webctrl id='RedemptionRequest_RedemptionDate' tag='INPUT' type='number' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -449,7 +449,7 @@
                         </ui:TypeInto>
                         <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  RedemptionReques...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_19" Text="[Now.AddMonths(1).ToString(&quot;MM&quot;)]">
                           <ui:TypeInto.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="951d821f-afff-47b9-ab16-0ec90e4f1228" InformativeScreenshot="eec8e17098b9cc628e2cf9a4fa77eebf" Selector="&lt;html app='chrome.exe' title='Solicitor Mortgage Redemption Statement Request | Mortgages | Virgin Money UK' /&gt;&lt;webctrl id='RedemptionRequest_RedemptionDate_Month' tag='INPUT' type='number' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="951d821f-afff-47b9-ab16-0ec90e4f1228" InformativeScreenshot="67862ae28e2daa0a8abc80e7be7892f0" Selector="&lt;webctrl id='RedemptionRequest_RedemptionDate_Month' tag='INPUT' type='number' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -461,7 +461,7 @@
                         </ui:TypeInto>
                         <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  RedemptionReques...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_20" Text="[Now.AddMonths(1).ToString(&quot;yyyy&quot;)]">
                           <ui:TypeInto.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9586b6a4-399d-4bc4-b6d9-a226da4fe1ba" InformativeScreenshot="380a326978d5ccdb05c787ab18039f9e" Selector="&lt;html app='chrome.exe' title='Solicitor Mortgage Redemption Statement Request | Mortgages | Virgin Money UK' /&gt;&lt;webctrl id='RedemptionRequest_RedemptionDate_Year' tag='INPUT' type='number' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9586b6a4-399d-4bc4-b6d9-a226da4fe1ba" InformativeScreenshot="53c4f6a773974dd43419209ef214c2ee" Selector="&lt;webctrl id='RedemptionRequest_RedemptionDate_Year' tag='INPUT' type='number' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -1002,17 +1002,15 @@
                       <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_7">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Boolean">[Retry_Loop]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="797,376" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="797,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                     <TryCatch.Try>
-                      <Sequence sap:VirtualizedContainerService.HintSize="563,1085" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence sap:VirtualizedContainerService.HintSize="563,985" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1052,14 +1050,6 @@
                             </ui:Target>
                           </ui:UiElementExists.Target>
                         </ui:UiElementExists>
-                        <Assign sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_8">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Boolean">[Retry_Loop]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                          </Assign.Value>
-                        </Assign>
                         <If Condition="[Website_Check_2=True]" sap:VirtualizedContainerService.HintSize="521,601" sap2010:WorkflowViewState.IdRef="If_3">
                           <If.Then>
                             <Sequence sap:VirtualizedContainerService.HintSize="376,454" sap2010:WorkflowViewState.IdRef="Sequence_12">
@@ -1081,7 +1071,7 @@
                                   </ui:Target>
                                 </ui:TakeScreenshot.Target>
                               </ui:TakeScreenshot>
-                              <ui:SaveImage DisplayName="Save Image" FileName="[Working_Folder+&quot;\Web-Form-Screenshot\&quot;+Screenshot_Counter.ToString+&quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="SaveImage_2" Image="[Screenshot]" />
+                              <ui:SaveImage DisplayName="Save Image" FileName="[Working_Folder+&quot;\Web-Form-Screenshot\&quot;+Reference_Number.ToString+&quot;-L&quot;+Lender_Coloum.ToString+&quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="SaveImage_2" Image="[Screenshot]" />
                               <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Boolean">[Retry_Loop]</OutArgument>
@@ -1096,7 +1086,7 @@
                       </Sequence>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,214" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,135" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1107,17 +1097,43 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear Team,&quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Initial Redemption Request BOT  was not able to submit Virgin Web-Form for : &quot; +Reference_Number+&quot;  as the Development is pending &quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Redemption BOT | RPA Team | Anza Services LLP&quot;]" DisplayName="Send SMTP Mail Message" Email="bilalzafri@anzaservicesllp.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="@Sonumotihai786" Port="587" SecureConnection="Auto" Server="smtp.office365.com" Subject="Redemption BOT not able to Submit Virgin Webform" To="hk@avrillo.co.uk">
-                            <ui:SendMail.Files>
-                              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
-                            </ui:SendMail.Files>
+                          <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                          </ui:SendMail>
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Error&quot;]" />
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,237" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear Team,&quot;+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Initial Redemption Request BOT  was not able to submit Virgin Web-Form for : &quot; +Reference_Number+&quot;  as the Development is pending &quot;+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+&#xA;Environment.NewLine+&#xA;&quot;Redemption BOT | RPA Team | Anza Services LLP&quot;]" DisplayName="Send SMTP Mail Message" Email="bilalzafri@anzaservicesllp.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="@Sonumotihai786" Port="587" SecureConnection="Auto" Server="smtp.office365.com" Subject="Redemption BOT not able to Submit Virgin Webform" To="hk@avrillo.co.uk">
+                                    <ui:SendMail.Files>
+                                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+                                    </ui:SendMail.Files>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:SendMail>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:CommentOut>
+                          </Sequence>
                         </ActivityAction>
                       </Catch>
                     </TryCatch.Catches>

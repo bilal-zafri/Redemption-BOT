@@ -20,12 +20,12 @@
     <x:Property Name="FOS_City" Type="InArgument(x:String)" />
     <x:Property Name="Lender_Name" Type="InArgument(x:String)" />
     <x:Property Name="Working_Folder" Type="InArgument(x:String)" />
-    <x:Property Name="Screenshot_Counter" Type="InArgument(x:Int32)" />
+    <x:Property Name="Lender_Coloum" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2635,8930</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2635,8967</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Halifax_Web_Form_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -97,7 +97,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Halifax_Web_Form" sap:VirtualizedContainerService.HintSize="2645,8825" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Halifax_Web_Form" sap:VirtualizedContainerService.HintSize="2645,8822" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="Address_E1" />
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="Website_Check" />
@@ -111,21 +111,22 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InterruptibleDoWhile Condition="[Retry_Loop=True]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="2603,8733" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_6">
+    <ui:InterruptibleDoWhile Condition="[Retry_Loop=True]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="2603,8730" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_6">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="2567,8568" sap2010:WorkflowViewState.IdRef="Sequence_34">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="2567,8565" sap2010:WorkflowViewState.IdRef="Sequence_34">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="2525,8476" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://apply.lloydsbank.co.uk/personal/a/gforms?formId=F013&amp;prodType=MM">
+          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="2525,8473" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://apply.lloydsbank.co.uk/personal/a/gforms?formId=F013&amp;prodType=MM">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2491,8375" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2491,8372" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -162,7 +163,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InterruptibleDoWhile>
-                  <If Condition="[(Lender_Name.ToUpper.Contains(&quot;HALIFAX&quot;) or Lender_Name.ToUpper.Contains(&quot;SCOTLAND&quot;) or Lender_Name.ToUpper.Contains(&quot;LLOYD&quot;)) and FOS_Mtg_AC_No.Length&lt;14]" sap:VirtualizedContainerService.HintSize="2449,8130" sap2010:WorkflowViewState.IdRef="If_23">
+                  <If Condition="[(Lender_Name.ToUpper.Contains(&quot;HALIFAX&quot;) or Lender_Name.ToUpper.Contains(&quot;SCOTLAND&quot;) or Lender_Name.ToUpper.Contains(&quot;LLOYD&quot;)) and FOS_Mtg_AC_No.Length&lt;14]" sap:VirtualizedContainerService.HintSize="2449,8127" sap2010:WorkflowViewState.IdRef="If_23">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -194,7 +195,7 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="2204,7983" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                      <Sequence sap:VirtualizedContainerService.HintSize="2204,7980" sap2010:WorkflowViewState.IdRef="Sequence_31">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -402,7 +403,7 @@
                             </ui:InterruptibleDoWhile.Body>
                           </ui:InterruptibleDoWhile>
                         </Sequence>
-                        <Sequence sap:VirtualizedContainerService.HintSize="2162,5337" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <Sequence sap:VirtualizedContainerService.HintSize="2162,5334" sap2010:WorkflowViewState.IdRef="Sequence_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1519,24 +1520,16 @@
                               <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="2120,60" sap2010:WorkflowViewState.IdRef="Assign_14">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[Retry_Loop]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2120,376" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2120,473" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                             <TryCatch.Try>
-                              <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                              <Sequence sap:VirtualizedContainerService.HintSize="563,1131" sap2010:WorkflowViewState.IdRef="Sequence_37">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  eformtag:btnView...'" sap:VirtualizedContainerService.HintSize="623,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  eformtag:btnView...'" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
                                   <ui:Click.CursorPosition>
                                     <ui:CursorPosition Position="Center">
                                       <ui:CursorPosition.OffsetX>
@@ -1558,7 +1551,7 @@
                                     </ui:Target>
                                   </ui:Click.Target>
                                 </ui:Click>
-                                <ui:UiElementExists DisplayName="Element Exists 'INPUT  eformtag:btnSubm...'" Exists="[Website_Check_3]" sap:VirtualizedContainerService.HintSize="623,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                                <ui:UiElementExists DisplayName="Element Exists 'INPUT  eformtag:btnSubm...'" Exists="[Website_Check_3]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
                                   <ui:UiElementExists.Target>
                                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="40fac9fc-32a6-4e1f-a3f6-beac955f7b4a" InformativeScreenshot="ff5ee784b20e40b8673f4c9fc28bc6e8" Selector="&lt;webctrl tag='INPUT' type='image' /&gt;">
                                       <ui:Target.TimeoutMS>
@@ -1570,32 +1563,7 @@
                                     </ui:Target>
                                   </ui:UiElementExists.Target>
                                 </ui:UiElementExists>
-                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="623,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                                  <ui:CommentOut.Body>
-                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
-                                        <Assign.To>
-                                          <OutArgument x:TypeArguments="x:Boolean">[Retry_Loop]</OutArgument>
-                                        </Assign.To>
-                                        <Assign.Value>
-                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                        </Assign.Value>
-                                      </Assign>
-                                    </Sequence>
-                                  </ui:CommentOut.Body>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </ui:CommentOut>
-                                <If Condition="[Website_Check_3=True]" sap:VirtualizedContainerService.HintSize="623,917" sap2010:WorkflowViewState.IdRef="If_24">
+                                <If Condition="[Website_Check_3=True]" sap:VirtualizedContainerService.HintSize="521,747" sap2010:WorkflowViewState.IdRef="If_24">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1603,13 +1571,13 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="478,770" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="376,600" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  eformtag:btnSubm...'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  eformtag:btnSubm...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
                                         <ui:Click.CursorPosition>
                                           <ui:CursorPosition Position="Center">
                                             <ui:CursorPosition.OffsetX>
@@ -1631,8 +1599,8 @@
                                           </ui:Target>
                                         </ui:Click.Target>
                                       </ui:Click>
-                                      <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
-                                      <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot" sap:VirtualizedContainerService.HintSize="436,68" sap2010:WorkflowViewState.IdRef="TakeScreenshot_2" Screenshot="[Screenshot]">
+                                      <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                                      <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="TakeScreenshot_2" Screenshot="[Screenshot]">
                                         <ui:TakeScreenshot.Target>
                                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2c8f1219-4bb4-4c87-a94a-23623879c2f0">
                                             <ui:Target.TimeoutMS>
@@ -1644,33 +1612,22 @@
                                           </ui:Target>
                                         </ui:TakeScreenshot.Target>
                                       </ui:TakeScreenshot>
-                                      <ui:SaveImage DisplayName="Save Image" FileName="[Working_Folder+&quot;\Web-Form-Screenshot\&quot;+Screenshot_Counter.ToString+&quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="436,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Screenshot]" />
-                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,230" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                                        <ui:CommentOut.Body>
-                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="x:Boolean">[Retry_Loop]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                                              </Assign.Value>
-                                            </Assign>
-                                          </Sequence>
-                                        </ui:CommentOut.Body>
-                                      </ui:CommentOut>
+                                      <ui:SaveImage DisplayName="Save Image" FileName="[Working_Folder+&quot;\Web-Form-Screenshot\&quot;+Reference_Number.ToString+&quot;-L&quot;+Lender_Coloum.ToString+&quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Screenshot]" />
+                                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Boolean">[Retry_Loop]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
                                     </Sequence>
                                   </If.Then>
                                 </If>
                               </Sequence>
                             </TryCatch.Try>
                             <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,214" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,311" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1681,17 +1638,42 @@
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                   </ActivityAction.Argument>
-                                  <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear Team,&quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Initial Redemption Request BOT  was not able to submit Lloyds Web-Form for : &quot; +Reference_Number+&quot;  as the Development is pending &quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Redemption BOT | RPA Team | Anza Services LLP&quot;]" DisplayName="Send SMTP Mail Message" Email="bilalzafri@anzaservicesllp.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="@Sonumotihai786" Port="587" SecureConnection="Auto" Server="smtp.office365.com" Subject="Redemption BOT not able to Submit Lloyds Webform" To="hk@avrillo.co.uk">
-                                    <ui:SendMail.Files>
-                                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
-                                    </ui:SendMail.Files>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,242" sap2010:WorkflowViewState.IdRef="Sequence_39">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                  </ui:SendMail>
+                                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Error&quot;]" />
+                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                                      <ui:CommentOut.Body>
+                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,237" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear Team,&quot;+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Initial Redemption Request BOT  was not able to submit Lloyds Web-Form for : &quot; +Reference_Number+&quot;  as the Development is pending &quot;+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+&#xA;Environment.NewLine+&#xA;&quot;Redemption BOT | RPA Team | Anza Services LLP&quot;]" DisplayName="Send SMTP Mail Message" Email="bilalzafri@anzaservicesllp.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="@Sonumotihai786" Port="587" SecureConnection="Auto" Server="smtp.office365.com" Subject="Redemption BOT not able to Submit Lloyds Webform" To="hk@avrillo.co.uk">
+                                            <ui:SendMail.Files>
+                                              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+                                            </ui:SendMail.Files>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </ui:SendMail>
+                                        </Sequence>
+                                      </ui:CommentOut.Body>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:CommentOut>
+                                  </Sequence>
                                 </ActivityAction>
                               </Catch>
                             </TryCatch.Catches>

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Proclaim_Dowload_Drafting_WordFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Proclaim_Dowload_Drafting_WordFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="FOS_First_Name_1" Type="InArgument(x:String)" />
     <x:Property Name="FOS_First_Name_2" Type="InArgument(x:String)" />
@@ -12,10 +12,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,3574</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,4136</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Proclaim_Dowload_Drafting_WordFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="32">
+    <scg:List x:TypeArguments="x:String" Capacity="64">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -48,10 +48,15 @@
       <x:String>UiPath.Shared.ObjectLibrary</x:String>
       <x:String>UiPath.CV.Activities</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -84,9 +89,11 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Proclaim_Dowload_Drafting_WordFile" sap:VirtualizedContainerService.HintSize="641,3469" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Proclaim_Dowload_Drafting_WordFile" sap:VirtualizedContainerService.HintSize="641,4071" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="Letter_Popup" />
       <Variable x:TypeArguments="x:Boolean" Name="Letter_Popup_2" />
@@ -101,43 +108,371 @@
       <Variable x:TypeArguments="x:String" Name="Second_Name" />
       <Variable x:TypeArguments="x:String" Name="Output_Day" />
       <Variable x:TypeArguments="x:Boolean" Name="Scroll_Popup" />
+      <Variable x:TypeArguments="x:Boolean" Name="Scroll_Space" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click Image 'prowin32.exe AVR'" sap:VirtualizedContainerService.HintSize="599,154" sap2010:WorkflowViewState.IdRef="ClickImage_3" KeyModifiers="None" MouseButton="BTN_LEFT">
-      <ui:ClickImage.CursorPosition>
-        <ui:CursorPosition Position="Center">
-          <ui:CursorPosition.OffsetX>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetX>
-          <ui:CursorPosition.OffsetY>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetY>
-        </ui:CursorPosition>
-      </ui:ClickImage.CursorPosition>
-      <ui:ClickImage.Image>
-        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
-      </ui:ClickImage.Image>
-      <ui:ClickImage.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0ee6f8ba-a2f0-4642-9813-fe827191a771" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:ClickImage.Target>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="599,51" sap2010:WorkflowViewState.IdRef="TryCatch_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:ClickImage>
+      <TryCatch.Try>
+        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ApiKey="0/e6JQ/U3Yc4x1ipGLo9p3/dnijIULSu0ujxXSaW+xfmxwqpn/NM1p4nC4M1KyVliCY7XIN+pgd3NvqzTRD/rQ==" DesignTimeCacheId="e782e4a6-338e-46a9-947f-53695c5bfab8" DisplayName="CV Screen Scope 'XTPShortcutBar'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CVScope_1" Server="https://cv.uipath.com/" Version="V2">
+          <p:CVScope.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'History' (36,825,39,11)&quot;]" DesignTimeCacheId="e782e4a6-338e-46a9-947f-53695c5bfab8" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="ee1a29ad248e5c9708bcb2dfd1d8ef5c" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                  <p:CvClickWithDescriptor.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </p:CvClickWithDescriptor.CursorPosition>
+                  <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                    <uc:CvDescriptor>
+                      <uc:CvDescriptor.Target>
+                        <uc:CvElementDescriptor DesignTimeArea="36, 825, 39, 11" ElementType="Text" Text="History" />
+                      </uc:CvDescriptor.Target>
+                    </uc:CvDescriptor>
+                  </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                  <p:CvClickWithDescriptor.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="8163de41-3526-4dfc-9e6a-af34f350272d">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </p:CvClickWithDescriptor.Target>
+                </p:CvClickWithDescriptor>
+              </Sequence>
+            </ActivityAction>
+          </p:CVScope.Body>
+          <p:CVScope.DesignTimeCacheContainer>
+            <uc:CvCacheContainer>
+              <uc:CvCacheContainer.Caches>
+                <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                  <uc:CVCache DisplayName="Main Screen" Id="e782e4a6-338e-46a9-947f-53695c5bfab8" InformativeScreenshot="ee46d0024fd140163fd10f476822d657" LogicalPosition="0, 65" OcrText="Selections&#xD;&#xA;Favourites&#xD;&#xA;155283 Mrs S Chen Sale and&#xD;&#xA;157880 Mr P D S„affield&#xD;&#xA;General&#xD;&#xA;Calendar&#xD;&#xA;Task Ljgt&#xD;&#xA;Draft *nails n,&#xD;&#xA;a Name Search&#xD;&#xA;R. Queries&#xD;&#xA;Cases / Ljbraries&#xD;&#xA;Open Cases (1}&#xD;&#xA;Miss C sa&#xD;&#xA;Quick Actions&#xD;&#xA;CD Bill Number&#xD;&#xA;Today's Cases (4}&#xD;&#xA;190288 A M&#xD;&#xA;189084 Mr M L Mcconoc&#xD;&#xA;191893 Miss ED Roe sa&#xD;&#xA;192331 Miss C sa&#xD;&#xA;Historical Case Ljgt&#xD;&#xA;Mon 08/03/2021&#xD;&#xA;History&#xD;&#xA;Enquiry&#xD;&#xA;Tasks&#xD;&#xA;—Z Accounts" Position="0, 65" ScreenshotGuid="5871c56b-910b-4604-84d5-07ed3b08e247" ServerVersion="1">
+                    <uc:CVCache.CvUiElements>
+                      <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="128">
+                        <uc:CvElementInfo Category="Icon" Region="5, 946, 25, 24" />
+                        <uc:CvElementInfo Category="Icon" Region="5, 817, 26, 25" />
+                        <uc:CvElementInfo Category="Icon" Region="5, 880, 26, 27" />
+                        <uc:CvElementInfo Category="Icon" Region="23, 250, 19, 18" />
+                        <uc:CvElementInfo Category="Icon" Region="22, 362, 20, 18" />
+                        <uc:CvElementInfo Category="Icon" Region="5, 850, 25, 23" />
+                        <uc:CvElementInfo Category="Icon" Region="4, 117, 17, 17" />
+                        <uc:CvElementInfo Category="Icon" Region="5, 915, 26, 23" />
+                        <uc:CvElementInfo Category="Icon" Region="4, 101, 17, 18" />
+                        <uc:CvElementInfo Category="Icon" Region="3, 233, 19, 18" />
+                        <uc:CvElementInfo Category="Button" Region="7, 365, 11, 11" />
+                        <uc:CvElementInfo Category="Icon" Region="3, 148, 19, 17" />
+                        <uc:CvElementInfo Category="Icon" Region="3, 165, 18, 17" />
+                        <uc:CvElementInfo Category="Icon" Region="4, 266, 18, 17" />
+                        <uc:CvElementInfo Category="Icon" Region="3, 46, 19, 18" />
+                        <uc:CvElementInfo Category="Icon" Region="3, 202, 19, 18" />
+                        <uc:CvElementInfo Category="Icon" Region="21, 132, 19, 16" />
+                        <uc:CvElementInfo Category="Icon" Region="3, 62, 19, 18" />
+                        <uc:CvElementInfo Category="Icon" Region="4, 346, 17, 16" />
+                        <uc:CvElementInfo Category="Icon" Region="21, 282, 20, 18" />
+                        <uc:CvElementInfo Category="Icon" Region="22, 298, 20, 18" />
+                        <uc:CvElementInfo Category="Icon" Region="22, 314, 19, 18" />
+                        <uc:CvElementInfo Category="Icon" Region="21, 217, 20, 18" />
+                        <uc:CvElementInfo Category="Icon" Region="22, 330, 19, 17" />
+                        <uc:CvElementInfo Category="Button" Region="0, 24, 165, 20" />
+                        <uc:CvElementInfo Category="Cell" Region="0, 23, 162, 19" />
+                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="0, 813, 164, 34" />
+                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="0, 79, 164, 21" />
+                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="128, 362, 19, 18" />
+                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="0, 0, 165, 25" />
+                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="3, 63, 19, 17" />
+                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="4, 47, 18, 16" />
+                        <uc:CvElementInfo Category="RadioButton" Confidence="Runtime" Region="22, 282, 21, 17" />
+                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="6, 802, 145, 13" />
+                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="4, 251, 17, 19" />
+                        <uc:CvElementInfo Category="RadioButton" Confidence="Runtime" Region="22, 218, 19, 17" />
+                        <uc:CvElementInfo Category="RadioButton" Confidence="Runtime" Region="22, 298, 19, 17" />
+                        <uc:CvElementInfo Category="RadioButton" Confidence="Runtime" Region="4, 47, 18, 17" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="2, 0, 163, 23" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="20, 297, 138, 16" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="33, 361, 131, 18" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 40, 3, 39" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1, 61, 159, 17" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="162, 809, 3, 35" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="162, 876, 3, 32" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="150, 355, 14, 23" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 766, 162, 39" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="127, 345, 37, 15" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="8, 281, 157, 16" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="15, 313, 24, 16" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1, 42, 159, 19" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 78, 3, 19" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="22, 329, 129, 16" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="130, 360, 32, 21" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="12, 345, 153, 16" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="3, 947, 161, 26" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 115, 162, 17" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 811, 163, 33" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="161, 971, 4, 3" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="162, 843, 3, 36" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="162, 22, 3, 19" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 41, 5, 19" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="16, 312, 148, 16" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="16, 329, 23, 16" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="162, 907, 3, 31" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="164, 299, 1, 15" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="163, 878, 1, 29" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="149, 344, 15, 17" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="162, 116, 3, 16" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="159, 967, 6, 7" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="161, 128, 4, 31" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="161, 954, 4, 20" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="16, 297, 22, 16" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 159, 2, 20" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="161, 164, 4, 16" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="161, 842, 4, 19" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="3, 972, 156, 2" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="164, 972, 0, 2" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="160, 155, 5, 18" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="161, 119, 4, 27" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="152, 327, 12, 44" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="161, 973, 4, 1" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="162, 150, 3, 28" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="164, 330, 1, 17" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="6, 249, 159, 15" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="162, 124, 3, 16" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="162, 140, 3, 21" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="162, 75, 3, 22" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="137, 944, 27, 29" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="162, 773, 3, 79" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="160, 146, 5, 19" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="164, 844, 0, 34" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="160, 908, 5, 36" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="164, 907, 0, 32" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="160, 99, 5, 81" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="163, 284, 2, 15" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 972, 59, 2" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="161, 105, 4, 28" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="159, 945, 6, 28" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="5, 919, 157, 25" />
+                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 131, 163, 17" />
+                      </scg:List>
+                    </uc:CVCache.CvUiElements>
+                    <uc:CVCache.OcrTexts>
+                      <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="128">
+                        <uc:OcrTextInfo Region="5, 6, 82, 13" Text="Selections" />
+                        <uc:OcrTextInfo Region="9, 30, 47, 9" Text="Favourites" />
+                        <uc:OcrTextInfo Region="27, 50, 35, 9" Text="155283" />
+                        <uc:OcrTextInfo Region="66, 50, 15, 9" Text="Mrs" />
+                        <uc:OcrTextInfo Region="85, 50, 6, 9" Text="S" />
+                        <uc:OcrTextInfo Region="95, 50, 24, 9" Text="Chen" />
+                        <uc:OcrTextInfo Region="123, 50, 20, 9" Text="Sale" />
+                        <uc:OcrTextInfo Region="147, 50, 17, 9" Text="and" />
+                        <uc:OcrTextInfo Region="27, 66, 35, 9" Text="157880" />
+                        <uc:OcrTextInfo Region="66, 66, 11, 9" Text="Mr" />
+                        <uc:OcrTextInfo Region="81, 66, 5, 9" Text="P" />
+                        <uc:OcrTextInfo Region="91, 66, 6, 9" Text="D" />
+                        <uc:OcrTextInfo Region="101, 66, 42, 9" Text="S„affield" />
+                        <uc:OcrTextInfo Region="8, 85, 36, 9" Text="General" />
+                        <uc:OcrTextInfo Region="26, 104, 42, 9" Text="Calendar" />
+                        <uc:OcrTextInfo Region="26, 120, 23, 9" Text="Task" />
+                        <uc:OcrTextInfo Region="54, 120, 14, 9" Text="Ljgt" />
+                        <uc:OcrTextInfo Region="46, 136, 21, 9" Text="Draft" />
+                        <uc:OcrTextInfo Region="72, 136, 28, 9" Text="*nails" />
+                        <uc:OcrTextInfo Region="105, 136, 10, 11" Text="n," />
+                        <uc:OcrTextInfo Region="5, 157, 8, 6" Text="a" />
+                        <uc:OcrTextInfo Region="27, 152, 26, 9" Text="Name" />
+                        <uc:OcrTextInfo Region="57, 152, 33, 9" Text="Search" />
+                        <uc:OcrTextInfo Region="6, 167, 14, 12" Text="R." />
+                        <uc:OcrTextInfo Region="26, 168, 35, 9" Text="Queries" />
+                        <uc:OcrTextInfo Region="8, 187, 28, 9" Text="Cases" />
+                        <uc:OcrTextInfo Region="40, 187, 5, 9" Text="/" />
+                        <uc:OcrTextInfo Region="49, 187, 37, 9" Text="Ljbraries" />
+                        <uc:OcrTextInfo Region="26, 206, 25, 11" Text="Open" />
+                        <uc:OcrTextInfo Region="55, 206, 28, 9" Text="Cases" />
+                        <uc:OcrTextInfo Region="90, 206, 12, 11" Text="(1}" />
+                        <uc:OcrTextInfo Region="85, 222, 19, 9" Text="Miss" />
+                        <uc:OcrTextInfo Region="108, 222, 6, 9" Text="C" />
+                        <uc:OcrTextInfo Region="153, 222, 11, 9" Text="sa" />
+                        <uc:OcrTextInfo Region="26, 238, 27, 9" Text="Quick" />
+                        <uc:OcrTextInfo Region="57, 238, 34, 9" Text="Actions" />
+                        <uc:OcrTextInfo Region="25, 252, 14, 14" Text="CD" />
+                        <uc:OcrTextInfo Region="71, 254, 11, 9" Text="Bill" />
+                        <uc:OcrTextInfo Region="87, 254, 36, 9" Text="Number" />
+                        <uc:OcrTextInfo Region="26, 270, 36, 11" Text="Today's" />
+                        <uc:OcrTextInfo Region="66, 270, 28, 9" Text="Cases" />
+                        <uc:OcrTextInfo Region="101, 270, 12, 11" Text="(4}" />
+                        <uc:OcrTextInfo Region="46, 286, 35, 9" Text="190288" />
+                        <uc:OcrTextInfo Region="104, 286, 7, 9" Text="A" />
+                        <uc:OcrTextInfo Region="115, 286, 7, 9" Text="M" />
+                        <uc:OcrTextInfo Region="46, 302, 35, 9" Text="189084" />
+                        <uc:OcrTextInfo Region="85, 302, 11, 9" Text="Mr" />
+                        <uc:OcrTextInfo Region="100, 302, 7, 9" Text="M" />
+                        <uc:OcrTextInfo Region="112, 302, 5, 9" Text="L" />
+                        <uc:OcrTextInfo Region="121, 302, 43, 9" Text="Mcconoc" />
+                        <uc:OcrTextInfo Region="46, 318, 35, 9" Text="191893" />
+                        <uc:OcrTextInfo Region="85, 318, 19, 9" Text="Miss" />
+                        <uc:OcrTextInfo Region="109, 318, 16, 9" Text="ED" />
+                        <uc:OcrTextInfo Region="130, 318, 18, 9" Text="Roe" />
+                        <uc:OcrTextInfo Region="152, 318, 12, 9" Text="sa" />
+                        <uc:OcrTextInfo Region="46, 334, 33, 9" Text="192331" />
+                        <uc:OcrTextInfo Region="85, 334, 19, 9" Text="Miss" />
+                        <uc:OcrTextInfo Region="108, 334, 6, 9" Text="C" />
+                        <uc:OcrTextInfo Region="152, 334, 12, 9" Text="sa" />
+                        <uc:OcrTextInfo Region="27, 350, 41, 9" Text="Historical" />
+                        <uc:OcrTextInfo Region="72, 350, 23, 9" Text="Case" />
+                        <uc:OcrTextInfo Region="100, 350, 14, 9" Text="Ljgt" />
+                        <uc:OcrTextInfo Region="46, 366, 19, 9" Text="Mon" />
+                        <uc:OcrTextInfo Region="69, 366, 56, 9" Text="08/03/2021" />
+                        <uc:OcrTextInfo Region="36, 825, 39, 11" Text="History" />
+                        <uc:OcrTextInfo Region="36, 857, 41, 11" Text="Enquiry" />
+                        <uc:OcrTextInfo Region="35, 889, 33, 9" Text="Tasks" />
+                        <uc:OcrTextInfo Region="9, 949, 20, 14" Text="—Z" />
+                        <uc:OcrTextInfo Region="35, 953, 53, 9" Text="Accounts" />
+                      </scg:List>
+                    </uc:CVCache.OcrTexts>
+                  </uc:CVCache>
+                </scg:List>
+              </uc:CvCacheContainer.Caches>
+            </uc:CvCacheContainer>
+          </p:CVScope.DesignTimeCacheContainer>
+          <p:CVScope.OCREngine>
+            <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+              <ActivityFunc.Argument>
+                <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+              </ActivityFunc.Argument>
+              <ui:MicrosoftOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_6" Image="[Image]" Language="en" Profile="Screen" Scale="1" />
+            </ActivityFunc>
+          </p:CVScope.OCREngine>
+          <p:CVScope.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="524d0e7c-b750-4b53-ba16-7483ecd9da9f" InformativeScreenshot="95b8b6a3bfb942024b9186c712fc041d" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Sushma Javare' idx='*' /&gt;&lt;wnd cls='XTPShortcutBar' /&gt;" WaitForReady="INTERACTIVE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </p:CVScope.Target>
+          <p:CVScope.UseLocalServer>
+            <InArgument x:TypeArguments="x:Boolean" />
+          </p:CVScope.UseLocalServer>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:CVScope>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="444,450" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,381" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+              <TryCatch.Try>
+                <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click Image 'prowin32.exe AVR'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:ClickImage.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:ClickImage.CursorPosition>
+                  <ui:ClickImage.Image>
+                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+                  </ui:ClickImage.Image>
+                  <ui:ClickImage.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0ee6f8ba-a2f0-4642-9813-fe827191a771" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:ClickImage.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ClickImage>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click Image 'prowin32.exe AVR'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:ClickImage.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:ClickImage.CursorPosition>
+                      <ui:ClickImage.Image>
+                        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+                      </ui:ClickImage.Image>
+                      <ui:ClickImage.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0ee6f8ba-a2f0-4642-9813-fe827191a771" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Sushma Javare' idx='*' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:ClickImage.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ClickImage>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
     <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'column header'" sap:VirtualizedContainerService.HintSize="599,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
@@ -150,7 +485,7 @@
         </ui:CursorPosition>
       </ui:Click.CursorPosition>
       <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6903e252-5275-45e2-8163-6b550daf27d6" InformativeScreenshot="8071c6c9cb158c2bbbe0476918ec5541" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Horizontal' cls='XTPReport' idx='1' /&gt;&lt;ctrl name='Report' role='table' /&gt;&lt;ctrl name='Report Header' role='column header' /&gt;&lt;ctrl name='Posted Date' role='column header' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6903e252-5275-45e2-8163-6b550daf27d6" InformativeScreenshot="8071c6c9cb158c2bbbe0476918ec5541" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Horizontal' cls='XTPReport' idx='1' /&gt;&lt;ctrl name='Report' role='table' /&gt;&lt;ctrl name='Report Header' role='column header' /&gt;&lt;ctrl name='Posted Date' role='column header' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -172,7 +507,7 @@
         </ui:CursorPosition>
       </ui:Click.CursorPosition>
       <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6903e252-5275-45e2-8163-6b550daf27d6" InformativeScreenshot="8071c6c9cb158c2bbbe0476918ec5541" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Horizontal' cls='XTPReport' idx='1' /&gt;&lt;ctrl name='Report' role='table' /&gt;&lt;ctrl name='Report Header' role='column header' /&gt;&lt;ctrl name='Posted Date' role='column header' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6903e252-5275-45e2-8163-6b550daf27d6" InformativeScreenshot="8071c6c9cb158c2bbbe0476918ec5541" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Horizontal' cls='XTPReport' idx='1' /&gt;&lt;ctrl name='Report' role='table' /&gt;&lt;ctrl name='Report Header' role='column header' /&gt;&lt;ctrl name='Posted Date' role='column header' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -182,6 +517,60 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="599,626" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(0,5)]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,492" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:UiElementExists DisplayName="Element Exists 'push button  Page up'" Exists="[Scroll_Space]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_11">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="87edf334-b619-4f28-b9c5-0d4716c36047" InformativeScreenshot="64af1ef54c2b1f64963ea441e83f95bd" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Horizontal' cls='XTPReport' idx='1' /&gt;&lt;ctrl automationid='NonClientVerticalScrollBar' /&gt;&lt;ctrl automationid='UpPageButton' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[Scroll_Space=True]" sap:VirtualizedContainerService.HintSize="484,254" sap2010:WorkflowViewState.IdRef="If_8">
+              <If.Then>
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Line up'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_20" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0703aeb6-c412-4eb1-b53e-ab17dbe2e428" InformativeScreenshot="64af1ef54c2b1f64963ea441e83f95bd" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Horizontal' cls='XTPReport' idx='1' /&gt;&lt;ctrl automationid='NonClientVerticalScrollBar' /&gt;&lt;ctrl automationid='UpPageButton' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:Click.Target>
+                </ui:Click>
+              </If.Then>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
     <Assign sap:VirtualizedContainerService.HintSize="599,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[Search_Counter]</OutArgument>
@@ -190,19 +579,19 @@
         <InArgument x:TypeArguments="x:Int32">1</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="599,901" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="599,1141" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,736" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,976" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="521,51" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="521,291" sap2010:WorkflowViewState.IdRef="TryCatch_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -243,10 +632,10 @@
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -453,36 +842,91 @@
         <InArgument x:TypeArguments="x:String" x:Key="Input_Day">[DateTime.DaysInMonth(Now.Year,Now.Month).ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[&quot;C:\Users\alk\Proclaim\_docs\DMSDOCS\&quot;+Word_Name+&quot;.DOC&quot;]" sap:VirtualizedContainerService.HintSize="599,252" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
-      <p:WordApplicationScope.Body>
-        <ActivityAction x:TypeArguments="ui:WordDocument">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[&quot;Completion has now been set for &quot;+Output_Day+&quot; &quot;+Now.ToString(&quot;MMMM&quot;)+&quot; &quot;+Now.ToString(&quot;yyyy&quot;)+&quot;.&quot;+Environment.NewLine()+&#xA;&quot;Kindly, send the redemption statement by fax or email to:-&quot;+Environment.NewLine()+&#xA;Environment.NewLine()+&#xA;&quot;Fax:02083621705&quot;+Environment.NewLine()+&#xA;&quot;Email: ms@avrillo.co.uk ( CC To na@avrillo.co.uk )&quot;]" ReplaceAll="True" Search="[&quot;Completion has now been set for &quot;+Output_Day+&quot; &quot;+Now.ToString(&quot;MMMM&quot;)+&quot; &quot;+Now.ToString(&quot;yyyy&quot;)+&quot;.&quot;]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </p:WordReplaceText>
-          </Sequence>
-        </ActivityAction>
-      </p:WordApplicationScope.Body>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="599,51" sap2010:WorkflowViewState.IdRef="TryCatch_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </p:WordApplicationScope>
+      <TryCatch.Try>
+        <p1:WordApplicationScope DisplayName="Word Application Scope" FilePath="[&quot;C:\Users\alk\Proclaim\_docs\DMSDOCS\&quot;+Word_Name+&quot;.DOC&quot;]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+          <p1:WordApplicationScope.Body>
+            <ActivityAction x:TypeArguments="ui:WordDocument">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,143" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <p1:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[&quot;Completion has now been set for &quot;+Output_Day+&quot; &quot;+Now.ToString(&quot;MMMM&quot;)+&quot; &quot;+Now.ToString(&quot;yyyy&quot;)+&quot;.&quot;+Environment.NewLine()+&#xA;&quot;Kindly, send the redemption statement by fax or email to:-&quot;+Environment.NewLine()+&#xA;Environment.NewLine()+&#xA;&quot;Fax:02083621705&quot;+Environment.NewLine()+&#xA;&quot;Email: ms@avrillo.co.uk ( CC To na@avrillo.co.uk )&quot;]" ReplaceAll="True" Search="[&quot;Completion has now been set for &quot;+Output_Day+&quot; &quot;+Now.ToString(&quot;MMMM&quot;)+&quot; &quot;+Now.ToString(&quot;yyyy&quot;)+&quot;.&quot;]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </p1:WordReplaceText>
+              </Sequence>
+            </ActivityAction>
+          </p1:WordApplicationScope.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p1:WordApplicationScope>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="516,432" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <p1:WordApplicationScope DisplayName="Word Application Scope" FilePath="[&quot;C:\Users\sj\Proclaim\_docs\DMSDOCS\&quot;+Word_Name+&quot;.DOC&quot;]" sap:VirtualizedContainerService.HintSize="510,363" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
+              <p1:WordApplicationScope.Body>
+                <ActivityAction x:TypeArguments="ui:WordDocument">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,254" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <p1:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Replace="[&quot;Completion has now been set for &quot;+Output_Day+&quot; &quot;+Now.ToString(&quot;MMMM&quot;)+&quot; &quot;+Now.ToString(&quot;yyyy&quot;)+&quot;.&quot;+Environment.NewLine()+&#xA;&quot;Kindly, send the redemption statement by fax or email to:-&quot;+Environment.NewLine()+&#xA;Environment.NewLine()+&#xA;&quot;Fax:02083621705&quot;+Environment.NewLine()+&#xA;&quot;Email: ms@avrillo.co.uk ( CC To na@avrillo.co.uk )&quot;]" ReplaceAll="True" Search="[&quot;Completion has now been set for &quot;+Output_Day+&quot; &quot;+Now.ToString(&quot;MMMM&quot;)+&quot; &quot;+Now.ToString(&quot;yyyy&quot;)+&quot;.&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p1:WordReplaceText>
+                  </Sequence>
+                </ActivityAction>
+              </p1:WordApplicationScope.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p1:WordApplicationScope>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
     <ui:CloseApplication DisplayName="Close Application 'Title Bar'" sap:VirtualizedContainerService.HintSize="599,106" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
       <ui:CloseApplication.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="85515dfe-c493-4c02-95d6-4a2ba854d67b" InformativeScreenshot="9fb7bfdaff909876deb0507195cf7f7b" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='*Word' /&gt;&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOfficeCaption' name='‪*' /&gt;">

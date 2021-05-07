@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Extracted_Data_Proclaim_FileOpening_S_" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Extracted_Data_Proclaim_FileOpening_S_" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="FOS_Address" Type="OutArgument(x:String)" />
     <x:Property Name="FOS_PCode" Type="OutArgument(x:String)" />
@@ -18,10 +18,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1490,3517</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,3840</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Extracted_Data_Proclaim_FileOpening_S__1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="58">
+    <scg:List x:TypeArguments="x:String" Capacity="38">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -59,10 +59,11 @@
       <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
       <x:String>UiPath.Word.Activities</x:String>
       <x:String>UiPath.Word</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -106,7 +107,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Extracted_Data_Proclaim_FileOpening_S_" sap:VirtualizedContainerService.HintSize="552,3412" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extracted_Data_Proclaim_FileOpening_S_" sap:VirtualizedContainerService.HintSize="418,3775" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="S_N" />
       <Variable x:TypeArguments="x:String" Name="R" />
@@ -122,209 +123,399 @@
       <Variable x:TypeArguments="x:String" Name="C" />
       <Variable x:TypeArguments="x:String" Name="Pc" />
       <Variable x:TypeArguments="x:String" Name="Ma" />
+      <Variable x:TypeArguments="x:String" Name="Screen_Status" />
+      <Variable x:TypeArguments="x:Boolean" Name="Conti" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_21">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b0556f0d40adf654696d32ad7e99f42c" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='142' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[S_N]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_22">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="f9e3edc948952f01e4cd3c9c63248dc1" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='105' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[DB1]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_23">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="5ce176181aa4ade8267c7a1b1f774bb7" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='123' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[T1]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_24">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="bad53c090d698c41ccfcc34e5f5d4a29" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='121' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[F1]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_25">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b459c0ec4bf5081c5c36764bd071462a" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='119' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[L1]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_26">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="036967a23b15f6aafb18b1f955b4ef18" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='92' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[DB2]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_27">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="f44f58ef911a40bf80693624099acdf1" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='103' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[T2]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_28">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="6754da2f993c99e11e04b64fcf2c1cf5" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='101' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[F2]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_29">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="0e0344ff3d2573bcd3486f91758e0e76" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='99' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[L2]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text 32'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_30">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="8f0f9955723c2f4f1b4f1e09a2fe4efa" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='4' /&gt;&lt;ctrl name='*' role='text' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[Ad]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'ComboBox'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_31">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="7d5a17904c0c5551b6cd01c6fa518aa8" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='ComboBox' idx='1' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[C]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_32">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b4b89e2a88396a578c5895795a58f88d" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='88' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[Pc]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="GetValue_33">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="c5aed594660ee787a9838749beb16e96" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='80' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[Ma]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+    <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+      <ui:InterruptibleDoWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Text 'ProButton'" sap:VirtualizedContainerService.HintSize="641,168" sap2010:WorkflowViewState.IdRef="GetOCRText_1">
+            <ui:GetOCRText.OCREngine>
+              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                <ActivityFunc.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                </ActivityFunc.Argument>
+                <p:UiPathScreenOCR Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" ApiKey="oyOqueMBDO9MI/+bpqv5hJpj37+HcULqfshLjaub3alXFejW75jRoooNGpXiZCODXJ4Gs9+n4iY3qc1Rx+wuZQ==" ComputeSkewAngle="False" DisplayName="UiPath Screen OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="auto" Profile="Screen" Scale="1" />
+              </ActivityFunc>
+            </ui:GetOCRText.OCREngine>
+            <ui:GetOCRText.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a19ef201-cfbe-40cf-a0a4-667c134a5173" InformativeScreenshot="460283e4ae9a8d22e57e8ca0e15ca555" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='ProButton' idx='3' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetOCRText.Target>
+            <ui:GetOCRText.Text>
+              <OutArgument x:TypeArguments="x:String">[Screen_Status]</OutArgument>
+            </ui:GetOCRText.Text>
+          </ui:GetOCRText>
+          <Assign sap:VirtualizedContainerService.HintSize="641,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[Conti]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </Assign.Value>
+          </Assign>
+          <If Condition="[Screen_Status.ToUpper.Contains(&quot;SA&quot;)]" sap:VirtualizedContainerService.HintSize="641,254" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ProButton'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d1b99145-781c-4e7c-b018-e47f8c11a6fe" InformativeScreenshot="f002f993714ddf2f0846beb4c9df5287" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='ProButton' idx='3' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+            </If.Then>
+            <If.Else>
+              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[Conti]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
+            </If.Else>
+          </If>
+          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="641,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+            <TextExpression.Namespaces>
+              <sco:Collection x:TypeArguments="x:String">
+                <x:String>System.Activities</x:String>
+                <x:String>System.Activities.Statements</x:String>
+                <x:String>System.Activities.Expressions</x:String>
+                <x:String>System.Activities.Validation</x:String>
+                <x:String>System.Activities.XamlIntegration</x:String>
+                <x:String>Microsoft.VisualBasic.Activities</x:String>
+                <x:String>System</x:String>
+                <x:String>System.Collections.Generic</x:String>
+                <x:String>System.Data</x:String>
+                <x:String>System.Diagnostics</x:String>
+                <x:String>System.IO</x:String>
+                <x:String>System.Linq</x:String>
+                <x:String>System.Management.Automation</x:String>
+                <x:String>System.Net.Mail</x:String>
+                <x:String>System.Xml</x:String>
+                <x:String>System.Xml.Linq</x:String>
+                <x:String>UiPath.Library</x:String>
+                <x:String>System.Windows.Markup</x:String>
+              </sco:Collection>
+            </TextExpression.Namespaces>
+            <TextExpression.References>
+              <sco:Collection x:TypeArguments="AssemblyReference">
+                <AssemblyReference>System.Activities</AssemblyReference>
+                <AssemblyReference>mscorlib</AssemblyReference>
+                <AssemblyReference>System.Data</AssemblyReference>
+                <AssemblyReference>System</AssemblyReference>
+                <AssemblyReference>System.Core</AssemblyReference>
+                <AssemblyReference>System.Management.Automation</AssemblyReference>
+                <AssemblyReference>System.Xml</AssemblyReference>
+                <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                <AssemblyReference>UiPath.Library</AssemblyReference>
+                <AssemblyReference>PresentationFramework</AssemblyReference>
+                <AssemblyReference>WindowsBase</AssemblyReference>
+                <AssemblyReference>PresentationCore</AssemblyReference>
+                <AssemblyReference>System.Xaml</AssemblyReference>
+              </sco:Collection>
+            </TextExpression.References>
+            <sap2010:WorkflowViewState.ViewStateManager>
+              <sap2010:ViewStateManager>
+                <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+              </sap2010:ViewStateManager>
+            </sap2010:WorkflowViewState.ViewStateManager>
+          </Delay>
+          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="641,22" sap2010:WorkflowViewState.IdRef="Delay_2">
+            <TextExpression.Namespaces>
+              <sco:Collection x:TypeArguments="x:String">
+                <x:String>System.Activities</x:String>
+                <x:String>System.Activities.Statements</x:String>
+                <x:String>System.Activities.Expressions</x:String>
+                <x:String>System.Activities.Validation</x:String>
+                <x:String>System.Activities.XamlIntegration</x:String>
+                <x:String>Microsoft.VisualBasic.Activities</x:String>
+                <x:String>System</x:String>
+                <x:String>System.Collections.Generic</x:String>
+                <x:String>System.Data</x:String>
+                <x:String>System.Diagnostics</x:String>
+                <x:String>System.IO</x:String>
+                <x:String>System.Linq</x:String>
+                <x:String>System.Management.Automation</x:String>
+                <x:String>System.Net.Mail</x:String>
+                <x:String>System.Xml</x:String>
+                <x:String>System.Xml.Linq</x:String>
+                <x:String>UiPath.Library</x:String>
+                <x:String>System.Windows.Markup</x:String>
+              </sco:Collection>
+            </TextExpression.Namespaces>
+            <TextExpression.References>
+              <sco:Collection x:TypeArguments="AssemblyReference">
+                <AssemblyReference>System.Activities</AssemblyReference>
+                <AssemblyReference>mscorlib</AssemblyReference>
+                <AssemblyReference>System.Data</AssemblyReference>
+                <AssemblyReference>System</AssemblyReference>
+                <AssemblyReference>System.Core</AssemblyReference>
+                <AssemblyReference>System.Management.Automation</AssemblyReference>
+                <AssemblyReference>System.Xml</AssemblyReference>
+                <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                <AssemblyReference>UiPath.Library</AssemblyReference>
+                <AssemblyReference>PresentationFramework</AssemblyReference>
+                <AssemblyReference>WindowsBase</AssemblyReference>
+                <AssemblyReference>PresentationCore</AssemblyReference>
+                <AssemblyReference>System.Xaml</AssemblyReference>
+              </sco:Collection>
+            </TextExpression.References>
+            <sap2010:WorkflowViewState.ViewStateManager>
+              <sap2010:ViewStateManager>
+                <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+              </sap2010:ViewStateManager>
+            </sap2010:WorkflowViewState.ViewStateManager>
+          </Delay>
+        </Sequence>
+      </ui:InterruptibleDoWhile.Body>
+      <ui:InterruptibleDoWhile.Condition>
+        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Conti=False" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+      </ui:InterruptibleDoWhile.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InterruptibleDoWhile>
+    <Sequence DisplayName="Extraction Field" sap:VirtualizedContainerService.HintSize="376,1950" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_21">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b0556f0d40adf654696d32ad7e99f42c" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='142' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[S_N]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_22">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="f9e3edc948952f01e4cd3c9c63248dc1" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='105' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[DB1]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_23">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="5ce176181aa4ade8267c7a1b1f774bb7" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='123' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[T1]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_24">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="bad53c090d698c41ccfcc34e5f5d4a29" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='121' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[F1]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_25">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b459c0ec4bf5081c5c36764bd071462a" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='119' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[L1]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_26">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="036967a23b15f6aafb18b1f955b4ef18" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='92' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[DB2]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_27">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="f44f58ef911a40bf80693624099acdf1" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='103' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[T2]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_28">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="6754da2f993c99e11e04b64fcf2c1cf5" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='101' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[F2]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_29">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="0e0344ff3d2573bcd3486f91758e0e76" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='99' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[L2]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text 32'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_30">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="8f0f9955723c2f4f1b4f1e09a2fe4efa" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Horizontal' cls='ProFrame' /&gt;&lt;wnd cls='Edit' idx='90' /&gt;&lt;ctrl role='editable text' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[Ad]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'ComboBox'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_31">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="7d5a17904c0c5551b6cd01c6fa518aa8" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='ComboBox' idx='1' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[C]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_32">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="b4b89e2a88396a578c5895795a58f88d" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='88' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[Pc]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_33">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3fbb16f9-dd07-49ee-a357-c248d807721b" InformativeScreenshot="c5aed594660ee787a9838749beb16e96" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd aaname='Case Details' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd aaname='Case Data' cls='XTPDockingPaneTabbedContainer' /&gt;&lt;wnd cls='Edit' idx='80' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[Ma]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+    </Sequence>
+    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_22">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_Address]</OutArgument>
       </Assign.To>
@@ -332,7 +523,7 @@
         <InArgument x:TypeArguments="x:String">[Ad.Replace(vbCrLf," ")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_City]</OutArgument>
       </Assign.To>
@@ -340,7 +531,7 @@
         <InArgument x:TypeArguments="x:String">[C]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_DOB_1]</OutArgument>
       </Assign.To>
@@ -348,7 +539,7 @@
         <InArgument x:TypeArguments="x:String">[DB1]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_DOB_2]</OutArgument>
       </Assign.To>
@@ -356,7 +547,7 @@
         <InArgument x:TypeArguments="x:String">[DB2]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_First_Name_1]</OutArgument>
       </Assign.To>
@@ -364,7 +555,7 @@
         <InArgument x:TypeArguments="x:String">[F1]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_First_Name_2]</OutArgument>
       </Assign.To>
@@ -372,7 +563,7 @@
         <InArgument x:TypeArguments="x:String">[F2]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_10">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_Last_Name_1]</OutArgument>
       </Assign.To>
@@ -380,7 +571,7 @@
         <InArgument x:TypeArguments="x:String">[L1]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_11">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_Last_Name_2]</OutArgument>
       </Assign.To>
@@ -388,7 +579,7 @@
         <InArgument x:TypeArguments="x:String">[L2]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_12">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_Mtg_AC_No]</OutArgument>
       </Assign.To>
@@ -396,7 +587,7 @@
         <InArgument x:TypeArguments="x:String">[Ma]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_13">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_Name_Title_1]</OutArgument>
       </Assign.To>
@@ -404,7 +595,7 @@
         <InArgument x:TypeArguments="x:String">[T1]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_14">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_Name_Title_2]</OutArgument>
       </Assign.To>
@@ -412,7 +603,7 @@
         <InArgument x:TypeArguments="x:String">[T2]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_PCode]</OutArgument>
       </Assign.To>
@@ -420,7 +611,7 @@
         <InArgument x:TypeArguments="x:String">[Pc]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_16">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_Reference_Number]</OutArgument>
       </Assign.To>
@@ -428,7 +619,7 @@
         <InArgument x:TypeArguments="x:String">[R]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_19">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FOS_Solicitor_Name]</OutArgument>
       </Assign.To>

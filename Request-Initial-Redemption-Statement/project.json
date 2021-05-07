@@ -4,6 +4,7 @@
   "main": "Redemption_WorkFlow.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.3]",
+    "UiPath.Form.Activities": "[1.1.11]",
     "UiPath.Mail.Activities": "[1.9.3]",
     "UiPath.System.Activities": "[20.10.1]",
     "UiPath.UIAutomation.Activities": "[20.10.6]",

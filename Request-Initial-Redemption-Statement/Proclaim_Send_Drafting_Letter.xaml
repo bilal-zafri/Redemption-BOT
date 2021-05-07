@@ -3,11 +3,12 @@
     <x:Property Name="Reference_Number" Type="InArgument(x:String)" />
     <x:Property Name="MS1R_Exception_Exit" Type="InArgument(x:Boolean)" />
     <x:Property Name="MS1R_Exception" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="Lender_Coloum" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1497,3719</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1602,2606</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Proclaim_Send_Drafting_Letter_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -71,7 +72,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Proclaim_Send_Drafting_Letter" sap:VirtualizedContainerService.HintSize="1052,3614" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Proclaim_Send_Drafting_Letter" sap:VirtualizedContainerService.HintSize="684,2501" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="Letter_Popup" />
       <Variable x:TypeArguments="x:Boolean" Name="Accept_Error_Check" />
@@ -84,7 +85,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="1010,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="642,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[MS1R_Exception_Exit]</OutArgument>
       </Assign.To>
@@ -92,18 +93,18 @@
         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1010,3422" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="642,2309" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="974,3257" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="606,2144" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="932,51" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+          <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="564,600" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
             <ui:InterruptibleDoWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,538" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,435" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -121,7 +122,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="af120ef5-33c4-4cac-9a01-787a02917bc2" InformativeScreenshot="6039a9aecf61f683146a3b9ac73a3a16" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' idx='*' /&gt;&lt;wnd cls='AfxOleControl42' title='Screen Split Sale - Pre-exchange / Exchange / Invoices*' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="af120ef5-33c4-4cac-9a01-787a02917bc2" InformativeScreenshot="7d05086aeb13d63743feb5377c76b4e4" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR*' /&gt;&lt;wnd cls='Edit' idx='156' /&gt;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -131,37 +132,90 @@
                     </ui:Target>
                   </ui:Click.Target>
                 </ui:Click>
-                <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Click Image 'prowin32.exe AVR'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-                  <ui:ClickImage.CursorPosition>
-                    <ui:CursorPosition Position="Center">
-                      <ui:CursorPosition.OffsetX>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:CursorPosition.OffsetX>
-                      <ui:CursorPosition.OffsetY>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:CursorPosition.OffsetY>
-                    </ui:CursorPosition>
-                  </ui:ClickImage.CursorPosition>
-                  <ui:ClickImage.Image>
-                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAApCAYAAAChi6CMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOkSURBVFhH7ZdNTxNBGMe9qh/Al3jy4NGDBy4mJpp4M1FPfgMgFQggRNPCQSyR2JgGk6ZKCE2bJpAYoQSlejC0kirYVkBe2sbSl4S2pPTtGzz2PzB1207bLWE3kvTwS2ZnnvnPL92Z3e2ZQqFAp42WtFq0pNWiJd0sn7cSdNPko+uvV8kXSQtrRJyotNvtpu7ubmpvb2egjb7KulQmR7qPITqv+0ZntYdcffmDDnL5qloRJyKdzWbJZrOVZM1mM4NfYww1qNV+CtK5I1EpV/TfKauWdDwep9HRUSan0WjI6XSWxtBGX29vLwUCAXq6EKJLIx5aDu3TuCtSJj++tFuWWw/V9vSzhSBdLAq7QylybibKhB9Y1ikvmFOLpqX5LZdDX18fBYNBtiW4sHk5QlvxA9J82GbCbeNe2kvnhGvVQlHp2dlZelO87ZBzbu7Rq6+77Be+Zlhh4iNf/lA0dbjXm+HY0qIxEdaVON1994vi+1m68NxT2hL3p9Ypl2vuF+bIluYHrBlpbItJT4zcgSQ9sv0uCd8w/qTwXppMJhOrkx5eOTSUTqfTpccXruVK21ZiJUkpEN4tbgkISzOxBtaqzBHRUNpoNLJQvChwLUc6WtwKl1/82wqctiNh1Ehz+AsJa0lzatFQuqOjgwXOzc2x656enobSTxyBKuHbZj/b17wGGchCG9m4xlp8vB4NpREGBgcHaXFxkXZ2dmhgYEBYy3lYfO5yWTwtHr/frnpFIwNZyEQ2X0daUwvZ0tFolIaGhmhmZoYikYiwFiwFkxROZujO2zW6ZfKzF4moDhnIQiayFZFGO5FIkF6vp4mJiZqPq3uTa2RfjVMuXz3GwVxkIAuZ6FNMGuCE48AAuaddSq35ikoD0S8lh3p3SnFpkM/ny/Yk79/Y2CCHw8FAm/dLzwTm8n6OKtIcnP7p6WlKpVLslmu1WrLb7Qy00Ycx1KBWlAFUlQbhcJh0Oh1Zrday2442+jCGGumcSlSV9vl87CN/fn5eOA4whhrUisaBatL40Onq6iKXyyUcl4Ia1Nb6OFJcGrfdYrGw17Df7y8bqwdqMQdzVX16JJNJMhgM7NWLfyXSWjngvyLmIgNZvF8xaX7ghoeHKRaLVdXKBXORIT2gikh7vV52mMbGxtgjTFTbDMhAFjKRrYh0Z2cn+3DPZDLCuuOALGQi+0Sl+/v7S4FKg7VEDpU0lPZ4PKqIYw2sJXKopKH0/0hLWi1a0mpxCqUL9BcvvoXLrQ+JZwAAAABJRU5ErkJggg==" />
-                  </ui:ClickImage.Image>
-                  <ui:ClickImage.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db7af7c9-b523-4d1a-88cd-09537af83b35" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:ClickImage.Target>
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="TryCatch_15">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </ui:ClickImage>
+                  <TryCatch.Try>
+                    <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Click Image 'prowin32.exe AVR'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:ClickImage.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:ClickImage.CursorPosition>
+                      <ui:ClickImage.Image>
+                        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAArCAYAAAA3+KulAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO5SURBVGhD7ZrdS5NRHMe9rf6AXuiqiy676MKbICjoLqiu+g9UloqaUmx6kU2SRgyDsRJpbAgKkU4sVxfhlqy0ban5so3mXsBtMvfif/Br36NnPXNHfZ6p29OY8IHnOed3vmcfd87ZM7GBauynYWdnh2qJupDaqQupnbrQafF5NU43TF669mqBvOGUsEYOpybkcrmora2NmpqaGLhG2/66ZDpLuo9BOqf7Rme0u1x58YO2s7mSWjmcuFAmkyGbzVYQMZvNDH6PPtSgVvspQGf3JKRc1n+njBqEYrEYDQwMsBeu0WjI4XAU+nCNto6ODvL7/fRkOkgX+900F9yiIWe4SGxodqMoVwlV2UNPpwN0IS/jCibJsRIvkrlvWaKcYIxcjiXEl5EcOjs7KRAIsGXGZcxzYVqNbZPmwxqTaRzy0GYqK5xLLhUTmpiYoNf5pYQX7ljZpJdfN9g7c9Uwz6T6v/yhSHJ3bx2HExES9YmwzsfozttfFNvK0Pln7sIyu/duibLZ470znLKE+GZXIoSlNuKOksufoIe23wWZ68afFNpMkclkYnXSg6QcFAmlUqnCEYx7uUK2+WhBQApkNvLLDDLSTMyBufbnyEGRkNFoZBPiQxL3coQi+eV16fm/5cVp3JNBjTSHfxhjLmmOXBQJNTc3s8kmJyfZfXt7+5FCj+3+EplbZh/bR7wGGcjCNbJxj7l4vxIUCWEi0NPTQzMzM7S+vk7d3d3CWs6D/OcKF8Gp9uj9WsljDTKQhUxk83mkNXIpSygSiVBvby+Nj49TOBwW1oLZQIJCiTTdfrNIN00+9iEqqkMGspCJ7IoL4Toej5Ner6fh4eEDj9y7I4s0uhCjbK60j4OxyEAWMtFWFSGAkwibF5RzKh00vmpCQPQblsNh73BVhUAulyvaA7x9eXmZ7HY7A9e8XboHMZa3c6ouxMEpNTY2Rslkki0jrVZLo6OjDFyjDX2oQa0oA6hGCIRCIdLpdGS1WouWEq7Rhj7USMfsRzVCXq+XfYGbmpoS9gP0oQa1on6gCiE8VLa2tpLT6RT2S0ENag96EK2qEJaSxWJhjy4+n6+o7zBQizEYq5pTLpFIkMFgYI8r+DYqrZUD/raAschAFm+vihDf/H19fRSNRktq5YKxyJAeFhUX8ng8bGMPDg6yY1hUqwRkIAuZyK64UEtLC/tSlk6nhXXlgCxkIrtiQl1dXYXJThvMJXoNR6FIyO12V0QKc2Au0Ws4CkVC/wN1IbVTF1I7tSe09w8YNfJD9BdEvmmW8rauSgAAAABJRU5ErkJggg==" />
+                      </ui:ClickImage.Image>
+                      <ui:ClickImage.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db7af7c9-b523-4d1a-88cd-09537af83b35" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;" TimeoutMS="2000">
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:ClickImage.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ClickImage>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_15">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Click Image 'prowin32.exe AVR'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_15" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:ClickImage.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:ClickImage.CursorPosition>
+                          <ui:ClickImage.Image>
+                            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADgAAAArCAYAAAAtxEsrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO6SURBVGhD7ZrdS5NRHMe9rf6AXuiqiy676MKbICjoLqiu+g9UTEVNKTa9yCZJI4bBWEk0NgYKkU4sVxfhlqy0ban5so3mXsBtMvfif/Br36NnPXNHfeaj7tnY4APnOed3vmcfdp6zZ2ID1firYXt7m2qZumC1UxesduqCleLLSpxuGL107dU8ecMpYY0cTk3Q5XJRe3s7NTU1MdBG3966ZDpL2k9BOqf9Tmc0O1x58ZO2srmSWjmcuGAmkyGr1VoQM5lMDH6NMdSgVvM5QGd3paRc1v2gjBoFY7EYDQ4OMpHW1lZyOByFMbTR19nZSX6/n55MBenigJtmg5s07AwXiQ7PrBflloMq7sGnUwG6kJdzBZPkWI4Xyd03L1JOMEcuxyrIt50curq6KBAIsG3J5UyzYVqJbVHrx1Um1zjsoY1UVriWXComOD4+Tq/zWw8ijuUNevltnX1yV/VzTHLg61+KJHfuTSWciKBoTIRlLkZ33v6m2GaGzj9zF7blvfeLlM0q++Q4xyLID49yBLE137mj5PIn6KH1T0HuuuEXhTZSZDQaWZ30YDoKigRTqVThyMe1XEHrXLQgJAVy6/ltCTlpJtbAWntz5KBI0GAwsDeAL21cyxGM5Lfjpef/tyOncVcONdIc/nCAtaQ5clEk2NzczBafmJhg1x0dHYcKPrb7S+RumXzsPuQ1yEAW2sjGNdbi4+WgSBALg97eXpqenqa1tTXq6ekR1nIe5L/XuBhOzUcfVksew5CBLGQim68jrZHLsQhGIhHq6+ujsbExCofDwlowE0hQKJGm228W6KbRx77URXXIQBYykV1xQbTj8TjpdDoaGRnZ94i/+26BbPMxyuZKxziYiwxkIRN9qhAEOOlwGICjnHr7zVeNIBB9AnI4aAeoShDkcrmie4j3Ly0tkd1uZ6DN+6X3MObyfo7qBDk4BUdHRymZTLJtp9FoyGazMdBGH8ZQg1pRBlCtIAiFQqTVaslisRRtPbTRhzHUSOfsRbWCXq+X/aCdnJwUjgOMoQa1onGgSkE8JLe1tZHT6RSOS0ENavd7sFaVILae2Wxmj1o+n69o7CBQizmYq9pTNJFIkF6vZ49X+LUurZUD/jaDuchAFu9XhSA/TPr7+ykajZbUygVzkSE9fCou6PF42EExNDTEjn1RbTkgA1nIRHbFBVtaWtiP1HQ6Law7CshCJrIrJtjd3V1Y/KTBWqL3cBiKBN1u96lIYg2sJXoPh6FIsBqoC1Y7dcFqp/YFd/8hqEZfRP8A7fP6MBYeYAEAAAAASUVORK5CYII=" />
+                          </ui:ClickImage.Image>
+                          <ui:ClickImage.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db7af7c9-b523-4d1a-88cd-09537af83b35" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='AVR - Alok Kumar' idx='*' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:ClickImage.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:ClickImage>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
                 <ui:UiElementExists DisplayName="Element Exists 'prowin32.exe  Proclaim'" Exists="[Letter_Popup]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                   <ui:UiElementExists.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62da9db5-0c6e-4e0d-8c79-c6958e866568" InformativeScreenshot="51df8f4522c3bba811d9f2f5bb037c8b" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ListView20WndClass' idx='2' /&gt;">
@@ -181,12 +235,12 @@
             </ui:InterruptibleDoWhile.Condition>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InterruptibleDoWhile>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="932,3074" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="564,1412" sap2010:WorkflowViewState.IdRef="TryCatch_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -194,170 +248,337 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence sap:VirtualizedContainerService.HintSize="480,1844" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence sap:VirtualizedContainerService.HintSize="526,1185" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
-                <Sequence sap:VirtualizedContainerService.HintSize="438,872" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                <If Condition="[Lender_Coloum=0]" sap:VirtualizedContainerService.HintSize="484,213" sap2010:WorkflowViewState.IdRef="If_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="MS1R - *">
-                    <ui:SelectItem.Items>
-                      <scg:List x:TypeArguments="x:String" Capacity="64">
-                        <x:String>ACC - Avrillo</x:String>
-                        <x:String>BSL - Test Solicitor</x:String>
-                        <x:String>BUY1 - Heath, Annisa-Joy Natalie</x:String>
-                        <x:String>CL - Sikabe, Lindiwe Nomagugu Naledi</x:String>
-                        <x:String>CSA - Conveyancing Data Services</x:String>
-                        <x:String>DONOR - Amir, Mohammed</x:String>
-                        <x:String>EAP - Non Referring Agent</x:String>
-                        <x:String>EAR - Non Referring Agent</x:String>
-                        <x:String>EAS - Non Referring Agent</x:String>
-                        <x:String>ENV - Conveyancing Data Services Ltd</x:String>
-                        <x:String>ESA - Conveyancing Data Services</x:String>
-                        <x:String>FLOOD - Conveyancing Data Services Ltd</x:String>
-                        <x:String>GRP - FirstPort Property Services Limited</x:String>
-                        <x:String>GRS - Management Company LTD</x:String>
-                        <x:String>IND-P - Isis Team</x:String>
-                        <x:String>IND-S - Isis</x:String>
-                        <x:String>INTCON - Internal Contact / Documentation</x:String>
-                        <x:String>IR - Inland Revenue Stamp Taxes</x:String>
-                        <x:String>LLP - E&amp;m</x:String>
-                        <x:String>LLS - Gary Coleman</x:String>
-                        <x:String>LRP - HM Land Registry</x:String>
-                        <x:String>LRS - HM Land Registry</x:String>
-                        <x:String>LSP - Conveyancing Data Services Ltd</x:String>
-                        <x:String>MP1D - Barclays Bank Plc.</x:String>
-                        <x:String>MP1H - Barclays Bank Plc.</x:String>
-                        <x:String>MP1R - Barclays Bank Plc.</x:String>
-                        <x:String>MS1D - Barclays Bank Plc.</x:String>
-                        <x:String>MS1H - Barclays Bank Plc.</x:String>
-                        <x:String>MS1R - Barclays Bank Plc.</x:String>
-                        <x:String>MS2H - Homes and Communities Agency</x:String>
-                        <x:String>MS2R - Homes and Communities Agency</x:String>
-                        <x:String>NEG-P - Gary Coleman</x:String>
-                        <x:String>NEG-S - Morgan</x:String>
-                        <x:String>OFF - Offshore Team</x:String>
-                        <x:String>OOSA(1) - Conveyancing Data Services Ltd</x:String>
-                        <x:String>OOSA(2) - Conveyancing Data Services Ltd</x:String>
-                        <x:String>OOSA(3) - Conveyancing Data Services Ltd</x:String>
-                        <x:String>OOSA(4) - Conveyancing Data Services Ltd</x:String>
-                        <x:String>OOSA(5) - Conveyancing Data Services Ltd</x:String>
-                        <x:String>OOSA(6) - Conveyancing Data Services Ltd</x:String>
-                        <x:String>PAGENT - N/a / None</x:String>
-                        <x:String>PRP - Purchase Property</x:String>
-                        <x:String>PRS - Sale Property</x:String>
-                        <x:String>PSP - Conveyancing Data Services Ltd</x:String>
-                        <x:String>SEL1 - Cooper, Tom</x:String>
-                        <x:String>SEL2 - Cooper, Donna</x:String>
-                        <x:String>SSL - Client</x:String>
-                        <x:String>WAT - Conveyancing Data Services Ltd</x:String>
-                      </scg:List>
-                    </ui:SelectItem.Items>
-                    <ui:SelectItem.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b15b9e6-fb2f-4877-97a3-652666a92bab" InformativeScreenshot="4d5d7e24124646a27eecd565627ad57d" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='22' /&gt;&lt;ctrl role='combo box' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:SelectItem.Target>
-                  </ui:SelectItem>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Open'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_22" KeyModifiers="None" MouseButton="BTN_LEFT">
-                    <ui:Click.CursorPosition>
-                      <ui:CursorPosition Position="Center">
-                        <ui:CursorPosition.OffsetX>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetX>
-                        <ui:CursorPosition.OffsetY>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetY>
-                      </ui:CursorPosition>
-                    </ui:Click.CursorPosition>
-                    <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be3d0e7b-57ef-4086-92ab-53046a196c1c" InformativeScreenshot="b575d74fabecb20919f109a20ce2af71" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='22' /&gt;&lt;ctrl automationid='DropDown' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:Click.Target>
-                  </ui:Click>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'list item'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_23" KeyModifiers="None" MouseButton="BTN_LEFT">
-                    <ui:Click.CursorPosition>
-                      <ui:CursorPosition Position="Center">
-                        <ui:CursorPosition.OffsetX>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetX>
-                        <ui:CursorPosition.OffsetY>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetY>
-                      </ui:CursorPosition>
-                    </ui:Click.CursorPosition>
-                    <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be3d0e7b-57ef-4086-92ab-53046a196c1c" InformativeScreenshot="81a8d8a82de7e27c6a2e22c661ea8b65" Selector="&lt;wnd app='prowin32.exe' cls='ComboLBox' idx='*' /&gt;&lt;ctrl name='MS1R -*' role='list item' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:Click.Target>
-                  </ui:Click>
-                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="359,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ComboBox'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
-                    <ui:Click.CursorPosition>
-                      <ui:CursorPosition Position="Center">
-                        <ui:CursorPosition.OffsetX>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetX>
-                        <ui:CursorPosition.OffsetY>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetY>
-                      </ui:CursorPosition>
-                    </ui:Click.CursorPosition>
-                    <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ee1f9da-0163-4cb9-ab25-fcb50393a38a" InformativeScreenshot="0fc30ee86efcab69d9ffb5e1532959e5" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='21' /&gt;&lt;ctrl automationid='DropDown' /&gt;" TimeoutMS="2000">
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:Click.Target>
-                  </ui:Click>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'list item'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
-                    <ui:Click.CursorPosition>
-                      <ui:CursorPosition Position="Center">
-                        <ui:CursorPosition.OffsetX>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetX>
-                        <ui:CursorPosition.OffsetY>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetY>
-                      </ui:CursorPosition>
-                    </ui:Click.CursorPosition>
-                    <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ee1f9da-0163-4cb9-ab25-fcb50393a38a" InformativeScreenshot="ef2210372d66dfa091417509aa1c67a4" Selector="&lt;wnd app='prowin32.exe' cls='ComboLBox' idx='*' /&gt;&lt;ctrl name='MS1R-003 - Request redemption figure for completion' role='list item' /&gt;" TimeoutMS="2000">
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:Click.Target>
-                  </ui:Click>
-                </Sequence>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="MS2R - *">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="64">
+                            <x:String>ACC - Avrillo</x:String>
+                            <x:String>BSL - Test Solicitor</x:String>
+                            <x:String>BUY1 - Heath, Annisa-Joy Natalie</x:String>
+                            <x:String>CL - Sikabe, Lindiwe Nomagugu Naledi</x:String>
+                            <x:String>CSA - Conveyancing Data Services</x:String>
+                            <x:String>DONOR - Amir, Mohammed</x:String>
+                            <x:String>EAP - Non Referring Agent</x:String>
+                            <x:String>EAR - Non Referring Agent</x:String>
+                            <x:String>EAS - Non Referring Agent</x:String>
+                            <x:String>ENV - Conveyancing Data Services Ltd</x:String>
+                            <x:String>ESA - Conveyancing Data Services</x:String>
+                            <x:String>FLOOD - Conveyancing Data Services Ltd</x:String>
+                            <x:String>GRP - FirstPort Property Services Limited</x:String>
+                            <x:String>GRS - Management Company LTD</x:String>
+                            <x:String>IND-P - Isis Team</x:String>
+                            <x:String>IND-S - Isis</x:String>
+                            <x:String>INTCON - Internal Contact / Documentation</x:String>
+                            <x:String>IR - Inland Revenue Stamp Taxes</x:String>
+                            <x:String>LLP - E&amp;m</x:String>
+                            <x:String>LLS - Gary Coleman</x:String>
+                            <x:String>LRP - HM Land Registry</x:String>
+                            <x:String>LRS - HM Land Registry</x:String>
+                            <x:String>LSP - Conveyancing Data Services Ltd</x:String>
+                            <x:String>MP1D - Barclays Bank Plc.</x:String>
+                            <x:String>MP1H - Barclays Bank Plc.</x:String>
+                            <x:String>MP1R - Barclays Bank Plc.</x:String>
+                            <x:String>MS1D - Barclays Bank Plc.</x:String>
+                            <x:String>MS1H - Barclays Bank Plc.</x:String>
+                            <x:String>MS1R - Barclays Bank Plc.</x:String>
+                            <x:String>MS2H - Homes and Communities Agency</x:String>
+                            <x:String>MS2R - Homes and Communities Agency</x:String>
+                            <x:String>NEG-P - Gary Coleman</x:String>
+                            <x:String>NEG-S - Morgan</x:String>
+                            <x:String>OFF - Offshore Team</x:String>
+                            <x:String>OOSA(1) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>OOSA(2) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>OOSA(3) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>OOSA(4) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>OOSA(5) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>OOSA(6) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>PAGENT - N/a / None</x:String>
+                            <x:String>PRP - Purchase Property</x:String>
+                            <x:String>PRS - Sale Property</x:String>
+                            <x:String>PSP - Conveyancing Data Services Ltd</x:String>
+                            <x:String>SEL1 - Cooper, Tom</x:String>
+                            <x:String>SEL2 - Cooper, Donna</x:String>
+                            <x:String>SSL - Client</x:String>
+                            <x:String>WAT - Conveyancing Data Services Ltd</x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b15b9e6-fb2f-4877-97a3-652666a92bab" InformativeScreenshot="4d5d7e24124646a27eecd565627ad57d" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='22' /&gt;&lt;ctrl role='combo box' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Open'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_24" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be3d0e7b-57ef-4086-92ab-53046a196c1c" InformativeScreenshot="b575d74fabecb20919f109a20ce2af71" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='22' /&gt;&lt;ctrl automationid='DropDown' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'list item'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_25" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be3d0e7b-57ef-4086-92ab-53046a196c1c" InformativeScreenshot="ec15f47eeff1d77431d47cb6a91caad1" Selector="&lt;wnd app='prowin32.exe' cls='ComboLBox' idx='*' /&gt;&lt;ctrl name='MS2R -*' role='list item' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="359,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ComboBox'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_26" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ee1f9da-0163-4cb9-ab25-fcb50393a38a" InformativeScreenshot="0fc30ee86efcab69d9ffb5e1532959e5" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='21' /&gt;&lt;ctrl automationid='DropDown' /&gt;" TimeoutMS="2000">
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'list item'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_27" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ee1f9da-0163-4cb9-ab25-fcb50393a38a" InformativeScreenshot="ef2210372d66dfa091417509aa1c67a4" Selector="&lt;wnd app='prowin32.exe' cls='ComboLBox' idx='*' /&gt;&lt;ctrl name='MS2R-003A - Request redemption figure for completion' role='list item' /&gt;" TimeoutMS="2000">
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="MS1R - *">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="64">
+                            <x:String>ACC - Avrillo</x:String>
+                            <x:String>BSL - Test Solicitor</x:String>
+                            <x:String>BUY1 - Heath, Annisa-Joy Natalie</x:String>
+                            <x:String>CL - Sikabe, Lindiwe Nomagugu Naledi</x:String>
+                            <x:String>CSA - Conveyancing Data Services</x:String>
+                            <x:String>DONOR - Amir, Mohammed</x:String>
+                            <x:String>EAP - Non Referring Agent</x:String>
+                            <x:String>EAR - Non Referring Agent</x:String>
+                            <x:String>EAS - Non Referring Agent</x:String>
+                            <x:String>ENV - Conveyancing Data Services Ltd</x:String>
+                            <x:String>ESA - Conveyancing Data Services</x:String>
+                            <x:String>FLOOD - Conveyancing Data Services Ltd</x:String>
+                            <x:String>GRP - FirstPort Property Services Limited</x:String>
+                            <x:String>GRS - Management Company LTD</x:String>
+                            <x:String>IND-P - Isis Team</x:String>
+                            <x:String>IND-S - Isis</x:String>
+                            <x:String>INTCON - Internal Contact / Documentation</x:String>
+                            <x:String>IR - Inland Revenue Stamp Taxes</x:String>
+                            <x:String>LLP - E&amp;m</x:String>
+                            <x:String>LLS - Gary Coleman</x:String>
+                            <x:String>LRP - HM Land Registry</x:String>
+                            <x:String>LRS - HM Land Registry</x:String>
+                            <x:String>LSP - Conveyancing Data Services Ltd</x:String>
+                            <x:String>MP1D - Barclays Bank Plc.</x:String>
+                            <x:String>MP1H - Barclays Bank Plc.</x:String>
+                            <x:String>MP1R - Barclays Bank Plc.</x:String>
+                            <x:String>MS1D - Barclays Bank Plc.</x:String>
+                            <x:String>MS1H - Barclays Bank Plc.</x:String>
+                            <x:String>MS1R - Barclays Bank Plc.</x:String>
+                            <x:String>MS2H - Homes and Communities Agency</x:String>
+                            <x:String>MS2R - Homes and Communities Agency</x:String>
+                            <x:String>NEG-P - Gary Coleman</x:String>
+                            <x:String>NEG-S - Morgan</x:String>
+                            <x:String>OFF - Offshore Team</x:String>
+                            <x:String>OOSA(1) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>OOSA(2) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>OOSA(3) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>OOSA(4) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>OOSA(5) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>OOSA(6) - Conveyancing Data Services Ltd</x:String>
+                            <x:String>PAGENT - N/a / None</x:String>
+                            <x:String>PRP - Purchase Property</x:String>
+                            <x:String>PRS - Sale Property</x:String>
+                            <x:String>PSP - Conveyancing Data Services Ltd</x:String>
+                            <x:String>SEL1 - Cooper, Tom</x:String>
+                            <x:String>SEL2 - Cooper, Donna</x:String>
+                            <x:String>SSL - Client</x:String>
+                            <x:String>WAT - Conveyancing Data Services Ltd</x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b15b9e6-fb2f-4877-97a3-652666a92bab" InformativeScreenshot="4d5d7e24124646a27eecd565627ad57d" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='22' /&gt;&lt;ctrl role='combo box' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Open'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_22" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be3d0e7b-57ef-4086-92ab-53046a196c1c" InformativeScreenshot="b575d74fabecb20919f109a20ce2af71" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='22' /&gt;&lt;ctrl automationid='DropDown' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'list item'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_23" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be3d0e7b-57ef-4086-92ab-53046a196c1c" InformativeScreenshot="81a8d8a82de7e27c6a2e22c661ea8b65" Selector="&lt;wnd app='prowin32.exe' cls='ComboLBox' idx='*' /&gt;&lt;ctrl name='MS1R -*' role='list item' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="359,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ComboBox'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ee1f9da-0163-4cb9-ab25-fcb50393a38a" InformativeScreenshot="0fc30ee86efcab69d9ffb5e1532959e5" Selector="&lt;wnd app='prowin32.exe' cls='ProMainWin' title='Proclaim' /&gt;&lt;wnd cls='ComboBox' idx='21' /&gt;&lt;ctrl automationid='DropDown' /&gt;" TimeoutMS="2000">
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'list item'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ee1f9da-0163-4cb9-ab25-fcb50393a38a" InformativeScreenshot="ef2210372d66dfa091417509aa1c67a4" Selector="&lt;wnd app='prowin32.exe' cls='ComboLBox' idx='*' /&gt;&lt;ctrl name='MS1R-003 - Request redemption figure for completion' role='list item' /&gt;" TimeoutMS="2000">
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="484,333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -429,7 +650,7 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
-                <ui:UiElementExists DisplayName="Element Exists 'prowin32.exe  Error'" Exists="[Accept_Error_Check]" sap:VirtualizedContainerService.HintSize="438,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                <ui:UiElementExists DisplayName="Element Exists 'prowin32.exe  Error'" Exists="[Accept_Error_Check]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                   <ui:UiElementExists.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6ffa24c7-9bad-4f51-aba3-e7b38892ab98" InformativeScreenshot="9574f4aba62b8224afb4834b6b42de15" Selector="&lt;wnd app='prowin32.exe' cls='#32770' title='Error' /&gt;" TimeoutMS="2000">
                       <ui:Target.WaitForReady>
@@ -438,7 +659,7 @@
                     </ui:Target>
                   </ui:UiElementExists.Target>
                 </ui:UiElementExists>
-                <If Condition="[Accept_Error_Check=True]" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="If_3">
+                <If Condition="[Accept_Error_Check=True]" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -753,10 +974,10 @@
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="898,2912" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="484,21" sap2010:WorkflowViewState.IdRef="Catch`1_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -764,7 +985,7 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="892,2843" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <Sequence sap:VirtualizedContainerService.HintSize="892,2829" sap2010:WorkflowViewState.IdRef="Sequence_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>

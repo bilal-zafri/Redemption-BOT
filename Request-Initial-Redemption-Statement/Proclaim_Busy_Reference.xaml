@@ -3,12 +3,11 @@
     <x:Property Name="Reference_Number" Type="InArgument(x:String)" />
     <x:Property Name="Working_Folder" Type="InArgument(x:String)" />
     <x:Property Name="Reference_Busy" Type="InArgument(x:Boolean)" />
-    <x:Property Name="Screenshot_Counter" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1490,1060</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,1060</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Proclaim_Busy_Reference_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -475,11 +474,13 @@
         </TryCatch>
       </If.Else>
     </If>
-    <ui:SaveImage DisplayName="Save Image" FileName="[Working_Folder+&quot;\Web-Form-Screenshot\&quot;+Screenshot_Counter.ToString+&quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="842,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Screenshot]" />
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear Team,&quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Reference Number : &quot;+Reference_Number+&quot; is not available for Redemption Process&quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Kindly find the Attachment of the Screenshot&quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Redemption BOT | RPA Team | Anza Services LLP&quot;]" DisplayName="Send SMTP Mail Message" Email="bilalzafri@anzaservicesllp.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="842,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="@Sonumotihai786" Port="587" SecureConnection="Auto" Server="smtp.office365.com" Subject="[&quot;Reference Number : &quot;+Reference_Number+&quot;  Busy / Not Available &quot;]" To="bilalzafri@anzaservicesllp.com">
+    <ui:SaveImage DisplayName="Save Image" FileName="[Working_Folder+&quot;\Proclaim-Busy-Reference-Screenshot\&quot;+Reference_Number+&quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="842,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Screenshot]" />
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear Team,&quot;+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Reference Number : &quot;+Reference_Number+&quot; is not available for Redemption Process&quot;+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Kindly find the Attachment of the Screenshot&quot;+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+&#xA;Environment.NewLine+&#xA;&quot;Redemption BOT | RPA Team | Anza Services LLP&quot;]" DisplayName="Send SMTP Mail Message" Email="bilalzafri@anzaservicesllp.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="842,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="@Sonumotihai786" Port="587" SecureConnection="Auto" Server="smtp.office365.com" Subject="[&quot;Reference Number : &quot;+Reference_Number+&quot;  Busy / Not Available &quot;]" To="bilalzafri@anzaservicesllp.com">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">[Working_Folder+"\Web-Form-Screenshot\"+Screenshot_Counter.ToString+".png"]</InArgument>
+          <InArgument x:TypeArguments="x:String">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Working_Folder+&quot;\Proclaim-Busy-Reference-Screenshot\&quot;+Reference_Number+&quot;.png&quot;" />
+          </InArgument>
         </scg:List>
       </ui:SendMail.Files>
       <sap:WorkflowViewStateService.ViewState>
